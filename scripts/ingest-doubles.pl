@@ -62,12 +62,6 @@ while(my $file_name = $list->getline) {
         print '.';
     };
 
-    # If something goes wrong the offending record
-    # is spit out.
-    catch {
-        say Dumper($record);
-    };
-
     # Commit every 1024 rows.
     if ($counter == 1023) {
         $dbh->commit;
