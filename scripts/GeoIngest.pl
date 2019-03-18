@@ -7,7 +7,7 @@
 # There is no error-checking for input values, so
 # don't mess this up!
 #
-# If you can, disable constraints and indexes during 
+# If you can, disable constraints and indexes during
 # an ingest, it will speed up the process dramatically.
 
 use feature ':5.14';
@@ -43,18 +43,17 @@ my $source_directory = abs_path($ARGV[0]);
 my ($collection) = $source_directory =~ m|.*/(.+)$|;
 
 
-my $dbh = DBI->connect("dbi:Pg:dbname=$ENV{GEO_DB_DB}", $ENV{GEO_DB_USER}, $ENV{GEO_DB_PASSWD}, {RaiseError => 1, AutoCommit => 0});
+my $dbh = DBI->connect("dbi:Pg:dbname=$ENV{GEO_DB_DB}", $ENV{GEO_DB_USER}, $ENV{GEO_DB_PASSWD}, {RaiseError => 1, AutoCommit => 1});
 
 #
 # Preparing SQL-Statement
 #
 
 my $db_insert = $dbh->prepare(qq(
-    INSERT INTO files (id, collection, path, last_modified,   size, checksum_sha1, agent) 
+    INSERT INTO files (id, collection, path, last_modified,   size, checksum_sha1, agent)
     VALUES            (?,  ?,          ?,    to_timestamp(?), ?,    ?,             ?);
 ));
 
-my $counter = 0;
 open(LOGFILE, "> $ENV{GEO_LOGS}/db-files.txt");
 
 
@@ -89,7 +88,7 @@ sub ingest {
     map { $sha1_id->add($_) } (
         $record->{collection},
         $record->{path},
-        $record->{last_modified}, 
+        $record->{last_modified},
         $record->{size},
         $record->{checksum_sha1},
         $record->{agent}
@@ -99,38 +98,20 @@ sub ingest {
 
     print Dumper($record);
 
-    try {
-        # Ram stuff into database!
-        $db_insert->execute(
-            $record->{id},
-            $record->{collection},
-            $record->{path},
-            $record->{last_modified}, 
-            $record->{size},
-            $record->{checksum_sha1},
-            $record->{agent}
-        );
-        say LOGFILE $record->{id}.'|'.$record->{path};
-    } 
-
-    catch {
-        # should be writing something meaningful to STDERR.
-        # The most likely case for the db refusing to ingest
-        # a row is because of a double key.
-        say 'SKIPPING';
-    };
-
-    $counter++;
-    if($counter==1024) {
-        $dbh->commit;
-        $counter=0;
-    }
+    # Ram stuff into database!
+    $db_insert->execute(
+        $record->{id},
+        $record->{collection},
+        $record->{path},
+        $record->{last_modified},
+        $record->{size},
+        $record->{checksum_sha1},
+        $record->{agent}
+    );
+    say LOGFILE $record->{id}.'|'.$record->{path};
 
 }
 
-# Since a commit only happens every 1024th rows inserted,
-# it is important to commit in the end!
-
-$dbh->commit;
 $dbh->disconnect;
 close LOGFILE;
+
