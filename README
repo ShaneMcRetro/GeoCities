@@ -36,6 +36,9 @@ script (i.e. .bashrc):
     export GEO_DB_USER='despens'
     export GEO_DB_PASSWD='despens'
 
+You may also need to install some perl modules:
+
+    $ sudo cpan install IO::All Try::Tiny DBD::Pg DBI
 
 ~~Dragan Espenschied, 2013-04-03
 
