@@ -43,11 +43,12 @@ while(<INPUT>) {
     else {
         my $winner = shift(@set);                                                   # the first directory name is the winner ...
 
-        for my $loser (@set) {                                                      # every single loser should go there!
-            my $loser_path = $ENV{GEO_WORK} . '/geocities' . $loser;                # Loser Path,
-            my $winner_path = $ENV{GEO_WORK} . '/geocities' . $winner;              # Winner Path!
+        for my $loser (@set) {                                                        # every single loser should go there!
+            my $loser_path = $ENV{GEO_WORK} . '/geocities' . $loser;                  # Loser Path,
+            my $winner_path = $ENV{GEO_WORK} . '/geocities' . $winner;                # Winner Path!
+            my $merge_directories_path = $ENV{GEO_SCRIPTS} . '/merge_directories.pl'; # script path
 
-            system(('merge_directories.pl', $loser_path , $winner_path));           # MERGE!
+            system(($merge_directories_path, $loser_path , $winner_path));           # MERGE!
             
             my $conflict_counter = 0;                                               # Conflicts that might arise need to be tracked.
             
@@ -55,7 +56,7 @@ while(<INPUT>) {
                 $conflict_counter++;                                                # try moving them into the next conflict directory.
                 my $conflict_path = $ENV{GEO_WORK} . "/geocities_conflicts_$conflict_counter" . $winner;    # Target dir.
                 system(('mkdir', '-p', $conflict_path));                                                    # Create the path.
-                system(('merge_directories.pl', $loser_path , $conflict_path));                             # MERGE!
+                system(($merge_directories_path, $loser_path , $conflict_path));                            # MERGE!
             }
             system(('rmdir', '-v', $loser_path)) if (-d $loser_path);                # Delete loser dir if it didn't happen yet, coz now it is empty!
         }
