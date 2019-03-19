@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # Merge geocities.com into www.geocities.com
 
 cd $GEO_WORK/geocities/
