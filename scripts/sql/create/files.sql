@@ -1,6 +1,6 @@
 -- Table: files
 
--- DROP TABLE files;
+DROP TABLE files;
 
 CREATE TABLE files
 (
@@ -12,7 +12,7 @@ CREATE TABLE files
   checksum_sha1 text NOT NULL, -- The sha1 binary checksum of the file's contents
   agent text NOT NULL, -- The name of the agent responsible for creating this database record.
   "timestamp" timestamp without time zone NOT NULL DEFAULT now() -- Time when this record was created.
-)
+);
 
 COMMENT ON TABLE files
   IS 'The following fields represent information about a file that is the absolute truth and trivial to figure out. Each file''s id is derived from these fields.';
@@ -24,5 +24,3 @@ COMMENT ON COLUMN files.size IS 'The file''s size in octets.';
 COMMENT ON COLUMN files.checksum_sha1 IS 'The sha1 binary checksum of the file''s contents';
 COMMENT ON COLUMN files.agent IS 'The name of the agent responsible for creating this database record.';
 COMMENT ON COLUMN files."timestamp" IS 'Time when this record was created.';
-
-

@@ -1,6 +1,6 @@
 -- Table: props
 
--- DROP TABLE props;
+DROP TABLE props;
 
 CREATE TABLE props
 (
@@ -10,7 +10,7 @@ CREATE TABLE props
   obj text, -- Object the file is related to.
   agent text, -- Name of the agent responsible for this entry
   "timestamp" timestamp without time zone DEFAULT now() -- Time when this entry was created
-)
+);
 
 COMMENT ON TABLE props
   IS 'Properties of files that require content analysis or human judgement.';
@@ -20,5 +20,3 @@ COMMENT ON COLUMN props.rel IS 'Type of relation';
 COMMENT ON COLUMN props.obj IS 'Object the file is related to.';
 COMMENT ON COLUMN props.agent IS 'Name of the agent responsible for this entry';
 COMMENT ON COLUMN props."timestamp" IS 'Time when this entry was created';
-
-
