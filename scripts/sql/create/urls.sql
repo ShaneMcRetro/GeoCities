@@ -1,6 +1,6 @@
 -- Table: urls
 
--- DROP TABLE urls;
+DROP TABLE urls;
 
 CREATE TABLE urls
 (
@@ -9,7 +9,7 @@ CREATE TABLE urls
   file_id text NOT NULL, -- id of the file the URL points to.
   agent text NOT NULL, -- Name of the agent that created this record.
   "timestamp" timestamp without time zone DEFAULT now() -- Time when this entry was created.
-)
+);
 
 COMMENT ON TABLE urls
   IS 'Mappings of URLs to files';
