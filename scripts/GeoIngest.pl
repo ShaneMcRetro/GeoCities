@@ -60,56 +60,60 @@ open(LOGFILE, "> $ENV{GEO_LOGS}/db-files.txt");
 find({wanted => \&ingest, no_chdir=>1}, $source_directory);
 
 sub ingest {
-    return unless(-f $File::Find::name);
-
     my $path_absolute =  decode_utf8($File::Find::name);
 
-    my ($path_relative) = $_ =~ m|$source_directory/(.+)|;
-    $path_relative = "$collection/$path_relative";
+    try {
+      return unless(-f $File::Find::name);
 
-    my $file_info = stat($File::Find::name);
+      my ($path_relative) = $_ =~ m|$source_directory/(.+)|;
+      $path_relative = "$collection/$path_relative";
 
-    my $sha1_file = Digest->new('SHA-1');
-    my $file_contents = io($path_absolute)->binary->all;
+      my $file_info = stat($File::Find::name);
 
-    $sha1_file->add( $file_contents );
+      my $sha1_file = Digest->new('SHA-1');
+      my $file_contents = io($path_absolute)->binary->all;
 
-    my $sha1_id = Digest->new('SHA-1');
+      $sha1_file->add( $file_contents );
 
-    my $record = {
-        collection      => $collection,
-        path            => $path_relative,
-        last_modified   => $file_info->mtime,
-        size            => $file_info->size,
-        checksum_sha1   => $sha1_file->hexdigest,
-        agent           => "$AGENT $VERSION",
-    };
+      my $sha1_id = Digest->new('SHA-1');
 
-    map { $sha1_id->add($_) } (
-        $record->{collection},
-        $record->{path},
-        $record->{last_modified},
-        $record->{size},
-        $record->{checksum_sha1},
-        $record->{agent}
-    );
+      my $record = {
+          collection      => $collection,
+          path            => $path_relative,
+          last_modified   => $file_info->mtime,
+          size            => $file_info->size,
+          checksum_sha1   => $sha1_file->hexdigest,
+          agent           => "$AGENT $VERSION",
+      };
 
-    $record->{id} = $sha1_id->hexdigest;
+      map { $sha1_id->add($_) } (
+          $record->{collection},
+          $record->{path},
+          $record->{last_modified},
+          $record->{size},
+          $record->{checksum_sha1},
+          $record->{agent}
+      );
 
-    print Dumper($record);
+      $record->{id} = $sha1_id->hexdigest;
 
-    # Ram stuff into database!
-    $db_insert->execute(
-        $record->{id},
-        $record->{collection},
-        $record->{path},
-        $record->{last_modified},
-        $record->{size},
-        $record->{checksum_sha1},
-        $record->{agent}
-    );
-    say LOGFILE $record->{id}.'|'.$record->{path};
+      #print Dumper($record);
 
+      # Ram stuff into database!
+      $db_insert->execute(
+          $record->{id},
+          $record->{collection},
+          $record->{path},
+          $record->{last_modified},
+          $record->{size},
+          $record->{checksum_sha1},
+          $record->{agent}
+      );
+      say LOGFILE $record->{id}.'|'.$record->{path};
+    } catch {
+      print "caught error: $_";
+      print "Manually inspect: $path_absolute";
+    }
 }
 
 $dbh->disconnect;
