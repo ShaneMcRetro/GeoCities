@@ -9,8 +9,8 @@ Making sense of the Archiveteam's Geocities Torrent
 
 This project was created on Ubuntu 12.04.
 
-You need a lot of harddrive space to seriously work with Geocities. I 
-recommend setting up an LVM spanning two 2TB disks. There is still the need 
+You need a lot of harddrive space to seriously work with Geocities. I
+recommend setting up an LVM spanning two 2TB disks. There is still the need
 to save space with such a setup, so these scripts will wipe temporary files
 after they are used.
 
@@ -28,7 +28,7 @@ script (i.e. .bashrc):
     export GEO_ARCHIVE=/media/Geocities/archive             # normalized archives
 
     export GEO_LOGS=~/Geocities/scripts/log                 # log files and lists
-    export GEO_SCRIPTS=~/Geocities/scripts                  # software 
+    export GEO_SCRIPTS=~/Geocities/scripts                  # software
     export GEO_SCREENSHOTS=~/Geocities/archive/screenshots  # screenshots dir
 
     export GEO_DB_HOST='localhost'                          # database access
@@ -36,9 +36,10 @@ script (i.e. .bashrc):
     export GEO_DB_USER='despens'
     export GEO_DB_PASSWD='despens'
 
-You may also need to install some perl modules:
+    With Ubuntu, you may also need to install some perl modules and system deps:
 
-    $ sudo cpan install IO::All Try::Tiny DBD::Pg DBI
+    $ sudo apt-get install build-essential p7zip-full convmv postgresql libpq-dev gvfs-bin
+    $ sudo cpan install IO::All Try::Tiny DBD::Pg DBI XML::TreePP
 
 ~~Dragan Espenschied, 2013-04-03
 
