@@ -13,7 +13,8 @@ cd $GEO_SOURCE/geocities.archiveteam.torrent/
 
 find . -name *.7z.001 | xargs -P4 -I filename 7z x filename -o$GEO_WORK
 
-
+rm $GEO_SOURCE/SUBSITES/geocities.com.7z.001.part
+7z x $GEO_SOURCE/SUBSITES/geocities.com.7z.001 -o$GEO_WORK
 
 #real    361m21.098s
 #user    799m53.967s
