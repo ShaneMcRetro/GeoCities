@@ -24,5 +24,3 @@ COMMENT ON COLUMN files.size IS 'The file''s size in octets.';
 COMMENT ON COLUMN files.checksum_sha1 IS 'The sha1 binary checksum of the file''s contents';
 COMMENT ON COLUMN files.agent IS 'The name of the agent responsible for creating this database record.';
 COMMENT ON COLUMN files."timestamp" IS 'Time when this record was created.';
-
-

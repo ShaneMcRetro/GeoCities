@@ -51,4 +51,3 @@ psql -d $GEO_DB_DB --no-align --tuples-only -f $GEO_SCRIPTS/sql/do/dump-files.sq
 # file.
 
 $GEO_SCRIPTS/GeoURLs.pl
-

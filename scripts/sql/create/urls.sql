@@ -18,5 +18,3 @@ COMMENT ON COLUMN urls.url IS 'Full historic URL.';
 COMMENT ON COLUMN urls.file_id IS 'id of the file the URL points to.';
 COMMENT ON COLUMN urls.agent IS 'Name of the agent that created this record.';
 COMMENT ON COLUMN urls."timestamp" IS 'Time when this entry was created.';
-
-

@@ -20,5 +20,3 @@ COMMENT ON COLUMN props.rel IS 'Type of relation';
 COMMENT ON COLUMN props.obj IS 'Object the file is related to.';
 COMMENT ON COLUMN props.agent IS 'Name of the agent responsible for this entry';
 COMMENT ON COLUMN props."timestamp" IS 'Time when this entry was created';
-
-
