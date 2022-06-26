@@ -11,7 +11,7 @@ cd $GEO_SOURCE/geocities.archiveteam.torrent/
 # "run 4 7zip decrunchers at the same time". Adjust the number to
 # the numbe of cores your processor has.
 
-find . -name *.7z.001 | xargs -P4 -I filename 7z x -aou filename -o$GEO_WORK
+find . -name \*.7z.001 | xargs -P4 -I filename 7z x -aou filename -o$GEO_WORK
 
 rm $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES/geocities.com.7z.001.part
 7z x $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES/geocities.com.7z.001 -o$GEO_WORK
