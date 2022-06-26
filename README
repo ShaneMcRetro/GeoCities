@@ -50,3 +50,7 @@ All material released under the AGPL, see LICENSE.
 During 2012, this project was supported by
 Swiss National Science Foundation http://www.snf.ch/, at the
 Bern University of the Arts http://www.hkb.bfh.ch/
+
+Notes below (still a WIP) added by Shane McRetro:
+- This is being modified to run nicely on macOS 12.x Monterey with Homebrew 3.5.2.
+- Use a case-sensitive formatted drive (e.g. APFS Case-sensitive).
