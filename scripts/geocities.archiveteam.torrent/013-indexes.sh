@@ -10,4 +10,4 @@ psql -d $GEO_DB_DB --no-align --tuples-only -f  $GEO_SCRIPTS/sql/do/find-indexes
 # Delete unneeded index files from disk and database,
 # mark the right ones as "homepage".
 
-$GEO_SCRIPTS/filer-indexes.pl
+$GEO_SCRIPTS/filter-indexes.pl
