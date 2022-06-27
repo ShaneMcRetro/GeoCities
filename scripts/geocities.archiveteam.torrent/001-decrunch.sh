@@ -27,7 +27,4 @@ find . -name \*.7z.001 | xargs -P4 -I filename 7z x -aou filename -o$GEO_WORK |&
 cd $GEO_WORK
 sudo rm geocities.yahoo_1.com geocities.yahoo.co_1.jp ar.geocities.yahoo_1.com uk.geocities.yahoo_1.com us.geocities.yahoo_1.com visit.geocities.yahoo_1.com themis.geocities.yahoo_1.com
 
-# ON THE NEXT RUN
-# This creates duplicates files, why was this here? Confirm /media/shane/GeoCities2TB/work/geocities/geocities.com/1christlover exists with one index.html
-# 7z x -aou $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES/geocities.com.7z.001 -o$GEO_WORK  |& tee $GEO_LOGS/001-decrunch_extra.log
-# If confirmed to exist, delete this block.
+# Done!
