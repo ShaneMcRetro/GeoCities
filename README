@@ -1,57 +1,56 @@
-One Terabyte Of Kilobyte Age
+One Terabyte of Kilobyte Age
 ============================
 
-Research blog: http://contemporary-home-computing.org/1tb/
-Screenshot stream: http://oneterabyteofkilobyteage.tumblr.com/
+Research Blog: https://blog.geocities.institute
+Screenshot Stream: http://oneterabyteofkilobyteage.tumblr.com/
+Original Source: https://github.com/despens/Geocities
 
-Making sense of the Archiveteam's Geocities Torrent
+Making Sense of the ArchiveTeam's GeoCities Torrent
 ---------------------------------------------------
 
-This project was created on Ubuntu 12.04.
+This project uses Ubuntu 22.04 LTS as a base.
 
-You need a lot of harddrive space to seriously work with Geocities. I
-recommend setting up an LVM spanning two 2TB disks. There is still the need
-to save space with such a setup, so these scripts will wipe temporary files
-after they are used.
+You need a lot of hard drive space to seriously work with Geocities. I used a pair of SSDs (Samsung 870 EVO).
+- 1TB for the source data.
+- 2TB for the work and final archive data.
+- Drives must be formatted as case-sensitive, such as ext4.
 
-The only versions kept will be the originals (as in how the data was
-distributed) and the finished, workable archive files.
+Some scripts will wipe temporary files after they are used. The only versions kept will be:
+- the originals (as in how the data was distributed, located in $GEO_SOURCE/geocities.archiveteam.torrent,
+- and the finished, workable archive files, located in $GEO_ARCHIVE
 
-Read the scripts' sources before running them, it might hint you towards
-packages you need to install and contain instructions on their usage.
+Read the script sources before running them, it might hint you towards packages you need to install and contain instructions on their usage.
 
-You need some environment variables, you might set them in your shell's startup
-script (i.e. .bashrc):
+You're going to need environment variables.
 
-    export GEO_SOURCE=/media/Geocities/source               # distribution files
-    export GEO_WORK=/media/Geocities/work                   # tmp directory
-    export GEO_ARCHIVE=/media/Geocities/archive             # normalized archives
+$ sudo nano ~/.bashrc
 
-    export GEO_LOGS=~/Geocities/scripts/log                 # log files and lists
-    export GEO_SCRIPTS=~/Geocities/scripts                  # software
-    export GEO_SCREENSHOTS=~/Geocities/archive/screenshots  # screenshots dir
+Replace the username and name your drives appropriately.
 
-    export GEO_DB_HOST='localhost'                          # database access
-    export GEO_DB_DB='Geocities'
-    export GEO_DB_USER='despens'
-    export GEO_DB_PASSWD='despens'
+export GEO_SOURCE=/media/shane/GC_1TB                   # distribution files, 1TB drive.
+export GEO_WORK=/media/shane/GC_2TB/work                # tmp directory
+export GEO_ARCHIVE=/media/shane/GC_2TB/archive          # normalised archives
 
-    With Ubuntu, you may also need to install some perl modules and system deps:
+export GEO_LOGS=/media/shane/GC_2TB/log                 # log files and lists
+export GEO_SCRIPTS=/media/shane/GC_2TB/scripts          # software
+export GEO_SCREENSHOTS=/media/shane/GC_2TB/screenshots  # screenshots dir
 
-    $ sudo apt-get install build-essential p7zip-full convmv postgresql libpq-dev gvfs-bin
-    $ sudo cpan install IO::All Try::Tiny DBD::Pg DBI XML::TreePP
+export GEO_DB_HOST='localhost'                          # database access
+export GEO_DB_DB='Geocities'
+export GEO_DB_USER='despens'
+export GEO_DB_PASSWD='despens'
 
-~~Dragan Espenschied, 2013-04-03
+
+Install perl modules and system dependencies:
+
+$ sudo apt-get install build-essential p7zip-full convmv postgresql libpq-dev libglib2.0-bin
+$ sudo cpan install IO::All Try::Tiny DBD::Pg DBI XML::TreePP
+
+
+Thanks to Dragan Espenschied and others.
 
 Additional Info:
-
 All material released under the AGPL, see LICENSE.
-
 During 2012, this project was supported by
-Swiss National Science Foundation http://www.snf.ch/, at the
-Bern University of the Arts http://www.hkb.bfh.ch/
-
-Notes below by Shane McRetro:
-- Still a WIP!
-- Increased verbosity of notes for my own benefit.
-- Using Ubuntu 22.04 on arm64 with a 1TB SSD (source) and 2TB SSD (work and archive).
+Swiss National Science Foundation http://www.snf.ch/
+at the Bern University of the Arts http://www.hkb.bfh.ch/
