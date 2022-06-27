@@ -12,19 +12,16 @@ missing/broken parts from archive.org
 Takes one argument: name of the XML file to process.
 
 First you need to get eight file lists in XML format from archive.org:
+sudo mkdir -p $GEO_SOURCE/geocities.archiveteam.torrent/
 
-http://www.archive.org/download/2009-archiveteam-geocities-part1/2009-archiveteam-geocities-part1_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part2/2009-archiveteam-geocities-part2_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part3/2009-archiveteam-geocities-part3_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part4/2009-archiveteam-geocities-part4_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part5/2009-archiveteam-geocities-part5_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part6/2009-archiveteam-geocities-part6_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part7/2009-archiveteam-geocities-part7_files.xml
-http://www.archive.org/download/2009-archiveteam-geocities-part8/2009-archiveteam-geocities-part8_files.xml
-
-Put them into a directory named
-
-    geocities.archiveteam.torrent
+wget http://www.archive.org/download/2009-archiveteam-geocities-part1/2009-archiveteam-geocities-part1_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part2/2009-archiveteam-geocities-part2_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part3/2009-archiveteam-geocities-part3_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part4/2009-archiveteam-geocities-part4_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part5/2009-archiveteam-geocities-part5_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part6/2009-archiveteam-geocities-part6_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part7/2009-archiveteam-geocities-part7_files.xml
+wget http://www.archive.org/download/2009-archiveteam-geocities-part8/2009-archiveteam-geocities-part8_files.xml
 
 This is the directory that will hold all the files, so it should
 rest on a drive with ~700 GB free space. If you started downloading 
@@ -37,13 +34,27 @@ it into a file:
 
     path/to/geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml > download.sh
 
+Example:
+cd into folder containing 2009-archiveteam-geocities-partX_files.xml files:
+cd $GEO_SOURCE/geocities.archiveteam.torrent/
+
+Compare MD5 checksums via md5sum with expected values from archive.org and log to $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part2_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part3_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part4_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part5_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part6_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part7_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part8_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+
+The file $GEO_LOGS/001-geo-torrent-checksums.sh doubles as a script to download missing parts if checksums don't match.
+
 Examine the contents of download.sh. Files with good checksums are
 mentioned in comments, others are showing up as wget commands.
 If you like what you see, run the generated script:
 
-    bash download.sh
-
-Repeat with all XML files, enjoy Geocities!
+bash $GEO_LOGS/001-geo-torrent-checksums.sh
 
 =cut
 
