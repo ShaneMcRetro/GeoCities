@@ -11,10 +11,10 @@ Making Sense of the ArchiveTeam's GeoCities Torrent
 
 This project uses Ubuntu 22.04 LTS as a base.
 
-You need a lot of hard drive space to seriously work with Geocities. I used a pair of SSDs (Samsung 870 EVO).
-- 1TB for the source data.
+You need a lot of hard drive space to seriously work with GeoCities. I used a pair of SSDs (Samsung 870 EVO).
+- 1TB for the source data (torrent or archive.org).
 - 2TB for the work and final archive data.
-- Drives must be formatted as case-sensitive, such as ext4.
+- Hard drives file system must be case-sensitive, such as ext4.
 
 Some scripts will wipe temporary files after they are used. The only versions kept will be:
 - the originals (as in how the data was distributed, located in $GEO_SOURCE/geocities.archiveteam.torrent,
@@ -47,6 +47,10 @@ Install perl modules and system dependencies:
 $ sudo apt-get install build-essential p7zip-full convmv postgresql libpq-dev libglib2.0-bin
 $ sudo cpan install IO::All Try::Tiny DBD::Pg DBI XML::TreePP
 
+Need to work out the best way to process these:
+- archiveteam-geocities-latecomer
+- archiveteam-geocities-santiago
+- geocities-jcn-pack
 
 Thanks to Dragan Espenschied and others.
 
