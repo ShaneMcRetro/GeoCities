@@ -16,32 +16,30 @@ This is the directory that will hold all the files, so it should rest on a drive
 free space. If you started downloading the original GeoCities torrent or the patched torrent,
 put these XML files into the existing directory.
 
-cd into the directory and run this script, 001-geo-torrent-checksums.pl.
-Since the script's output can be executed as a shell script, forward it into a file (we use tee -a to append here):
-
-    path/to/geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml > download.sh
-
-Example:
-cd into folder containing 2009-archiveteam-geocities-partX_files.xml files:
-cd $GEO_SOURCE/geocities.archiveteam.torrent/
+Change to the directory containing the 2009-archiveteam-geocities-partX_files.xml files:
+    
+    cd $GEO_SOURCE/geocities.archiveteam.torrent/
 
 Compare MD5 checksums via md5sum with expected values from archive.org and log to $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part2_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part3_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part4_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part5_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part6_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part7_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-$GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part8_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part2_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part3_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part4_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part5_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part6_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part7_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part8_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
 
 The file $GEO_LOGS/001-geo-torrent-checksums.sh doubles as a script to download missing parts if checksums don't match.
 
-Examine the contents of download.sh.
-Files with good checksums are commented out, errors show as wget commands.
-If you like what you see, run the generated script:
+Examine the contents of $GEO_LOGS/001-geo-torrent-checksums.sh.
 
-$ bash $GEO_LOGS/001-geo-torrent-checksums.sh
+Files with good checksums are commented out, errors show as wget commands. If you like what you see, run the generated script:
+
+    bash $GEO_LOGS/001-geo-torrent-checksums.sh
+
+This will then download down any missing/corrupt files.
 
 =cut
 
