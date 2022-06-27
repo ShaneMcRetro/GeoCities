@@ -51,6 +51,7 @@ During 2012, this project was supported by
 Swiss National Science Foundation http://www.snf.ch/, at the
 Bern University of the Arts http://www.hkb.bfh.ch/
 
-Notes below (still a WIP) added by Shane McRetro:
-- This is being modified to run nicely on macOS 12.x Monterey with Homebrew 3.5.2.
-- Use a case-sensitive formatted drive (e.g. APFS Case-sensitive).
+Notes below by Shane McRetro:
+- Still a WIP!
+- Increased verbosity of notes for my own benefit.
+- Using Ubuntu 22.04 on arm64 with a 1TB SSD (source) and 2TB SSD (work and archive).
