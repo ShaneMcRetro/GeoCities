@@ -4,33 +4,20 @@ our $VERSION = 1.00;
 
 =pod
 
-This script compares checksums of local files belonging to the Archive Team's
-Geocities Torrent with checksums published on archive.org. It can generate
-shell scripts that complete an aborted torrent download by getting 
-missing/broken parts from archive.org
+This script compares checksums of local files belonging to the ArchiveTeam's GeoCities Torrent
+with checksums published on archive.org. It can generate shell scripts that complete an aborted
+torrent download by getting missing/broken parts from archive.org
 
-Takes one argument: name of the XML file to process.
+Prerequisites:
+- Complete the steps in the README.
+- Get the eight files using 000-download-checksum-lists.sh
 
-First you need to get eight file lists in XML format from archive.org:
-sudo mkdir -p $GEO_SOURCE/geocities.archiveteam.torrent/
+This is the directory that will hold all the files, so it should rest on a drive with ~700 GB
+free space. If you started downloading the original GeoCities torrent or the patched torrent,
+put these XML files into the existing directory.
 
-wget http://www.archive.org/download/2009-archiveteam-geocities-part1/2009-archiveteam-geocities-part1_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part2/2009-archiveteam-geocities-part2_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part3/2009-archiveteam-geocities-part3_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part4/2009-archiveteam-geocities-part4_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part5/2009-archiveteam-geocities-part5_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part6/2009-archiveteam-geocities-part6_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part7/2009-archiveteam-geocities-part7_files.xml
-wget http://www.archive.org/download/2009-archiveteam-geocities-part8/2009-archiveteam-geocities-part8_files.xml
-
-This is the directory that will hold all the files, so it should
-rest on a drive with ~700 GB free space. If you started downloading 
-the original Geocities Torrent or the Patched Torrent, put these 
-XML files into the existing directory.
-
-cd into the directory and run geo-torrent-checksums.pl (this script).
-Since the script's output can be executed as a shell script, forward 
-it into a file:
+cd into the directory and run this script, 001-geo-torrent-checksums.pl.
+Since the script's output can be executed as a shell script, forward it into a file (we use tee -a to append here):
 
     path/to/geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml > download.sh
 
@@ -50,11 +37,11 @@ $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl
 
 The file $GEO_LOGS/001-geo-torrent-checksums.sh doubles as a script to download missing parts if checksums don't match.
 
-Examine the contents of download.sh. Files with good checksums are
-mentioned in comments, others are showing up as wget commands.
+Examine the contents of download.sh.
+Files with good checksums are commented out, errors show as wget commands.
 If you like what you see, run the generated script:
 
-bash $GEO_LOGS/001-geo-torrent-checksums.sh
+$ bash $GEO_LOGS/001-geo-torrent-checksums.sh
 
 =cut
 
