@@ -7,12 +7,10 @@
 # to solve case issues that will be tackled
 # in another way soon.
 
-cd $GEO_WORK/geocities
+# Move JCN, Latecomer, Santiago decompressed work files into $GEO_WORK.
+
+cd $GEO_WORK
 
 find . -type l -print0  |  xargs -n 1 -P4 -0 rm -v
-# "type l" means           Delete these 
-# to look for symlinks.    bastards, fast!
-
-# real    94m32.760s
-# user    0m30.622s
-# sys     4m15.080s
+# "type l" means           Delete these bastards...
+# to look for symlinks.    fast!
