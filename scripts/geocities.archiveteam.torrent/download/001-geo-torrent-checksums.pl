@@ -81,7 +81,7 @@ for my $file (@{$tree->{'files'}{'file'}}) {
         if ($target_filename =~ /^geocities/) {
             # The orginal torrent was separated into different directories.
             # On archive.org directory information was sometimes omitted.
-            # Diretories are restored according to the archive's file name.
+            # Directories are restored according to the archive's file name.
             my ($order_char) = $target_filename =~ m|^geocities\-(\w)|;
             if( lc($order_char) eq $order_char) {
                 $target_directory = 'LOWERCASE';
