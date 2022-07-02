@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 
 # Find tracking inserted into html files by the Geocities server
-# and normalize all letters to 'a' and all digits to '0'
+# and normalize all letters to 'a' and all digits to '0'.
+# This gets rid of date / time stamps that were making otherwise identical files different.
 
 our $VERSION = 1.00;
 
