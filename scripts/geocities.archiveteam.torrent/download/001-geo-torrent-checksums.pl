@@ -41,6 +41,21 @@ Files with good checksums are commented out, errors show as wget commands. If yo
 
 This will then download down any missing/corrupt files.
 
+EXTRA BONUS FILES
+
+JCN
+    cd $GEO_SOURCE/geocities-jcn-pack/
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl geocities-jcn-pack_files.xml |& tee -a $GEO_LOGS/001-geo-extras-checksums.sh
+
+Latecomer
+    cd $GEO_SOURCE/archiveteam-geocities-latecomer/
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl archiveteam-geocities-latecomer_files.xml |& tee -a $GEO_LOGS/001-geo-extras-checksums.sh
+
+Santiago
+    cd $GEO_SOURCE/archiveteam-geocities-santiago/
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl archiveteam-geocities-santiago_files.xml |& tee -a $GEO_LOGS/001-geo-extras-checksums.sh
+
+
 =cut
 
 $| = 1; # turn on autoflush, bitches love autoflush!
