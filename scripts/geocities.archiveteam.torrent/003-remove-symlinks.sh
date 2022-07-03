@@ -7,7 +7,8 @@
 # to solve case issues that will be tackled
 # in another way soon.
 
-# Move JCN, Latecomer, Santiago decompressed work files into $GEO_WORK.
+# Note to future self, do not try and do this while fighting the flu.
+# Decompress and move JCN, Latecomer and Santiago work files into $GEO_WORK in their own respective subfolders.
 
 cd $GEO_WORK
 
