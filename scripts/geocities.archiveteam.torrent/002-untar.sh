@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# The torrent holds some 7zip archives that already contain
-# real directories, most contain tarballs. They will be 
-# untared and deleted after.
+# The torrent holds some 7zip archives that already contain real directories, most contain tarballs.
+# They will be untared and deleted after.
 
 cd $GEO_WORK
 
@@ -15,3 +14,5 @@ ls -f -1 | tr '\n' '\0' | xargs -0 file -i | grep -i application/x-tar | sed 's/
 # column.                                                                                 filename as 
 #                                                                                         an argument
 
+# End result should be 38,334,585 items, totalling 884.1 GB in the $GEO_WORK folder.
+# This does not include Santiago, Latecomer and GCN Pack.
