@@ -4,8 +4,8 @@
 # Should be ~39,507,391 items, totalling 911.0 GB via properties in GNOME.
 
 # The entire drive should report 994 GB used, 873.8 GB free via disk properties (Alt-Return in root)
-# df -h reports size as 1.8T , 926G used, 814G free.
-# df -H reports size as 2.0T , 994G used, 874G free.
+# df -h reports size as 1.8T, 926G used, 814G free.
+# df -H reports size as 2.0T, 994G used, 874G free.
 
 # Merge geocities.com into www.geocities.com
 
