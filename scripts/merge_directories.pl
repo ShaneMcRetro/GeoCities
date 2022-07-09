@@ -15,7 +15,7 @@ The all files from B<source_directory> are moved to B<target_directory>.
 
 If a file does not exist in target_directory, it is moved there.
 
-If target_directory contains the exactly same file (same las modified
+If target_directory contains the exactly same file (same last modified
 date and same contents), the source file is deleted.
 
 If target_directory contains the same file name, but last modified date or
