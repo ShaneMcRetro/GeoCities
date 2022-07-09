@@ -1,5 +1,5 @@
-# Merge as much as possible from the leftover profiles in YAHOOIDS
-# into www.geocities.com
+# Merge as much as possible from the leftover profiles in YAHOOIDS into www.geocities.com
+# In perl we trust
 
 cd $GEO_WORK/geocities/YAHOOIDS
 find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/geocities/www.geocities.com'
