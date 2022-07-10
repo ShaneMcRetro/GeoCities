@@ -16,7 +16,5 @@ $GEO_SCRIPTS/merge_directories.pl geocities.com www.geocities.com
 mkdir -p $GEO_WORK/geocities_conflicts_1/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl geocities.com $GEO_WORK/geocities_conflicts_1/www.geocities.com
 
-
-# real    4m39.263s
-# user    0m8.661s
-# sys 0m30.210s
+# One this has run you will need to do modify the above to do the same to JCN, Latecomer, Santiago (and unmangled-SpindleyQ?)
+# Get everything that isn't the main archive (above) into a single www.geocities.com folder then merge it into the main archive.
