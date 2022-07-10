@@ -8,11 +8,11 @@
 # df -H reports size as 2.0T, 994G used, 874G free.
 
 # Merge geocities.com folders into www.geocities.com
-
 cd $GEO_WORK/geocities/
 $GEO_SCRIPTS/merge_directories.pl geocities.com www.geocities.com
 
-# Save conflicts
+# Save conflicts, this will also delete the geocities.com folder once it is empty.
+# The contents of geocities.com that could not be merged are now considered conflicting folders and files.
 mkdir -p $GEO_WORK/geocities_conflicts_1/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl geocities.com $GEO_WORK/geocities_conflicts_1/www.geocities.com
 
