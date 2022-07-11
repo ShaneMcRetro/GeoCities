@@ -2,14 +2,15 @@
 # Make sure these folders exist as I *might* have renamed them when extracting...
 # This will merge all the regions ar, au, br, es, mx, us, etc, etc into the www.geocities.com folder.
 # This might be done at a later step but I haven't checked that far ahead yet...
-#
 
 
 # Cleanup empty folders (conflicts mostly)
 cd $GEO_WORK
 find . -maxdepth 3 -empty -type d -delete
 
-# These contain junk or were bad data
+
+
+# Remove folders containing junk or bad data
 rm -rf $GEO_WORK/JCN
 rm -rf $GEO_WORK/Latecomer
 rm -rf $GEO_WORK/geocities/ar.geocities.yahoo.com
@@ -122,8 +123,6 @@ mkdir -p $GEO_WORK/conflicts/geocities_extra/regional/uk.share.geocities.com1
 mkdir -p $GEO_WORK/conflicts/geocities_extra/regional/us.geocities.com1
 mkdir -p $GEO_WORK/conflicts/geocities_extra/regional/us.share.geocities.com1
 
-
-
 # And save conflicting data
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.geocities.com $GEO_WORK/conflicts/geocities_extra/regional/ar.geocities.com1
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.share.geocities.com $GEO_WORK/conflicts/geocities_extra/regional/ar.share.geocities.com1
@@ -154,7 +153,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GE
 
 
 
-# And cleanup any empty folders again (conflicts)
+# Then cleanup any empty folders again (conflicts)
 cd $GEO_WORK/conflicts/geocities_extra/
 find . -maxdepth 3 -empty -type d -delete
 cd $GEO_WORK/
