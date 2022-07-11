@@ -1,13 +1,15 @@
 #!/usr/bin/perl
 
-# Find all files containing a question mark and check if
-# this version of the file is really needed, as in: contains
-# something different than the same file without a question mark part.
+# Find all files containing a question mark and check if this version of the file is really needed, as in:
+# contains# something different than the same file without a question mark part.
 # This is because in Geocities, most of the URL parameters are
 # targeted at Javascripts running in the browser and not at
 # server side software. Most Geocities users had no way of running
 # server side software apart from the cgi scripts that Geocities
 # provided centrally.
+#
+# perl 008_handle_questionsmarks.pl
+#
 
 use feature ':5.14';
 use warnings;
@@ -19,7 +21,8 @@ use File::stat;
 
 $| = 1; # turn on autoflush
 
-chdir($ENV{GEO_WORK} . '/geocities');
+# Process the entire work folder, including conflicts
+chdir($ENV{GEO_WORK} . '/');
 
 find({wanted => \&handle, no_chdir => 1}, '.');
 
