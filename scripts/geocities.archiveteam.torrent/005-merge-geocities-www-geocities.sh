@@ -18,4 +18,3 @@ $GEO_SCRIPTS/merge_directories.pl geocities.com $GEO_WORK/geocities_conflicts_1/
 
 # One this has run you will need to do modify the above to do the same to JCN, Latecomer, Santiago (and unmangled-SpindleyQ?)
 # Get everything that isn't the main archive (above) into a single www.geocities.com folder then merge it into the main archive.
-# See 005a-more-merging.
