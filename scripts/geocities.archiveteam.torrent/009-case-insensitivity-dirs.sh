@@ -6,7 +6,8 @@
 # issues for most files contained inside of them. To speed things
 # up, create a list of all directory names and save it in a file.
 
-cd $GEO_WORK/geocities
+# Include conflicts by starting in root of $GEO_WORK directory
+cd $GEO_WORK
 find . -type d > $GEO_LOGS/dir-index.txt
 
 # real    116m21.050s
