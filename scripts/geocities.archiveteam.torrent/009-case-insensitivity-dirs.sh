@@ -4,8 +4,7 @@
 # First add the database login file to your home folder.
 # If you set these differently you can retrieve them via the "env" command
 
-# cd ~
-# nano .pgpass
+# nano ~/.pgpass
 # localhost:5432:Geocities:despens:despens
 # chmod 0600 ~/.pgpass
 
