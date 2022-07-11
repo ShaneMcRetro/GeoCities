@@ -7,6 +7,7 @@
 # cd ~
 # nano .pgpass
 # localhost:5432:Geocities:despens:despens
+# chmod 0600 ~/.pgpass
 
 # Directory names will be handled, since this will solve
 # issues for most files contained inside of them. To speed things
