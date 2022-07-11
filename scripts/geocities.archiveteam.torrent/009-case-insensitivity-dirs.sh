@@ -4,9 +4,27 @@
 # First add the database login file to your home folder.
 # If you set these differently you can retrieve them via the "env" command
 
+# sudo apt update && sudo apt install postgresql postgresql-contrib
+
+### MESS BEGIN ###
+# sudo -u postgres psql
+# sudo -u postgres createuser --interactive
+# despens
+# sudo -u postgres createdb Geocities
+# sudo adduser despens
+# despens
+
+# sudo nano /etc/postgresql/14/main/pg_hba.conf
+# local all all trust
+# sudo systemctl restart postgresql@14-main.service
+
 # nano ~/.pgpass
 # localhost:5432:Geocities:despens:despens
 # chmod 0600 ~/.pgpass
+# nano ~/.bashrc
+# export PGUSER='despens'
+
+### MESS END ###
 
 # Directory names will be handled, since this will solve
 # issues for most files contained inside of them. To speed things
