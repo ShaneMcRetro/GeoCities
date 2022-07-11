@@ -18,8 +18,10 @@ mv $GEO_WORK/unmangled-SpindleyQ/www.geocities.com\(2\) $GEO_WORK/unmangled-Spin
 # Merge www.geocities.com(2) into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com2 $GEO_WORK/unmangled-SpindleyQ/www.geocities.com
 
-# Merge this other GeoCities folder that was kicking around.
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/spindleyq2/www.geocities.com
+
+# Merge this other GeoCities folder that was kicking around.
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com2 $GEO_WORK/conflicts/spindleyq2/www.geocities.com
 
 
@@ -27,79 +29,90 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.co
 # START Santiago 
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com
 
-# Save conflicts (none)
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/santiago1/www.geocities.com
+
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/conflicts/santiago1/www.geocities.com
 
-# Note: Santiago - Lord Nightmare has no geocities.com folder
 
 
 # START Latecomer
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/geocities.com $GEO_WORK/Latecomer/gc/geocities/www.geocities.com
 
-# Save conflicts (none)
+
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/latecomer_main/www.geocities.com
+
+# Save conflicts (none)
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/geocities.com $GEO_WORK/conflicts/latecomer_main/www.geocities.com
 
 # Three sources for latecomer, only two have a geocities.com folder
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/geocities.com $GEO_WORK/Latecomer/gc/glw/www.geocities.com
 
-# Save conflicts (none)
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/latecomer_glw/www.geocities.com
+
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/geocities.com $GEO_WORK/conflicts/latecomer_glw/www.geocities.com
 
-# Note: JCN has no geocities.com folder so nothing to merge.
 
-#
 # That means we can merge all the www.geocities.com folders together one by one putting conflicting files aside.
 # Let's make a folder to store all the mergeable folders/files
 mkdir -p $GEO_WORK/geocities_extra
-#
-#
-# unmangled-SpindleyQ
 
+
+
+# unmangled-SpindleyQ
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com1
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/geocities_conflicts_geocities_extra/www.geocities.com1
 
 
-# Santiago - Part 1 of 2
 
+# Santiago - Part 1 of 2
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com2
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com $GEO_WORK/conflicts/geocities_extra/www.geocities.com2
+
+
 
 # Santiago - Part 2 of 2
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com3
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/www.geocities.com $GEO_WORK/conflicts/geocities_extra/www.geocities.com3
 
 
-# Latecomer cpdl - Part 1 of 3 - Note: THIS IS BROKEN-ish, why? There are http: with return carriages as folders... that can't be good. It looks like the perl script skips them though and copies the bulk that can be copied. Expect a few errors from sha1sum reporting this is a directory.
-
+# Latecomer cpdl - Part 1 of 3 - Note: THIS IS BROKEN-ish. There are http: with return carriages as folders... that can't be good. It looks like the perl script skips them though and copies the bulk that can be copied. Expect a few errors from sha1sum reporting this is a directory.
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com4
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/www.geocities.com $GEO_WORK/conflicts/geocities_extra/www.geocities.com4
+
 
 
 # Latecomer geocities - Part 2 of 3
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com5
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/www.geocities.com $GEO_WORK/conflicts/geocities_extra/www.geocities.com5
 
 
@@ -107,9 +120,10 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/www.geocities
 # Latecomer glw - Part 3 of 3
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com6
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/www.geocities.com $GEO_WORK/conflicts/geocities_extra/www.geocities.com6
 
 
@@ -117,7 +131,8 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/www.geocities.com $
 # JCN
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/www.geocities.com $GEO_WORK/geocities_extra
 
-# Save conflicts
+# Make a folder to store conflicts
 mkdir -p $GEO_WORK/conflicts/geocities_extra/www.geocities.com7
 
+# Save conflicts
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/www.geocities.com $GEO_WORK/conflicts/geocities_extra/www.geocities.com7
