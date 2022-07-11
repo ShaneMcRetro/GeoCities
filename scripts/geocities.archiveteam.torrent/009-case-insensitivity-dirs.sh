@@ -1,8 +1,14 @@
-# To get rid of all the files that have been downloaded multiple
-# times due to filename case sensitivity issues, the help of a
-# database server is required!
+# To get rid of all the files that have been downloaded multiple times due to filename case sensitivity issues,
+# the help of a database server is required!
 
-# First, directory names will be handled, since this will solve
+# First add the database login file to your home folder.
+# If you set these differently you can retrieve them via the "env" command
+
+# cd ~
+# nano .pgpass
+# localhost:5432:Geocities:despens:despens
+
+# Directory names will be handled, since this will solve
 # issues for most files contained inside of them. To speed things
 # up, create a list of all directory names and save it in a file.
 
@@ -17,8 +23,7 @@ find . -type d > $GEO_LOGS/dir-index.txt
 
 # Create a database table to hold directory names
 # directory names converted to lower case.
-# No indexes or constraints are present in the
-# table to enable a swift ingest.
+# No indexes or constraints are present in the table to enable a swift ingest.
 
 # Make sure your database server is prepared and that you have a 
 # .pgpass file in case your db server asks for passwords each 
@@ -61,6 +66,6 @@ $GEO_SCRIPTS/remove-double-dirs.pl
 
 # This is nerve griding, get a RAID5 if you can!!!1
 
-# The lists are not needed any more.
-rm -v $GEO_LOGS/dir-index.txt
-rm -v $GEO_LOGS/doubles-dir-sorted.txt
+# The lists are not needed any more, but I am collecting lists to see how mangled they are...
+# rm -v $GEO_LOGS/dir-index.txt
+# rm -v $GEO_LOGS/doubles-dir-sorted.txt
