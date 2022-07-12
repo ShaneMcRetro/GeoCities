@@ -40,6 +40,6 @@ $GEO_SCRIPTS/remove-double-files.pl
 # sys     0m13.885s
 
 
-# The lists are not needed any more.
-rm $GEO_LOGS/file-index.txt
-rm $GEO_LOGS/doubles-file-sorted.txt
+# The lists are not needed any more, I'm keeping them though for testing!
+# rm $GEO_LOGS/file-index.txt
+# rm $GEO_LOGS/doubles-file-sorted.txt
