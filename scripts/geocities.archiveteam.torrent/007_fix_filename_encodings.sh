@@ -218,7 +218,7 @@ cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Cave/7752/ && convmv -f cp1
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Cave/7105/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Ring/1107/ && convmv -f iso-8859-1 -t utf8 -r --notest * && rm geobook.html\?njiösch\? ;
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Corridor/8831/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
-cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Corridor/1041/ && convmv -f iso-8859-1 -tf8 -r --notest * ;
+cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Corridor/1041/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Bridge/2232/ && convmv -f cp1252 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Metro/9162/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Dome/5724/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
