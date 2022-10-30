@@ -9,4 +9,4 @@ WHERE 1 < (
 	FROM doubles AS d2
 	WHERE d1.lowname = d2.lowname
 	)
-ORDER BY lowname DESC;
+ORDER BY name DESC;
