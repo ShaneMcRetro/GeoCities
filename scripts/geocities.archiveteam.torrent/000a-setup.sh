@@ -38,9 +38,9 @@ export GEO_SCRIPTS=/media/shane/GC_2TB/scripts          # Where the magic lives 
 export GEO_SCREENSHOTS=/media/shane/GC_2TB/screenshots  # screenshots dir (Why?)
 
 export GEO_DB_HOST='localhost'                          # database access
-export GEO_DB_DB='Turtles'								# PostgreSQL database name
-export GEO_DB_USER='despens'							# PostgreSQL database user
-export GEO_DB_PASSWD='despens'							# PostgreSQL database password
+export GEO_DB_DB='Turtles'                              # PostgreSQL database name
+export GEO_DB_USER='despens'                            # PostgreSQL database user
+export GEO_DB_PASSWD='despens'                          # PostgreSQL database password
 
 
 
