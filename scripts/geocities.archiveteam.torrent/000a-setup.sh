@@ -15,7 +15,7 @@
 
 # Install additional Perl Modules via apt; we do not use cpan here.
 # These are needed for DBI, Data::Dumper, IO::All, Try::Tiny, XML::TreePP, DBD::Pg, YAML qw(LoadFile)
-sudo apt update && sudo apt install -y libdbi-perl data-dumper libio-all-perl libtry-tiny-perl libxml-treepp-perl libdbd-pg-perl libconfig-yaml-perl
+sudo apt update && sudo apt install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-tiny-perl libxml-treepp-perl libdbd-pg-perl libconfig-yaml-perl
 
 # Install other things that are needed, convmv (UTF-8), postgresql (database magic)
 sudo apt install build-essential p7zip-full convmv postgresql libpq-dev libglib2.0-bin findutils
