@@ -4,17 +4,13 @@ our $VERSION = 1.00;
 
 =pod
 
-This script compares checksums of local files belonging to the ArchiveTeam's GeoCities Torrent
-with checksums published on archive.org. It can generate shell scripts that complete an aborted
-torrent download by getting missing/broken parts from archive.org
+This script compares checksums of local files belonging to the ArchiveTeam's GeoCities Torrent with checksums published on archive.org. It can generate shell scripts that complete an aborted torrent download by getting missing/broken parts from archive.org.
 
 Prerequisites:
 - Complete the steps in the README.
-- Get the eight files using 000-download-checksum-lists.sh
+- Get the eleven (8x archiveteam, 1x latecomer, 1x santiago, 1x jcn) checksum files using 000b-download-checksum-lists.sh
 
-This is the directory that will hold all the files, so it should rest on a drive with ~700 GB
-free space. If you started downloading the original GeoCities torrent or the patched torrent,
-put these XML files into the existing directory.
+The directory below will hold all the work files, so it should rest on a drive with ~700 GB free space. If you started downloading the original GeoCities torrent or the patched torrent, put these XML files into the existing directory.
 
 Change to the directory containing the 2009-archiveteam-geocities-partX_files.xml files:
     
@@ -22,48 +18,50 @@ Change to the directory containing the 2009-archiveteam-geocities-partX_files.xm
 
 Compare MD5 checksums via md5sum with expected values from archive.org and log to $GEO_LOGS/001-geo-torrent-checksums.sh
     
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part2_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part3_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part4_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part5_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part6_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part7_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
-    $GEO_SCRIPTS/geocities.archiveteam.torrent/download/001-geo-torrent-checksums.pl 2009-archiveteam-geocities-part8_files.xml |& tee -a $GEO_LOGS/001-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part2_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part3_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part4_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part5_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part6_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part7_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
+    $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part8_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
 
-The file $GEO_LOGS/001-geo-torrent-checksums.sh doubles as a script to download missing parts if checksums don't match.
+The bash script created at $GEO_LOGS/000c-geo-torrent-checksums.sh helps to download missing parts if there's a checksum mismatch.
 
-Examine the contents of $GEO_LOGS/001-geo-torrent-checksums.sh.
+Examine the contents of $GEO_LOGS/000c-geo-torrent-checksums.sh.
 
-Files with good checksums are commented out, errors show as wget commands. If you like what you see, run the generated script:
+Files with good checksums are commented out. Mismatched data show as wget commands. If you like what you see, run the generated script:
 
-    bash $GEO_LOGS/001-geo-torrent-checksums.sh
+    bash $GEO_LOGS/000c-geo-torrent-checksums.sh
 
 This will then download down any missing/corrupt files.
 
-EXTRA BONUS FILES (Should really work out how to script these things...)
+Next up, three more sources. I don't know how to script any of this...
 
-JCN
-    cd $GEO_SOURCE/geocities-jcn-pack/
-    md5sum geocities.jcn-grab.tar.bz2
+JCN, Latecomer and Santiagox
+
+JCN:
+cd $GEO_SOURCE/geocities-jcn-pack/
+md5sum geocities.jcn-grab.tar.bz2
     
 If MD5 does not match with the .xml:
-    wget -cv https://archive.org/download/geocities-jcn-pack/geocities.jcn-grab.tar.bz2
+wget -cv https://archive.org/download/geocities-jcn-pack/geocities.jcn-grab.tar.bz2
     
-Latecomer (!!! This one does not match)
-    cd $GEO_SOURCE/archiveteam-geocities-latecomer/
-    md5sum gc.tar.xz
+Latecomer (!!! This one does not match):
+cd $GEO_SOURCE/archiveteam-geocities-latecomer/
+md5sum gc.tar.xz
 
 If MD5 does not match with the .xml:
-    wget -cv https://archive.org/download/archiveteam-geocities-latecomer/gc.tar.xz
+wget -cv https://archive.org/download/archiveteam-geocities-latecomer/gc.tar.xz
 
-Santiago
-    cd $GEO_SOURCE/archiveteam-geocities-santiago/
-    md5sum 2012-06-geocities-catchup.zip archived_geocities_stuff_by_lord_nightmare.tar.gz
+Santiago:
+cd $GEO_SOURCE/archiveteam-geocities-santiago/
+md5sum 2012-06-geocities-catchup.zip archived_geocities_stuff_by_lord_nightmare.tar.gz
 
 If MD5 does not match with the .xml:
-    wget -cv https://archive.org/download/archiveteam-geocities-santiago/2012-06-geocities-catchup.zip
-    wget -cv https://archive.org/download/archiveteam-geocities-santiago/archived_geocities_stuff_by_lord_nightmare.tar.gz
+wget -cv https://archive.org/download/archiveteam-geocities-santiago/2012-06-geocities-catchup.zip
+wget -cv https://archive.org/download/archiveteam-geocities-santiago/archived_geocities_stuff_by_lord_nightmare.tar.gz
 
 
 =cut
@@ -73,10 +71,7 @@ $| = 1; # turn on autoflush, bitches love autoflush!
 use 5.10.0;
 use warnings;
 use strict;
-use XML::TreePP; # The package name in Debian/Ubuntu for this library is
-                 # libxml-treepp-perl
-                 # Or get it from CPAN:
-                 # http://search.cpan.org/~kawasaki/XML-TreePP-0.41/lib/XML/TreePP.pm
+use XML::TreePP; # Debian/Ubuntu - sudo apt install libxml-treepp-perl
 
 my %created_directories; # To avoid creating the same directory multiple times,
                          # save created ones here.

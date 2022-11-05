@@ -5,54 +5,31 @@ One Terabyte of Kilobyte Age
 Research Blog: https://blog.geocities.institute
 Screenshot Stream: http://oneterabyteofkilobyteage.tumblr.com/
 Original Source: https://github.com/despens/Geocities
+Current Source: https://github.com/ShaneMcRetro/GeoCities
 
-Making Sense of the ArchiveTeam's GeoCities Torrent
+Rebuilding GeoCities in 2022 from Archive.org
 ---------------------------------------------------
 
 This project uses Ubuntu 22.04 LTS as a base.
 
-You need a lot of hard drive space to seriously work with GeoCities. I used a pair of SSDs (Samsung 870 EVO).
-- 1TB for the source data (torrent or archive.org).
-- 2TB for the work and final archive data.
-- Hard drives file system must be case-sensitive, such as ext4.
+We are merging several sources together:
+- The Archive Team Geocities Snapshot (May 2011)
+- Geocities: JCN Grab (geocities-jcn-pack) (Dec 2011)
+- Geocities: Latecomer (archiveteam-geocities-latecomer) (Mar 2012)
+- Geocities: The Santiago Grab (archiveteam-geocities-santiago) (Jun 2012)
 
-Some scripts will wipe temporary files after they are used. The only versions kept will be:
-- the originals (as in how the data was distributed, located in $GEO_SOURCE/geocities.archiveteam.torrent,
-- and the finished, workable archive files, located in $GEO_ARCHIVE
+The full list can be found here: https://archive.org/details/archiveteam-geocities
 
-Read the script sources before running them, it might hint you towards packages you need to install and contain instructions on their usage.
-
-You're going to need environment variables.
-
-$ sudo nano ~/.bashrc
-
-Replace the username and name your drives appropriately.
-
-export GEO_SOURCE=/media/shane/GC_1TB                   # distribution files, 1TB drive.
-export GEO_WORK=/media/shane/GC_2TB/work                # tmp directory
-export GEO_ARCHIVE=/media/shane/GC_2TB/archive          # normalised archives
-
-export GEO_LOGS=/media/shane/GC_2TB/log                 # log files and lists
-export GEO_SCRIPTS=/media/shane/GC_2TB/scripts          # software
-export GEO_SCREENSHOTS=/media/shane/GC_2TB/screenshots  # screenshots dir
-
-export GEO_DB_HOST='localhost'                          # database access
-export GEO_DB_DB='Geocities'
-export GEO_DB_USER='despens'
-export GEO_DB_PASSWD='despens'
+Read the script sources before running them, it might hint you towards packages you need to install and contain instructions on their usage. I believe I've added them all to the 000a-setup.sh script.
 
 
-Install perl modules and system dependencies:
 
-$ sudo apt-get install build-essential p7zip-full convmv postgresql libpq-dev libglib2.0-bin
-$ sudo cpan install IO::All Try::Tiny DBD::Pg DBI XML::TreePP
+TO DO: How to handle international Sites (br, au, de, uk, us, etc?) - maybe merge into main?
 
-Need to work out the best way to process these:
-- archiveteam-geocities-latecomer
-- archiveteam-geocities-santiago
-- geocities-jcn-pack
 
-Thanks to Dragan Espenschied and others.
+
+
+Thanks to Dragan Espenschied and others who have helped along the way!
 
 Additional Info:
 All material released under the AGPL, see LICENSE.
