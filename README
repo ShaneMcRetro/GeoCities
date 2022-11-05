@@ -3,9 +3,10 @@ One Terabyte of Kilobyte Age
 ============================
 
 Research Blog: https://blog.geocities.institute
-Screenshot Stream: http://oneterabyteofkilobyteage.tumblr.com/
+Screenshot Stream: http://oneterabyteofkilobyteage.tumblr.com
 Original Source: https://github.com/despens/Geocities
 Current Source: https://github.com/ShaneMcRetro/GeoCities
+Demo Data: http://geocities.mcretro.net
 
 Rebuilding GeoCities in 2022 from Archive.org
 ---------------------------------------------------
@@ -20,14 +21,9 @@ We are merging several sources together:
 
 The full list can be found here: https://archive.org/details/archiveteam-geocities
 
-Read the script sources before running them, it might hint you towards packages you need to install and contain instructions on their usage. I believe I've added them all to the 000a-setup.sh script.
-
-
-
-TO DO: How to handle international Sites (br, au, de, uk, us, etc?) - maybe merge into main?
-
-
-
+Read the script sources before running them, it might hint what packages you need 
+to install and contain instructions on their usage. I believe I've added them all to
+the 000a-setup.sh script.
 
 Thanks to Dragan Espenschied and others who have helped along the way!
 
