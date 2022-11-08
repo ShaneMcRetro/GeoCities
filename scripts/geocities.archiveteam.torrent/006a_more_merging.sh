@@ -26,7 +26,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.co
 
 
 
-# START Santiago 
+# START Santiago
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com
 
 # Make a folder to store conflicts

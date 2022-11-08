@@ -11,7 +11,7 @@ cd $GEO_SOURCE/geocities.archiveteam.torrent
 # Download XML files containing checksums from archive.org
 for i in {1..8};
 do
-    wget -cv http://www.archive.org/download/2009-archiveteam-geocities-part${i}/2009-archiveteam-geocities-part${i}_files.xml;
+    wget -cv http://archive.org/download/2009-archiveteam-geocities-part${i}/2009-archiveteam-geocities-part${i}_files.xml;
 done
 
 
@@ -37,3 +37,8 @@ cd $GEO_SOURCE/geocities-jcn-pack
 
 # Download XML file containing checksums from archive.org
 wget -cv https://archive.org/download/geocities-jcn-pack/geocities-jcn-pack_files.xml;
+
+
+# real	0m22.252s
+# user	0m0.312s
+# sys	0m0.091s
