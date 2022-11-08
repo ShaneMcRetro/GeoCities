@@ -13,6 +13,10 @@ Rebuilding GeoCities in 2022 from Archive.org
 
 This project uses Ubuntu 22.04 LTS as a base.
 
+Time estimates are based on your hardware being:
+- Intel Xeon W3520 at 2.67 GHz (4 cores, 8 threads)
+- 32 GB PC3-8500 (1066 MHz) DDR3 ECC SDRAM
+
 We are merging several sources together:
 - The Archive Team Geocities Snapshot (May 2011)
 - Geocities: JCN Grab (geocities-jcn-pack) (Dec 2011)
