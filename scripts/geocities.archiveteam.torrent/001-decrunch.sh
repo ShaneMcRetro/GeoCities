@@ -23,8 +23,12 @@ sudo rm $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES%2Fmx.geocities.yahoo.
 
 find . -name \*.7z.001 | xargs -P8 -I filename 7z x -aou filename -o$GEO_WORK |& tee -a $GEO_LOGS/001-decrunch.log
 
+# Tidy up and remove some decrunched duplicates, where did they come from? 001, but their MD5s match so we will remove them.
 
-# Done!
+cd $GEO_WORK
+rm geocities.yahoo_1.com geocities.yahoo.co_1.jp ar.geocities.yahoo_1.com uk.geocities.yahoo_1.com us.geocities.yahoo_1.com visit.geocities.yahoo_1.com themis.geocities.yahoo_1.com
+
+# Check the $GEO_LOG/001-decrunch.log for any errors encountered (search keyword "error" or "fail", probably)
 
 # real  249m14.277s
 # user  894m58.437s

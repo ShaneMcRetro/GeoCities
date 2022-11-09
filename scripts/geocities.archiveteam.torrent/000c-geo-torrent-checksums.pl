@@ -23,51 +23,51 @@ cd $GEO_SOURCE/geocities.archiveteam.torrent/
 Compare MD5 checksums via md5sum with expected values from archive.org and log to $GEO_LOGS/001-geo-torrent-checksums.sh. This takes around 15 minutes per .xml.
     
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part1_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	12m32.667s
-user	4m48.974s
-sys	1m8.075s
+real   12m32.667s
+user   4m48.974s
+sys    1m8.075s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part2_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	13m59.323s
-user	5m21.289s
-sys	1m15.963s
+real   13m59.323s
+user   5m21.289s
+sys    1m15.963s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part3_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	12m41.598s
-user	4m40.592s
-sys	1m8.030s
+real   12m41.598s
+user   4m40.592s
+sys    1m8.030s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part4_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	8m7.615s
-user	2m52.543s
-sys	0m42.237s
+real   8m7.615s
+user   2m52.543s
+sys    0m42.237s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part5_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	15m5.956s
-user	5m33.568s
-sys	1m18.890s
+real   15m5.956s
+user   5m33.568s
+sys    1m18.890s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part6_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	15m52.209s
-user	5m33.454s
-sys	1m20.129s
+real   15m52.209s
+user   5m33.454s
+sys    1m20.129s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part7_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	15m49.514s
-user	5m25.736s
-sys	1m19.246s
+real   15m49.514s
+user   5m25.736s
+sys    1m19.246s
 
 
 $GEO_SCRIPTS/geocities.archiveteam.torrent/000c-geo-torrent-checksums.pl 2009-archiveteam-geocities-part8_files.xml |& tee -a $GEO_LOGS/000c-geo-torrent-checksums.sh
-real	14m7.128s
-user	4m38.829s
-sys	1m5.381s
+real   14m7.128s
+user   4m38.829s
+sys    1m5.381s
 
 
 

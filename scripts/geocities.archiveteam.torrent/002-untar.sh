@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# First tidy up and remove some decrunched duplicates, where did they come from? 001, but their MD5s do match so... rm, rm, rm.
-
-cd $GEO_WORK
-rm geocities.yahoo_1.com geocities.yahoo.co_1.jp ar.geocities.yahoo_1.com uk.geocities.yahoo_1.com us.geocities.yahoo_1.com visit.geocities.yahoo_1.com themis.geocities.yahoo_1.com
-
-# Check the $GEO_LOG/001-decrunch.log for any errors encountered (search keyword error or fail, probably)
-
 # df -H should reveal:
 # Filesystem  Size  Used  Avail  Use%  Mounted on
 # /dev/sdb    2.0T  910G  959G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
