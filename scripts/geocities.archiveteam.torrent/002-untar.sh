@@ -34,7 +34,7 @@ tar -xvf gc.tar.xz -C $GEO_WORK/Latecomer
 cd $GEO_SOURCE/archiveteam-geocities-santiago
 mkdir -p $GEO_WORK/Santiago
 7z x 2012-06-geocities-catchup.zip -o$GEO_WORK/Santiago
-mkdir -p archived_geocities_stuff_by_lord_nightmare
+mkdir -p $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare
 tar -xvf archived_geocities_stuff_by_lord_nightmare.tar.gz -C $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare
 
 cd $GEO_SOURCE/geocities-jcn-pack
