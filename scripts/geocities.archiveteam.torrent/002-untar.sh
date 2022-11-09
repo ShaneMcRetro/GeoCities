@@ -3,14 +3,20 @@
 # First tidy up and remove some decrunched duplicates, where did they come from? 001, but their MD5s do match so... rm, rm, rm.
 
 cd $GEO_WORK
-sudo rm geocities.yahoo_1.com geocities.yahoo.co_1.jp ar.geocities.yahoo_1.com uk.geocities.yahoo_1.com us.geocities.yahoo_1.com visit.geocities.yahoo_1.com themis.geocities.yahoo_1.com
+rm geocities.yahoo_1.com geocities.yahoo.co_1.jp ar.geocities.yahoo_1.com uk.geocities.yahoo_1.com us.geocities.yahoo_1.com visit.geocities.yahoo_1.com themis.geocities.yahoo_1.com
 
+# Check the $GEO_LOG/001-decrunch.log for any errors encountered (search keyword error or fail, probably)
+
+# df -H should reveal:
+# Filesystem  Size  Used  Avail  Use%  Mounted on
+# /dev/sdb    2.0T  910G  959G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+# /dev/sdc    2.0T  756G  1.2T   41%   /media/ubuntu/GC_1TB_SRC    # aka $GEO_SOURCE
+
+# Huh, I guess I'm using a 2TB HDD for the GeoCities source data... it'll fit on a 1TB easily though! :-)
 
 # The torrent holds some 7zip archives that already contain real directories, most contain tarballs.
 # They will be untared and deleted after otherwise the 2TB drive ain't big enough.
 # JCN, Latecomer and Santiago are decompressed after this as they were only single archives.
-
-cd $GEO_WORK
 
 ls -f -1 | tr '\n' '\0' | xargs -0 file -i | grep -i application/x-tar | sed 's/:.\+//' | tr '\n' '\0' | xargs -I filename -0 -n 1 bash -c 'tar xvf filename && rm -v filename'
 # list all    Separate    Run the "file"     "grep" finds all the files  Throwing away    Convert new-   Run bash to execute the untar operation             ^^^^^^^^^^^^^^^^^
@@ -48,3 +54,6 @@ cd $GEO_WORK
 # Latecomer   670,494 items, totalling 15.5 GB.
 # Santiago    509,730 items, totalling 9.5 GB.
 # JCN Pack    68,941 items, totalling 1.3 GB.
+
+
+# TIMES GO HERE
