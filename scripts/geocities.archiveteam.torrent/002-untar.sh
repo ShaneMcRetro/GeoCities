@@ -22,10 +22,6 @@ ls -f -1 | tr '\n' '\0' | xargs -0 file -i | grep -i application/x-tar | sed 's/
 
 # Decompress single archives for JCN, LATECOMER and SANTIAGO
 
-#
-# TEST THESE LINE BY LINE TO MAKE SURE THEY WORK FIRST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - THEN DELETE THE TEST DATA AND RUN SCRIPT IN FULL with "time"
-#
-
 cd $GEO_SOURCE/archiveteam-geocities-latecomer
 mkdir -p $GEO_WORK/Latecomer
 tar -xvf gc.tar.xz -C $GEO_WORK/Latecomer
@@ -46,7 +42,13 @@ cd $GEO_WORK
 # ArchiveTeam 38,334,585 items, totalling 884.1 GB.
 # Latecomer   670,494 items, totalling 15.5 GB.
 # Santiago    509,730 items, totalling 9.5 GB.
-# JCN Pack    68,941 items, totalling 1.3 GB.
+# JCN Pack    68,942 items, totalling 1.3 GB.
 
+# df -H should reveal:
+# Filesystem  Size  Used  Avail  Use%  Mounted on
+# /dev/sdb    2.0T  994G  875G   54%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+# /dev/sdc    2.0T  756G  1.2T   41%   /media/ubuntu/GC_1TB_SRC    # aka $GEO_SOURCE
 
-# TIMES GO HERE
+# real  155m39.592s
+# user  23m29.031s
+# sys   75m34.227s
