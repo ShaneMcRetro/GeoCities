@@ -52,7 +52,7 @@ cd $GEO_WORK
 # As everything in in order, make a backup of the untouched files.
 # I used a 2TB hard drive with identical block size so dd could be used.
 # sudo dd if=/dev/sdb of=/dev/sdd bs=4M status=progress
-# Next I pulled the source drive from the machine, taking it offline.
+# Next I pulled the source drive and backup HDs from the machine, taking them offline.
 
 # real  155m39.592s
 # user  23m29.031s
