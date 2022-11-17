@@ -14,4 +14,6 @@ find . -type l -print0  |  xargs -n 1 -P4 -0 rm -v
 
 
 
-# TIMES GO HERE
+# real  10m34.653s
+# user  1m43.810s
+# sys   3m19.959s
