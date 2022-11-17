@@ -57,6 +57,7 @@ sub normalize {
     }
 }
 
+# OLD TIMES
 # real  1717m42.893s
 # user  152m35.896s
 # sys   46m25.606s
