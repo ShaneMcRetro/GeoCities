@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Make sure these folders exist as I *might* have renamed them when extracting...
+# ALL CONFLICTS TO BE STORED IN $GEO_WORK/conflicts/source_X
+# Where is unmangled spindleyQ????
+# Is it processed twice in here?
+
+
 
 cd $GEO_WORK
 
