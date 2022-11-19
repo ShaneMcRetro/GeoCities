@@ -54,14 +54,16 @@ cd $GEO_WORK
 # unmangled-SpindleyQ   9,432 items, totalling 375.8 MB.
 # mirrors-SpindleyQ     3,694 items, totalling 232.2 MB.
 
-# df -H should reveal, not including SpindleyQ:
+# df -H should reveal:
 # Filesystem  Size  Used  Avail  Use%  Mounted on
-# /dev/sdb    2.0T  994G  875G   54%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+# /dev/sdb    2.0T  995G  874G   54%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
 # /dev/sdc    2.0T  756G  1.2T   41%   /media/ubuntu/GC_1TB_SRC    # aka $GEO_SOURCE
 
 # As everything in in order, make a backup of the untouched files.
-# I used a 2TB hard drive with identical block size so dd could be used.
-# sudo dd if=/dev/sdb of=/dev/sdd bs=4M status=progress
+# I used a 2TB hard drive with identical block size so dd could be used in both directions.
+
+# sudo dd if=/dev/sdX of=/dev/sdX bs=4M status=progress
+
 # Next I pulled the source HD and backup HD from the machine, taking them offline.
 
 # real  155m39.592s
