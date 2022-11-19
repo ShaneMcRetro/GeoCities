@@ -8,8 +8,64 @@
 
 # Consolidate JCN, Santiago, Latecomer and SpindleyQ into a single www.geocities.com folder.
 # This will then be merged with www.geocities.com from script 005-merge-geocities-www-geocities.sh
-# Region-free.
-# Duplicates or conflicting data are deleted.
+# Regions are required at this stage.
+# Duplicates or conflicting data NEED TO BE PRESERVED FOR DB.
+
+################################################################ CONFLICTS NEED TO BE SAVED FOR DATABASE ##############################################################################
+
+# First consolidate each post-MAIN release to have a www.geocities.com each.
+# Example, Latecomer has four separate www.geocities.com folders.
+# /media/ubuntu/GC_2TB/work/Latecomer/gc/cpdl
+# /media/ubuntu/GC_2TB/work/Latecomer/gc/geocities
+# /media/ubuntu/GC_2TB/work/Latecomer/gc/glw
+# /media/ubuntu/GC_2TB/work/Latecomer/gc/more
+# Merge them straight into the MAIN www.geocities.com folder.
+# Save the conflicts to the Latecomer1 folder.
+# Regions can actually be merged in the same command!
+
+
+### EXAMPLE ON HOW TO CREATE CONFLICTS ###
+# Merge with MAIN at $GEO_WORK/geocities/www.geocities.com
+cd $GEO_WORK
+mkdir -p $GEO_WORK/mergetest/www.geocities.com
+
+
+mkdir -p $GEO_WORK/conflicts/unmangled-SpindleyQ1
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/conflicts/unmangled-SpindleyQ1
+
+mkdir -p $GEO_WORK/conflicts/unmangled-SpindleyQ1
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/conflicts/mirrors-SpindleyQ1
+
+
+mkdir -p $GEO_WORK/conflicts/Santiago1
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/www.geocities.com $GEO_WORK/conflicts/Santiago1
+
+# Lord Nightmare too
+
+mkdir -p $GEO_WORK/conflicts/Latecomer1
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl $GEO_WORK/geocities
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl $GEO_WORK/conflicts/Latecomer1
+
+mkdir -p $GEO_WORK/conflicts/Latecomer2
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities $GEO_WORK/geocities
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities $GEO_WORK/conflicts/Latecomer2
+
+mkdir -p $GEO_WORK/conflicts/Latecomer3
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw $GEO_WORK/geocities
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw $GEO_WORK/conflicts/Latecomer3
+
+mkdir -p $GEO_WORK/conflicts/Latecomer4
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/more $GEO_WORK/geocities
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/more $GEO_WORK/conflicts/Latecomer4
+
+mkdir -p $GEO_WORK/conflicts/JCN1
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/www.geocities.com $GEO_WORK/conflicts/JCN1
+################################################################ CONFLICTS NEED TO BE SAVED FOR DATABASE ##############################################################################
+
 
 
 cd $GEO_WORK
