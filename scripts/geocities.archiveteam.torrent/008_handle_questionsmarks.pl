@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # Find all files containing a question mark and check if this version of the file is really needed, as in:
-# contains# something different than the same file without a question mark part.
+# contains something different than the same file without a question mark part.
 # This is because in Geocities, most of the URL parameters are
 # targeted at Javascripts running in the browser and not at
 # server side software. Most Geocities users had no way of running
@@ -135,4 +135,4 @@ sub fexec {
 
 # real    125m8.382s
 # user    2m59.983s
-# sys 5m9.275s
+# sys     5m9.275s
