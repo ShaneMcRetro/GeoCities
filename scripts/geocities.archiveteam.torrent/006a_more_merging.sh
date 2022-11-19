@@ -18,17 +18,13 @@ cd $GEO_WORK
 # START  Get all the images #
 #############################
 
-#########################################################   UP TO HERE   ##################################################################
-################################################################# Confirm these all exist!
-
-# Merge all the pic.geocities.com data into one folder
+# Merge all the pic.geocities.com data into MAIN folder
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/pic.geocities.com/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
-
 
 #############################
 # START unmangled-SpindleyQ #
@@ -80,7 +76,7 @@ rm -rv $GEO_WORK/mirrors-SpindleyQ/br.geocities.com
 # START    Merge SpindleyQs #
 #############################
 
-# Combine the SpindleyQs to become one
+# Combine the SpindleyQs
 mkdir -p $GEO_WORK/SpindleyQ/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/SpindleyQ/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/SpindleyQ/www.geocities.com
@@ -104,6 +100,8 @@ mkdir -p $GEO_WORK/Santiago/www.geocities.com
 
 # Merge geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/Santiago/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com $GEO_WORK/Santiago/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/www.geocities.com $GEO_WORK/Santiago/www.geocities.com
 
 # Merge regionals into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/ar.geocities.com $GEO_WORK/Santiago/www.geocities.com
@@ -113,25 +111,9 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/m
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/us.geocities.com $GEO_WORK/Santiago/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/uk.geocities.com $GEO_WORK/Santiago/www.geocities.com
 
-
-################## Check these to see if anything interesting, if not delete. Will need to be formatted as above if kept.
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.yahoo.com $GEO_WORK/geocities/geocities.yahoo.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/login.yahoo.com $GEO_WORK/geocities/login.yahoo.com
-# Japanese?
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/visit.geocities.jp $GEO_WORK/geocities/visit.geocities.jp
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/www.geocities.co.jp $GEO_WORK/geocities/www.geocities.co.jp
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/www.geocities.jp $GEO_WORK/geocities/www.geocities.jp
-
-
 # Clean up
-rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com
-rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup/ar.geocities.com
-rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup/au.geocities.com
-rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup/ca.geocities.com
-rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup/mx.geocities.com
-rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup/us.geocities.com
-rm -rv $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/uk.geocities.com
-
+rm -rv $GEO_WORK/Santiago/2012-06-geocities-catchup
+rm -rv $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare
 
 #############################
 # END              Santiago #
@@ -144,12 +126,22 @@ rm -rv $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/uk.geocitie
 #############################
 
 mkdir -p $GEO_WORK/Latecomer/www.geocities.com
+mkdir -p $GEO_WORK/Latecomer/visit.geocities.com
+
+# Purge directories and files with CRLF (%0D%0A) to prevent $GEO_SCRIPTS/merge_directories.pl aborts.
+cd $GEO_WORK/Latecomer
+find . -name '*'$'\r\n*' -exec rm -rf '{}' \;
+find . -name '*'$'\n*' -exec rm -rf '{}' \;
+find . -name '*'$'\r*' -exec rm -rf '{}' \;
+
+# Back to work
+cd $GEO_WORK
 
 # Merge geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/geocities.com $GEO_WORK/Latecomer/www.geocities.com
 
-# Merge regionals into www.geocities.com
+# # Latecomer "geocities" - Merge regionals into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/au.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/br.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/ca.geocities.com $GEO_WORK/Latecomer/www.geocities.com
@@ -160,6 +152,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/uk.geocities.
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/us.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/us.share.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 
+# Latecomer "glw" - Merge regionals into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/au.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/br.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/ca.geocities.com $GEO_WORK/Latecomer/www.geocities.com
@@ -169,15 +162,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/mx.geocities.com $G
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/uk.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/us.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 
-
-
-# We still need to remove the return carriages from cpdl Latecomer!!
-#    $GEO_WORK/Latecomer/gc/cpdl/www.geocities.com
-#    $GEO_WORK/Latecomer/gc/cpdl/mx.geocities.com
-# We still need to remove the return carriages from cpdl Latecomer!!
-
-# Latecomer cpdl - BROKEN (Regional)
-## CONFIRM THIS HAS NO www.geocities.com or geocities.com!!!!!!!!!!!!!!
+# Latecomer "cpdl" - Merge regionals into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/au.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/br.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/ca.geocities.com $GEO_WORK/Latecomer/www.geocities.com
@@ -187,15 +172,13 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/mx.geocities.com $
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/uk.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/us.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/us.share.geocities.com $GEO_WORK/Latecomer/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/visit.geocities.com $GEO_WORK/Latecomer/visit.geocities.com
 
-################## Check these to see if anything interesting, if not delete. Will need to be formatted as above if kept.
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/visit.geocities.com $GEO_WORK/geocities/visit.geocities.com
-
-
+# Latecomer "more" - Merge regionals into www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/more/www.geocities.com $GEO_WORK/Latecomer/www.geocities.com
 
 # Clean up
 rm -rv $GEO_WORK/Latecomer/gc/geocities/geocities.com
-rm -rv $GEO_WORK/Latecomer/gc/glw/geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/geocities/au.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/geocities/br.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/geocities/ca.geocities.com
@@ -205,6 +188,7 @@ rm -rv $GEO_WORK/Latecomer/gc/geocities/es.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/geocities/uk.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/geocities/us.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/geocities/us.share.geocities.com
+rm -rv $GEO_WORK/Latecomer/gc/glw/geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/glw/au.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/glw/br.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/glw/ca.geocities.com
@@ -222,23 +206,64 @@ rm -rv $GEO_WORK/Latecomer/gc/cpdl/mx.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/cpdl/uk.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/cpdl/us.geocities.com
 rm -rv $GEO_WORK/Latecomer/gc/cpdl/us.share.geocities.com
-rm -rv $GEO_WORK/Latecomer/gc/cpdl/visit.geocities.com $GEO_WORK/geocities/visit.geocities.com
+rm -rv $GEO_WORK/Latecomer/gc/cpdl/visit.geocities.com
+rm -rv $GEO_WORK/Latecomer/gc/more/www.geocities.com
 
 #############################
 # END             Latecomer #
 #############################
 
 
-# WHERE IS JCN????????? WHERE IS JCN????????? WHERE IS JCN????????? WHERE IS JCN????????? WHERE IS JCN????????? WHERE IS JCN????????? WHERE IS JCN?????????
+#############################
+# START                 JCN #
+#############################
+
+# Remove non-GeoCities data
+rm -rv $GEO_WORK/JCN/albislami.net
+rm -rv $GEO_WORK/JCN/bahai-invitation.com
+rm -rv $GEO_WORK/JCN/chatangel1.com
+rm -rv $GEO_WORK/JCN/chozenfaith.com
+rm -rv $GEO_WORK/JCN/eddieting.com
+rm -rv $GEO_WORK/JCN/geocities.yahoo.com
+rm -rv $GEO_WORK/JCN/harrysharma.com
+rm -rv $GEO_WORK/JCN/islaamnet.com
+rm -rv $GEO_WORK/JCN/mythicmorgans.net
+rm -rv $GEO_WORK/JCN/philadelphiacityhallwillpennshomepage.org
+rm -rv $GEO_WORK/JCN/pushti-marg.net
+rm -rv $GEO_WORK/JCN/samaroshihtzu.com
+rm -rv $GEO_WORK/JCN/www.alefnet.biz
+rm -rv $GEO_WORK/JCN/www.ancient-hebrew.org
+rm -rv $GEO_WORK/JCN/www.appiusforum.com
+rm -rv $GEO_WORK/JCN/www.manmadequilts.com
+rm -rv $GEO_WORK/JCN/www.nchoney.net
+rm -rv $GEO_WORK/JCN/www.netbiblestudy.net
+rm -rv $GEO_WORK/JCN/www.sagada-igorot.com
+rm -rv $GEO_WORK/JCN/www.texashotsauce.org
+rm -rv $GEO_WORK/JCN/www.thebonejangler.com
+rm -rv $GEO_WORK/JCN/geocities.jcn-grab.tar.bz2
+
+#############################
+# END                   JCN #
+#############################
 
 
-####################################################################### DONE? ####################################################################################
 
+#############################
+# START     Merge with Main #
+#############################
 
-# 1. Merge all the www.geocities.com folders together one by one, duplicates (conflicts) are deleted at the end.
-# 2. Then we will merge with MAIN.
+# Check main for any CRLFs...
+#cd $GEO_WORK
+#find . -name '*'$'\r\n*' -exec rm -rf '{}' \;
+#find . -name '*'$'\n*' -exec rm -rf '{}' \;
+#find . -name '*'$'\r*' -exec rm -rf '{}' \;
 
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/SpindleyQ/www.geocities.com $GEO_WORK/?????????????????????????????????????
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/www.geocities.com $GEO_WORK/?????????????????????????????????????
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/www.geocities.com $GEO_WORK/?????????????????????????????????????
+# Merge with MAIN at $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/SpindleyQ/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/www.geocities.com $GEO_WORK/geocities/www.geocities.com
 
+#############################
+# END       Merge with Main #
+#############################
