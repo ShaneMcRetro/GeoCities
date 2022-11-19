@@ -128,7 +128,7 @@ rm -rv $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare
 mkdir -p $GEO_WORK/Latecomer/www.geocities.com
 mkdir -p $GEO_WORK/Latecomer/visit.geocities.com
 
-# Purge directories and files with CRLF (%0D%0A) to prevent $GEO_SCRIPTS/merge_directories.pl aborts.
+# Purge directories and files with CRLF (%0D%0A) to prevent $GEO_SCRIPTS/merge_directories.pl aborting.
 cd $GEO_WORK/Latecomer
 find . -name '*'$'\r\n*' -exec rm -rf '{}' \;
 find . -name '*'$'\n*' -exec rm -rf '{}' \;
