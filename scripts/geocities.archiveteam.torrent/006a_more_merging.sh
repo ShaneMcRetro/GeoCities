@@ -5,42 +5,85 @@
 # STEP THROUGH MANUALLY, we are not deleting data yet.
 # Big mess below, yay! Still working on it...
 
+# Conflicting data is considered duplicate data at this stage.
+# The largest archive is the main set of data.
+# These are all additional and will be merged into the core set of data... in time.
 
 cd $GEO_WORK
 
-# START unmangled-SpindleyQ
-# Merge geocities.com into www.geocities.com
+#############################
+# START unmangled-SpindleyQ #
+#############################
+
+# Merge all regions and geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/geocities.com $GEO_WORK/unmangled-SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/ar.geocities.com $GEO_WORK/unmangled-SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/br.geocities.com $GEO_WORK/unmangled-SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/ca.geocities.com $GEO_WORK/unmangled-SpindleyQ/www.geocities.com
 
-# Save conflicts (Data that wasn't moved or deleted are kept safe for later)
-mkdir -p $GEO_WORK/spindleyq1/www.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/geocities.com $GEO_WORK/spindleyq1/www.geocities.com
+# Clean up (Anything that remains is a duplicate)
+rm -rv $GEO_WORK/unmangled-SpindleyQ/geocities.com
+rm -rv $GEO_WORK/unmangled-SpindleyQ/ar.geocities.com
+rm -rv $GEO_WORK/unmangled-SpindleyQ/br.geocities.com
+rm -rv $GEO_WORK/unmangled-SpindleyQ/ca.geocities.com
 
-# How do you escape a bracket in perl? Ehhhh maybe just rename the folder.
-mv $GEO_WORK/unmangled-SpindleyQ/www.geocities.com\(2\) $GEO_WORK/unmangled-SpindleyQ/www.geocities.com2
-
-# Merge www.geocities.com(2) into www.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com2 $GEO_WORK/unmangled-SpindleyQ/www.geocities.com
-
-# Make a folder to store conflicts
-mkdir -p $GEO_WORK/spindleyq2/www.geocities.com
-
-# Merge this other GeoCities folder that was kicking around.
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com2 $GEO_WORK/spindleyq2/www.geocities.com
+#############################
+# END   unmangled-SpindleyQ #
+#############################
 
 
+
+#############################
+# START   mirrors-SpindleyQ #
+#############################
+
+# Merge all regions and geocities.com into www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/geocities.com $GEO_WORK/mirrors-SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/ar.geocities.com $GEO_WORK/mirrors-SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/br.geocities.com $GEO_WORK/mirrors-SpindleyQ/www.geocities.com
+
+# Clean up (Anything that remains is a duplicate)
+rm -rv $GEO_WORK/mirrors-SpindleyQ/geocities.com
+rm -rv $GEO_WORK/mirrors-SpindleyQ/ar.geocities.com
+rm -rv $GEO_WORK/mirrors-SpindleyQ/br.geocities.com
+
+#############################
+# END   unmangled-SpindleyQ #
+#############################
+
+
+
+#############################
+# START    Merge SpindleyQs #
+#############################
+
+# Combine the SpindleyQs to become one
+mkdir -p $GEO_WORK/SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/SpindleyQ/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/SpindleyQ/www.geocities.com
+
+# Clean up
+rm -rv $GEO_WORK/unmangled-SpindleyQ/
+rm -rv $GEO_WORK/mirrors-SpindleyQ/
+
+#############################
+# END      Merge SpindleyQs #
+#############################
+
+
+#########################################################   UP TO HERE   ##################################################################
 
 # START Santiago
 # Merge geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com
 
 # Make a folder to store conflicts
-mkdir -p $GEO_WORK/santiago1/www.geocities.com
+mkdir -p $GEO_WORK/conflicts/santiago1/www.geocities.com
 
 # Save conflicts
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/santiago1/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/conflicts/santiago1/www.geocities.com
 
-
+################################################################################################################################################################
 
 # START Latecomer
 # Merge geocities.com into www.geocities.com
@@ -63,7 +106,7 @@ mkdir -p $GEO_WORK/latecomer_glw/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/geocities.com $GEO_WORK/latecomer_glw/www.geocities.com
 
 
-
+################################################################################################################################################################
 
 
 

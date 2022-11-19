@@ -51,8 +51,8 @@ cd $GEO_WORK
 # Latecomer             670,494 items, totalling 15.5 GB.
 # Santiago              509,730 items, totalling 9.5 GB.
 # JCN Pack              68,942 items, totalling 1.3 GB.
-# unmangled-SpindleyQ   9,432 items, totalling 375.8 MB
-# mirrors-SpindleyQ     3,694 items, totalling 232.2 MB
+# unmangled-SpindleyQ   9,432 items, totalling 375.8 MB.
+# mirrors-SpindleyQ     3,694 items, totalling 232.2 MB.
 
 # df -H should reveal, not including SpindleyQ:
 # Filesystem  Size  Used  Avail  Use%  Mounted on
