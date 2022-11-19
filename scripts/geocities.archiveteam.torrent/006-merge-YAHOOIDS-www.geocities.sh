@@ -2,13 +2,14 @@
 # In perl we trust
 
 cd $GEO_WORK/geocities/YAHOOIDS
+
 find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/geocities/www.geocities.com'
 
-find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/geocities_conflicts_1/www.geocities.com'
+find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/conflicts/main1/www.geocities.com'
 
-mkdir -p $GEO_WORK/geocities_conflicts_2/www.geocities.com
+mkdir -p $GEO_WORK/conflicts/main2/www.geocities.com
 
-find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/geocities_conflicts_2/www.geocities.com'
+find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/conflicts/main2/www.geocities.com'
 
 rm -rv $GEO_WORK/geocities/YAHOOIDS
 

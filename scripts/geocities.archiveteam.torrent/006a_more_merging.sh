@@ -2,11 +2,8 @@
 
 # This script focuses on getting all the "www.geocities.com" data that it can.
 
-
-# Make sure these folders exist as I *might* have renamed them when extracting...
 # STEP THROUGH MANUALLY, we are not deleting data yet.
-# Where is unmangled spindleyQ???? Needs to be decompressed in 002-untar from source
-
+# Big mess below, yay! Still working on it...
 
 
 cd $GEO_WORK
@@ -34,6 +31,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.co
 
 
 # START Santiago
+# Merge geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/geocities.com $GEO_WORK/Santiago/2012-06-geocities-catchup/www.geocities.com
 
 # Make a folder to store conflicts
@@ -45,6 +43,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/2012-06-geocities-catchup/g
 
 
 # START Latecomer
+# Merge geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/geocities.com $GEO_WORK/Latecomer/gc/geocities/www.geocities.com
 
 # Make a folder to store conflicts
@@ -54,6 +53,7 @@ mkdir -p $GEO_WORK/latecomer_main/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/geocities.com $GEO_WORK/latecomer_main/www.geocities.com
 
 # Three sources for latecomer, only two have a geocities.com folder
+# Merge geocities.com into www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/glw/geocities.com $GEO_WORK/Latecomer/gc/glw/www.geocities.com
 
 # Make a folder to store conflicts
