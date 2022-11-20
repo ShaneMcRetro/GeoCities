@@ -1,10 +1,11 @@
 #!/usr/bin/perl
 
-# Find tracking inserted into html files by the Geocities server
+# Find tracking inserted into html files by the GeoCities server.
 # and normalize all letters to 'a' and all digits to '0'.
 # This gets rid of date / time stamps that were making otherwise identical files different.
 # Should result in files changed to have the following universal string:
-# <IMG SC="http: //geo.yahoo.com/serv?5=00000000&t=0000000000&f=aa-a0" ALT=1 WIDTH=1 HEIGHT=1>
+# <IMG SRC="http: //geo.yahoo.com/serv?5=00000000&t=0000000000&f=aa-a0" ALT=1 WIDTH=1 HEIGHT=1>
+# Also, we can then use Apache rewrite module to either remove or change to any code we want.
 
 our $VERSION = 1.00;
 
