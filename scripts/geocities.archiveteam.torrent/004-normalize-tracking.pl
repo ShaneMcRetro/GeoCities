@@ -58,7 +58,8 @@ sub normalize {
     }
 }
 
-# real  427m30.605s
-# user  182m33.153s
-# sys   83m11.244s
+# real    439m0.772s
+# user    181m55.608s
+# sys     83m15.554s
+
 
