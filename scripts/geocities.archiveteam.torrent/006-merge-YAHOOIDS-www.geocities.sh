@@ -11,8 +11,13 @@ mkdir -p $GEO_WORK/conflicts/main2/www.geocities.com
 
 find . -mindepth 2 -maxdepth 2 -type d -print0 | xargs -0 -I pathname bash -c '$GEO_SCRIPTS/merge_directories.pl pathname $GEO_WORK/conflicts/main2/www.geocities.com'
 
-rm -rv $GEO_WORK/geocities/YAHOOIDS
 
+# Manually delete these after inspecting to see what's left after two rounds.
+# rm -rv $GEO_WORK/geocities/YAHOOIDS
+
+# Now that that is out of the way do a full backup.
+
+# sudo dd if=/dev/sdX of=/dev/sdX bs=4M status=progress
 
 # real    1909m46.145s
 # user    46m57.052s
