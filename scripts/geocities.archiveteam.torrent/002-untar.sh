@@ -5,8 +5,6 @@
 # /dev/sdb    2.0T  910G  959G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
 # /dev/sdc    2.0T  756G  1.2T   41%   /media/ubuntu/GC_1TB_SRC    # aka $GEO_SOURCE
 
-# Huh, I guess I'm using a 2TB HDD for the GeoCities source data... it'll fit on a 1TB easily though! :-)
-
 # The torrent holds some 7zip archives that already contain real directories, most contain tarballs.
 # They will be untared and deleted after otherwise the 2TB drive ain't big enough.
 # JCN, Latecomer and Santiago are decompressed after this as they were only single archives.
@@ -22,7 +20,9 @@ ls -f -1 | tr '\n' '\0' | xargs -0 file -i | grep -i application/x-tar | sed 's/
 # column.                                                                                 filename as 
 #                                                                                         an argument
 
-# Decompress single archives for JCN, LATECOMER and SANTIAGO
+
+
+# Decompress single archives for JCN, Latecomer, Santiago and SpindleyQ
 
 cd $GEO_SOURCE/archiveteam-geocities-latecomer
 mkdir -p $GEO_WORK/Latecomer
