@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Create the directory for the torrent, if it doesn't exist already.
-# Uses the environment variable GEO_SOURCE!
-
+# Uses the environment variable $GEO_SOURCE
+# Source drive must use a case sensitive filesystem such as ext4.
 
 # 1. Main Torrent
+# Create the directory for the torrent, if it doesn't exist already.
 mkdir -p $GEO_SOURCE/geocities.archiveteam.torrent
 cd $GEO_SOURCE/geocities.archiveteam.torrent
 
