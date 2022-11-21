@@ -24,19 +24,34 @@
 # Regions can actually be merged into main via the same command!
 
 
-### EXAMPLE ON HOW TO CREATE CONFLICTS ###
-# Merge with MAIN at $GEO_WORK/geocities/www.geocities.com
+############################################# COPY THE BELOW TEMPLATE ################################################
+
+# Merge all www.geocities.com with MAIN at $GEO_WORK/geocities/www.geocities.com
 cd $GEO_WORK
-mkdir -p $GEO_WORK/mergetest/www.geocities.com
 
+# Make a conflicts directory
+mkdir -p $GEO_WORK/conflicts/unmangled-SpindleyQ/www.geocities.com
 
-mkdir -p $GEO_WORK/conflicts/unmangled-SpindleyQ1
+# Merge as much as possible (only non-existing data will be copied)
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/geocities/www.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/conflicts/unmangled-SpindleyQ1
 
-mkdir -p $GEO_WORK/conflicts/unmangled-SpindleyQ1
+# Move the duplicate data (conflicting) to the conflicts folder
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/www.geocities.com $GEO_WORK/conflicts/unmangled-SpindleyQ/www.geocities.com
+
+# Delete the source directory (Check it is empty first... there will be regional data... so maybe not just yet)
+# rm -rv $GEO_WORK/unmangled-SpindleyQ
+
+############################################# COPY THE ABOVE TEMPLATE ################################################
+
+
+
+
+
+
+
+mkdir -p $GEO_WORK/conflicts/mirrors-SpindleyQ
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/geocities/www.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/conflicts/mirrors-SpindleyQ1
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/www.geocities.com $GEO_WORK/conflicts/mirrors-SpindleyQ1/www.geocities.com
 
 
 mkdir -p $GEO_WORK/conflicts/Santiago1
