@@ -21,7 +21,7 @@
 # /media/ubuntu/GC_2TB/work/Latecomer/gc/more
 # Merge them straight into the MAIN www.geocities.com folder.
 # Save the conflicts to the Latecomer1 folder.
-# Regions can actually be merged in the same command!
+# Regions can actually be merged into main via the same command!
 
 
 ### EXAMPLE ON HOW TO CREATE CONFLICTS ###
@@ -44,6 +44,8 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/www.geocities.com $GEO_WORK
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/www.geocities.com $GEO_WORK/conflicts/Santiago1
 
 # Lord Nightmare too
+
+# JCN as well - good starting point as less data
 
 mkdir -p $GEO_WORK/conflicts/Latecomer1
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl $GEO_WORK/geocities
