@@ -2,8 +2,8 @@
 
 
 # You need a decent amount of hard drive space to work with GeoCities.
-# - 1TB for the source data (from torrent or archive.org).
-# - 2TB for the work space and final data set.
+# - ≥1TB for the source data (from torrent or archive.org).
+# - ≥2TB for the work space and final data set.
 # - Use ext4 as the file systems. GeoCities was case-sensitive.
 
 
@@ -22,9 +22,7 @@ sudo apt install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-ti
 sudo apt install build-essential p7zip-full convmv postgresql libpq-dev libglib2.0-bin findutils
 
 
-
-
-# Next let's setup some environment variables.
+# Next let's set some environment variables.
 
 sudo nano ~/.bashrc
 
@@ -59,5 +57,3 @@ mkdir -p /media/ubuntu/GC_2TB/work
 # Do a reboot for good measure.
 
 sudo reboot
-
-
