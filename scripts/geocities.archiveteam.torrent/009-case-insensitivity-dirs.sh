@@ -33,6 +33,7 @@
 # Include conflicts by starting in root of $GEO_WORK directory
 # Then again maybe this is a bad idea as they will be seen as doubles by the database?
 # Or maybe they are safe if they are pathnames...
+
 cd $GEO_WORK
 find . -type d > $GEO_LOGS/dir-index.txt
 
