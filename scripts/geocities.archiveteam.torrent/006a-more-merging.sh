@@ -35,14 +35,9 @@
 
 cd $GEO_WORK
 
-find . -name '*'$'\r\n*' -exec rm -rf '{}' \;
-find . -name '*'$'\n*' -exec rm -rf '{}' \;
-find . -name '*'$'\r*' -exec rm -rf '{}' \;
-
-# How are these now the same as the above?
-#find . -name '*'$'\r\n*' -exec rm -rf '{}' \;
-#find . -name '*'$'\n*' -exec rm -rf '{}' \;
-#find . -name '*'$'\r*' -exec rm -rf '{}' \;
+find . -name '*'$'\r\n*' -exec rm -rv '{}' \;
+find . -name '*'$'\n*' -exec rm -rv '{}' \;
+find . -name '*'$'\r*' -exec rm -rv '{}' \;
 
 #############################
 # END            Purge CRLF #
@@ -66,7 +61,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/pic.geocities.com/pic.geoc
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/pic.geocities.com/pic.geocities.com $GEO_WORK/conflicts/main3/pic.geocities.com
 
 # Delete the source directory (Check it is empty first)
-# rm -rv $GEO_WORK/geocities/pic.geocities.com/pic.geocities.com
+rm -rv $GEO_WORK/geocities/pic.geocities.com/pic.geocities.com
 
 #############################
 # END         Image tidy up #
@@ -102,7 +97,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/br.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/unmangled-SpindleyQ/ca.geocities.com $GEO_WORK/conflicts/unmangled-SpindleyQ/ca.geocities.com
 
 # Delete the source directory (Check it is empty first)
-# rm -rv $GEO_WORK/unmangled-SpindleyQ
+rm -rv $GEO_WORK/unmangled-SpindleyQ
 
 
 #############################
@@ -136,14 +131,14 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/ar.geocities.com $
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/mirrors-SpindleyQ/br.geocities.com $GEO_WORK/conflicts/mirrors-SpindleyQ/br.geocities.com
 
 # Delete the source directory (Check it is empty first)
-# rm -rv $GEO_WORK/mirrors-SpindleyQ
+rm -rv $GEO_WORK/mirrors-SpindleyQ
 
 
 #############################
 # END     mirrors-SpindleyQ #
 #############################
 
-
+### TESTING - UP TO HERE ###
 
 #############################
 # START            Santiago #
