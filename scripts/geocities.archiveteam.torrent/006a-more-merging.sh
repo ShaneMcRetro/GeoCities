@@ -2,29 +2,12 @@
 
 # STEP THROUGH MANUALLY. Still WIP.
 
-# Consolidate JCN, Santiago, Latecomer and SpindleyQ into a single www.geocities.com folder.
-# This will then be merged with www.geocities.com from script 005-merge-geocities-www-geocities.sh
-# Regions are required at this stage.
-# Duplicates or conflicting data NEED TO BE PRESERVED FOR DB.
+# Merge JCN, Santiago, Latecomer and SpindleyQ.
+# Duplicates/conflicting data need to be preserved for database processing later on.
 
-################################################################ CONFLICTS NEED TO BE SAVED FOR DATABASE ##############################################################################
-
-# First consolidate each post-MAIN release to have a www.geocities.com each.
-# Example, Latecomer has four separate www.geocities.com folders.
-# /media/ubuntu/GC_2TB/work/Latecomer/gc/cpdl
-# /media/ubuntu/GC_2TB/work/Latecomer/gc/geocities
-# /media/ubuntu/GC_2TB/work/Latecomer/gc/glw
-# /media/ubuntu/GC_2TB/work/Latecomer/gc/more
-# Merge them straight into the MAIN www.geocities.com folder.
-# Save the conflicts to the Latecomer1 folder.
-# Regions can actually be merged into main via the same command!
-
-# UPDATE:
-# Screw it, just merge everything direct into www.geocities.com and regional folders.
-# Regional folders will be merged into one jumbo www.geocities.com folder in the next script.
-
-
-# CHECK ALL $GEO_WORK/geocities/ folders below exist on the decompressed, otherwise mkdir -p them
+# This will merge everything direct into www.geocities.com and regional folders.
+# These are located at GeoCities MAIN - $GEO_WORK/geocities/
+# Regional folders will (likely) be merged into one jumbo www.geocities.com folder in the next script (006b).
 
 
 #############################
@@ -138,7 +121,7 @@ rm -rv $GEO_WORK/mirrors-SpindleyQ
 # END     mirrors-SpindleyQ #
 #############################
 
-### TESTING - UP TO HERE ###
+
 
 #############################
 # START            Santiago #
@@ -155,7 +138,6 @@ mkdir -p $GEO_WORK/conflicts/Santiago-catchup/ca.geocities.com
 mkdir -p $GEO_WORK/conflicts/Santiago-catchup/mx.geocities.com
 mkdir -p $GEO_WORK/conflicts/Santiago-catchup/us.geocities.com
 mkdir -p $GEO_WORK/conflicts/Santiago-catchup/pic.geocities.com
-
 mkdir -p $GEO_WORK/conflicts/Santiago-nightmare/www.geocities.com
 mkdir -p $GEO_WORK/conflicts/Santiago-nightmare/uk.geocities.com
 mkdir -p $GEO_WORK/conflicts/Santiago-nightmare/pic.geocities.com
@@ -189,7 +171,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Santiago/archived_geocities_stuff_by_lord_nightmare/pic.geocities.com $GEO_WORK/conflicts/Santiago-nightmare/pic.geocities.com
 
 # Delete the source directory (Check it is empty first)
-# rm -rv $GEO_WORK/Santiago
+rm -rv $GEO_WORK/Santiago
 
 
 #############################
@@ -217,7 +199,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/www.geocities.com $GEO_WORK/conf
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/JCN/pic.geocities.com $GEO_WORK/conflicts/JCN/pic.geocities.com
 
 # Delete the source directory (Check it is empty first)
-# rm -rv $GEO_WORK/JCN
+rm -rv $GEO_WORK/JCN
 
 
 #############################
@@ -277,6 +259,7 @@ mkdir -p $GEO_WORK/conflicts/Latecomer-cpdl/us.share.geocities.com
 # Latecomer "more"
 mkdir -p $GEO_WORK/conflicts/Latecomer-more/www.geocities.com
 
+
 # Latecomer "geocities" - Merge geocities.com into www.geocities.com and regionals into geocities MAIN. Only non-existing data will be copied.
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/www.geocities.com $GEO_WORK/geocities/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/geocities/geocities.com $GEO_WORK/geocities/www.geocities.com
@@ -319,6 +302,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/cpdl/us.share.geocities
 
 # Latecomer "more" -  - Merge www.geocities.com into geocities MAIN. No regional data. Only non-existing data will be copied.
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/more/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+
 
 # Move the duplicate data (conflicting) to the conflicts folder
 
@@ -367,9 +351,28 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/Latecomer/gc/more/www.geocities.com 
 
 
 # Delete the source directory (Check it is empty first)
-# rm -rv $GEO_WORK/Latecomer
+rm -rv $GEO_WORK/Latecomer
 
 
 #############################
 # END             Latecomer #
 #############################
+
+
+### DELETE EMPTY FOLDERS ###
+# Cleanup empty folders (conflicts mostly)
+
+cd $GEO_WORK
+find . -empty -type d -delete
+
+
+# The $GEO_WORK drive should report via df -H:
+# Filesystem  Size  Used  Avail  Use%  Mounted on
+# /dev/sdb    2.0T  905G  964G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+
+
+### TIMES GO HERE
+# TIME
+# TIME
+# TIME
+
