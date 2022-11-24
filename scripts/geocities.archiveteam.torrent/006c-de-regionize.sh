@@ -4,9 +4,6 @@
 # This might be done at a later step but I haven't checked that far ahead yet...
 
 
-# Cleanup empty folders (conflicts mostly)
-cd $GEO_WORK
-find . -maxdepth 3 -empty -type d -delete
 
 
 
@@ -98,7 +95,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GE
 
 
 
-# Then cleanup any empty folders again (conflicts)
+# Then cleanup any empty folders
 cd $GEO_WORK/conflicts/geocities_extra/
 find . -maxdepth 3 -empty -type d -delete
 cd $GEO_WORK/
