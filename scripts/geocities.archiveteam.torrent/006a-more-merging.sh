@@ -371,8 +371,7 @@ find . -empty -type d -delete
 # /dev/sdb    2.0T  905G  964G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
 
 
-### TIMES GO HERE
-# TIME
-# TIME
-# TIME
+# real    117m24.237s
+# user    63m1.481s
+# sys     45m36.684s
 
