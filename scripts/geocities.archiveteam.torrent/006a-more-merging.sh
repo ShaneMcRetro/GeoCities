@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# STEP THROUGH MANUALLY. Still WIP.
-
 # Merge JCN, Santiago, Latecomer and SpindleyQ.
 # Duplicates/conflicting data need to be preserved for database processing later on.
 
 # This will merge everything direct into www.geocities.com and regional folders.
 # These are located at GeoCities MAIN - $GEO_WORK/geocities/
-# Regional folders will (likely) be merged into one jumbo www.geocities.com folder in the next script (006b).
+# Regional folders will be merged into MAIN www.geocities.com folder in the next script (006b).
 
 
 #############################
