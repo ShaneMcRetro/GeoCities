@@ -5,7 +5,7 @@
 # After identifying all problematic file names with a dry run of convmv:
 #
 #    cd $GEO_WORK
-#    (convmv --lowmem -r --nfc -f latin1 -t utf8 *) 2>&1 >> $GEO_LOGS/encoding_errors.txt
+#    (convmv --lowmem -r --nfc -f latin1 -t utf8 *) 2>&1 >> $GEO_LOGS/007-encoding-errors.txt
 #
 # each file was examined manually. Depending on the encoding information, links end embeds in the surrounding HTML
 # files, the encoding of the file name was determined. This, people, shows why utf8 was such a great invention!
@@ -14,8 +14,7 @@
 #
 # As some character encoding issues are the result of using parametrized URLs with question marks, some of the fixes
 # here overlap with what the next script is trying to achieve.
-#
-# Added one additional after merging regional and additional packs (JCN, Latecomer, etc) into www.geocities.com.
+
 
 cd $GEO_WORK/geocities/www.geocities.com/SoHo/Museum/1134/ && convmv -f Windows-1251 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/zteffen/Clints_hjemmeside/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
