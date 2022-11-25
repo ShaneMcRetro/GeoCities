@@ -6,7 +6,6 @@
 
 
 # Remove directories containing junk or bad data.
-# CONFIRM THESE ARE EMPTY/JUNK FIRST!!!
 
 rm -rv $GEO_WORK/geocities/ar.geocities.yahoo.com
 rm -rv $GEO_WORK/geocities/ar.yahoo.com
@@ -41,7 +40,7 @@ rm -rv $GEO_WORK/geocities/themis.geocities.yahoo.com
 rm -rv $GEO_WORK/geocities/tournament.fantasysports.yahoo.com
 rm -rv $GEO_WORK/geocities/travel.yahoo.com
 rm -rv $GEO_WORK/geocities/tv.yahoo.com
-rm -rv $GEO_WORK/geocities/us.geocities.yahoo.com # CHECK THIS ONE ESPECIALLY
+rm -rv $GEO_WORK/geocities/uk.geocities.yahoo.com
 rm -rv $GEO_WORK/geocities/us.1.p.geocities.com
 rm -rv $GEO_WORK/geocities/us.1.p2.geocities.com
 rm -rv $GEO_WORK/geocities/us.1.p3.geocities.com
@@ -53,7 +52,6 @@ rm -rv $GEO_WORK/geocities/us.1.p9.geocities.com
 rm -rv $GEO_WORK/geocities/us.1.p10.geocities.com
 rm -rv $GEO_WORK/geocities/us.1.p12.geocities.com
 rm -rv $GEO_WORK/geocities/us.2.p2.geocities.com
-rm -rv $GEO_WORK/geocities/uk.geocities.yahoo.com
 rm -rv $GEO_WORK/geocities/visit.geocities.yahoo.com
 rm -rv $GEO_WORK/geocities/weather.yahoo.com
 rm -rv $GEO_WORK/geocities/www.yahoo.com
@@ -125,6 +123,7 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GE
 
 
 # Move the duplicate data (conflicting) to the conflicts folder.
+
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.geocities.com $GEO_WORK/conflicts/main3/ar.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.share.geocities.com $GEO_WORK/conflicts/main3/ar.share.geocities.com
 $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/asia.geocities.com $GEO_WORK/conflicts/main3/asia.geocities.com
@@ -156,23 +155,25 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GE
 # These are not to be merged.
 # Check these contain useful data.
 # Keep or delete.
-# $GEO_WORK/geocities/www.geocities.com
-# $GEO_WORK/geocities/visit.geocities.com
-# $GEO_WORK/geocities/geocities.yahoo.com
-# $GEO_WORK/geocities/help.yahoo.com
-# $GEO_WORK/geocities/info.yahoo.com
-# $GEO_WORK/geocities/login.yahoo.com
-# $GEO_WORK/geocities/pic.geocities.com
-
+# $GEO_WORK/geocities/www.geocities.com      # MAIN www.geocities.com
+# $GEO_WORK/geocities/visit.geocities.com    # counter.gif - All zeroes
+# $GEO_WORK/geocities/geocities.yahoo.com    # Content Violation Reporting Form inside
+# $GEO_WORK/geocities/help.yahoo.com         # Misc
+# $GEO_WORK/geocities/info.yahoo.com         # Misc
+# $GEO_WORK/geocities/login.yahoo.com        # Login page
+# $GEO_WORK/geocities/pic.geocities.com      # Pictures and clipart
+# $GEO_WORK/geocities/us.geocities.yahoo.com # PageWizard? (Pagebuilder?)
 
 # Clean up any left over empty folders.
-cd $GEO_WORK/conflicts/geocities_extra/
+cd $GEO_WORK
 find . -empty -type d -delete
-cd $GEO_WORK/
 
-# SIZING GOES HERE
+
 # We should see a drop as duplicates are removed, I believe regional sites overlapped MAIN considerably.
-# SIZING GOES HERE
+# The $GEO_WORK drive should report via df -H:
+# Filesystem  Size  Used  Avail  Use%  Mounted on
+# /dev/sdb    2.0T  905G  964G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+
 
 # TIMES GO HERE
 # TIMES GO HERE
