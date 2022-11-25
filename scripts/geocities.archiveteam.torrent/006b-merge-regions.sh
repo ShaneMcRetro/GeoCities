@@ -169,13 +169,13 @@ cd $GEO_WORK
 find . -empty -type d -delete
 
 
-# We should see a drop as duplicates are removed, I believe regional sites overlapped MAIN considerably.
 # The $GEO_WORK drive should report via df -H:
 # Filesystem  Size  Used  Avail  Use%  Mounted on
-# /dev/sdb    2.0T  905G  964G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+# /dev/sdb    2.0T  904G  965G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
 
 
-# TIMES GO HERE
-# TIMES GO HERE
-# TIMES GO HERE
+# real  68m55.548s
+# user  33m22.311s
+# sys   28m17.448s
+
 
