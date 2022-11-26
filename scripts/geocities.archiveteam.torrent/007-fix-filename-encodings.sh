@@ -7,13 +7,13 @@
 #    cd $GEO_WORK
 #    (convmv --lowmem -r --nfc -f latin1 -t utf8 *) 2>&1 >> $GEO_LOGS/007-encoding-errors.txt
 #
-# each file was examined manually. Depending on the encoding information, links end embeds in the surrounding HTML
+# each file was examined manually. Depending on the encoding information, links and embeds in the surrounding HTML
 # files, the encoding of the file name was determined. This, people, shows why utf8 was such a great invention!
 #
 # The most common encoding is iso-8859-1, containing Western European characters.
 #
 # As some character encoding issues are the result of using parametrized URLs with question marks, some of the fixes
-# here overlap with what the next script is trying to achieve.
+# here overlap with what the next script (008) is trying to achieve.
 
 
 cd $GEO_WORK/geocities/www.geocities.com/SoHo/Museum/1134/ && convmv -f Windows-1251 -t utf8 -r --notest * ;
