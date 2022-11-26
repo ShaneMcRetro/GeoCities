@@ -1,19 +1,17 @@
-# Pick up the last few remaining case sensitivity related
-# doubles, a process similar to finding correspondent directories
-# as in '009-case-insensitivity-dirs.sh' is required.
-# The difference is that it uses another algorithm to delete
-# the offenders (see 'remove-double-files.pl') and it takes
-# longer to ingest the huge amount of files in contrast
-# to the just some 2 million directories.
+# This script picks up the last few remaining case sensitivity related doubles.
+# It uses a process similar to finding correspondent directories in '009-case-insensitivity-dirs.sh'.
 #
-# For the time it takes, the amount of results is quite
-# meagre. But every removed file saves processing time 
-# in hundreds of occasions in the future.
+# The difference is that it uses another algorithm to delete the offenders (see 'remove-double-files.pl').
+# It takes longer to ingest the huge amount of files in contrast to the just some 2 million directories.
+# There is something like 38,000,000 files so that makes sense.
+#
+# For the time it takes, the amount of results are quite meagre.
+# However, every file removed saves processing time for billions of occasions in the future.
 
 cd $GEO_WORK/geocities
 find . -type f > $GEO_LOGS/file-index.txt
 
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/doubles.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
 
 # Put all this stuff into the database
@@ -21,19 +19,21 @@ psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/doubles.sql
 $GEO_SCRIPTS/ingest-doubles.pl file-index.txt
 
 
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
 
 # Generate a sorted list of files.
-psql --no-align --tuples-only -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-file-sorted.txt
+psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-file-sorted.txt
 
 # real    261m8.978s
 # user    57m27.591s
-# sys 10m15.014s
+# sys     10m15.014s
 
 
 # Feed the double dir list into the dir-compare script that
 # will sort or dirnames and their contents.
+
 $GEO_SCRIPTS/remove-double-files.pl
+
 
 # real    10m49.846s
 # user    0m23.697s
