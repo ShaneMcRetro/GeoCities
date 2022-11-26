@@ -58,7 +58,7 @@ find . -type d > $GEO_LOGS/dir-index.txt
 # .pgpass file in case your db server asks for passwords each 
 # time!
 
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/doubles.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
 
 # Put all this stuff into the database
@@ -72,14 +72,14 @@ $GEO_SCRIPTS/ingest-doubles.pl dir-index.txt
 
 # Create indexes in the database to speed up sorting.
 
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
 
 # real    3m22.510s
 # user    0m0.012s
 # sys     0m0.020s
 
 # Generate a sorted list of directories.
-psql --no-align --tuples-only -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-dir-sorted.txt
+psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-dir-sorted.txt
 
 # real    135m23.145s
 # user    0m0.324s
