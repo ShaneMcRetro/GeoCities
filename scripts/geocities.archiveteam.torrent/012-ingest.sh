@@ -11,9 +11,9 @@ mv -v $GEO_WORK/geocities_conflicts_2 $GEO_ARCHIVE/archiveteam.torrent_conflicts
 # dramatically speed up the process, but terribly destroy your database
 # if something goes wrong.
 
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/files.sql
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/urls.sql
-psql -d $GEO_DB_DB -f $GEO_SCRIPTS/sql/create/props.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/files.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/urls.sql
+psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/props.sql
 
 $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/archiveteam.torrent
 $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/archiveteam.torrent_conflicts_1
@@ -24,7 +24,7 @@ $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/archiveteam.torrent_conflicts_2
 # sys     48m5.140s
 
 
-psql -d $GEO_DB_DB --no-align --tuples-only -f $GEO_SCRIPTS/sql/do/dump-files.sql -o $GEO_LOGS/db-files.txt
+psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/dump-files.sql -o $GEO_LOGS/db-files.txt
 
 # real    45m40.148s
 # user    0m28.850s
