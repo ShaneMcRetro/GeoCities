@@ -1,15 +1,12 @@
-# Hand-picked destruction of symlink cancer, directories
-# nested in themselves, probably caused by symlinks on the
-# Geocities server. It's turtles all the way down ...
-# These almost endless loops mess up the file system big time,
-# generating false impressions of users being overly active
-# and burning processor cycles and storage memory.
-# It is save to remove these directories if the data they contain
-# is the same.
+# Hand-picked destruction of symlink cancer, directories nested in themselves.
+# Probably caused by symlinks on the GeoCities server. 
+# It's turtles all the way down...
+# These almost endless loops mess up the filesystem big time.
+# It is safe to remove these directories if the data they contain is the same.
 #
-# These directories have been manually checked for being save
-# to remove. To find them, the SQL query in $GEO_SCRIPTS/sql/do/find-doubles.sql
-# was used, based on the doubles-dir data generated in 009-case-insensitivity-dirs.sh
+# These directories have been manually checked for being safe to remove.
+# To find them, the SQL query in $GEO_SCRIPTS/sql/do/find-doubles.sql was used.
+# This is based on the doubles-dir data generated in 009-case-insensitivity-dirs.sh
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Temple/2506/pisces/beth/beth
 
@@ -96,10 +93,10 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Teahouse/4122/geobook.html/sn
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Shrine/3376/Shampoo/Pictures/Pictures
 
-# biggie
+# Biggie
 rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/Workshop/9176/Clown/Clown
 
-# this one was 2.1 GB!
+# This one was 2.1 GB!
 alldirs=(actors authors basarke credits gallery Julie media Newsletters smith szpindel)
 for topdir in ${alldirs[@]}; do
     for deepdir in ${alldirs[@]}; do
@@ -107,7 +104,7 @@ for topdir in ${alldirs[@]}; do
     done
 done
 
-# One of these directories that is actually a HTML file ...
+# One of these directories that is actually a HTML file...
 rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/7931/midi
 
 # In the conflict directories there's some sickness floating
