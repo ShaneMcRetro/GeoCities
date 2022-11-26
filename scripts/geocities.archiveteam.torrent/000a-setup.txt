@@ -19,7 +19,8 @@ sudo apt install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-ti
 
 # Install other things that are needed, convmv (UTF-8), postgresql (database magic)
 
-sudo apt install build-essential p7zip-full convmv postgresql libpq-dev libglib2.0-bin findutils
+sudo apt install build-essential p7zip-full convmv postgresql postgresql-contrib libpq-dev libglib2.0-bin findutils 
+
 
 
 # Next let's set some environment variables.
