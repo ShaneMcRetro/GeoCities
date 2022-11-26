@@ -1,7 +1,7 @@
 # Find everything that could be an index file,
 # like "index.html", "index.htm", "INDEX.HTM", etc
 
-psql -d $GEO_DB_DB --no-align --tuples-only -f  $GEO_SCRIPTS/sql/do/find-indexes.sql -o $GEO_LOGS/indexes-list.txt
+psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/find-indexes.sql -o $GEO_LOGS/indexes-list.txt
 
 # real    3m34.571s
 # user    0m0.056s
