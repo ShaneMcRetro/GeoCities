@@ -1,16 +1,21 @@
-# To get rid of all the files that have been downloaded multiple times due to filename case sensitivity issues,
-# the help of a database server is required!
+#!/bin/bash
 
-# First add the database login file to your home folder.
-# If you set these differently you can retrieve them via the "env" command
+# Remove files that have been downloaded multiple thanks to case sensitivity issues.
+# We are calling on the power of a database server for processing these.
 
 # sudo apt update && sudo apt install postgresql postgresql-contrib
+# DELETE THE ABOVE LINE WHEN DONE AS IT HAS BEEN PUT INTO STEP 000a
 
-### MESS BEGIN ###
+# Add the database login file to your home folder.
+# If you set these differently you can retrieve them via the "env" command.
+
+
+### MESS BEGIN ### - I really need to get this right as I had issues last time...
+
 # sudo -u postgres psql
 # sudo -u postgres createuser --interactive
 # despens
-# sudo -u postgres createdb Geocities
+# sudo -u postgres createdb Turtles
 # sudo adduser despens
 # despens
 
@@ -19,18 +24,21 @@
 # sudo systemctl restart postgresql@14-main.service
 
 # nano ~/.pgpass
-# localhost:5432:Geocities:despens:despens
+# localhost:5432:Turtles:despens:despens
 # chmod 0600 ~/.pgpass
 # nano ~/.bashrc
 # export PGUSER='despens'
 
+# Reopen the terminal to activate new export line.
+
 ### MESS END ###
+# DELETE THE ABOVE LINE WHEN DONE AS IT HAS BEEN PUT INTO STEP 000a
 
-# Directory names will be handled, since this will solve
-# issues for most files contained inside of them. To speed things
-# up, create a list of all directory names and save it in a file.
 
-# Include conflicts by starting in root of $GEO_WORK directory
+# Directory names will be handled, since this will solve issues for most files contained inside of them.
+# To speed things up, create a list of all directory names and save it in a file.
+
+# Include conflicts by starting in root of $GEO_WORK directory.
 # Then again maybe this is a bad idea as they will be seen as doubles by the database?
 # Or maybe they are safe if they are pathnames...
 
