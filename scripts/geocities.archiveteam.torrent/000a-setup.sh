@@ -92,27 +92,13 @@ despens                                                                         
 # Create database turtles and give despens full access
 CREATE DATABASE turtles;                                                                        # Create the database turtles.
 GRANT ALL PRIVILEGES ON DATABASE turtles TO despens;                                            # Allow despens access to turtles
-\l                                                                                             # Lists database
+\l                                                                                              # Lists database
 \q                                                                                              # Quit postgresql.
 exit
 
+# You can install pgAdmin 4 to look around the database like stats:
+# https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-pgadmin-on-ubuntu-22-04.html
 
-### Create the turtles database # THIS DOES NOT WORK
-sudo -u despens createdb turtles
-
-# IF THE ABOVE WORKS THE FOLLOWING IS JUNK
-# USE PGADMIN TO CONFIRM IT LOOKS THE SAME AS BELOW
-
-# CREATE DATABASE turtles
-# WITH OWNER = postgres
-# ENCODING = 'UTF8'
-# TABLESPACE = pg default
-# LC COLLATE = 'en AU. UTF-8'
-# LC CTYPE = 'en AU. UTF-8'
-# CONNECTION LIMIT = - 1;
-# GRANT CONNECT, TEMPORARY ON DATABASE turtles TO public;
-# GRANT ALL ON DATABASE turtles T0 postgres;
-# GRANT ALL ON DATABASE turtles TO despens;
 
 ####    Alt user and db creation ?    ####
 # sudo -u postgres psql
