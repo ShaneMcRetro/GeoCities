@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Remove files that have been downloaded multiple thanks to case sensitivity issues.
-# We are calling on the power of a database server for processing these.
-# Add the database login file to your home folder (see 000a).
+# We are calling on the power of a database server (psql) for processing these.
+# Add the database login file to your home folder - see 000a - .pgpass
 # If you set these differently you can retrieve them via the "env" command.
 # Directory names will be handled, since this will solve issues for most files contained inside of them.
 # To speed things up, create a list of all directory names and save it in a file.
