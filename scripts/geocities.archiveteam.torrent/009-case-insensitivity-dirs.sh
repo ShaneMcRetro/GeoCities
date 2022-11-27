@@ -10,28 +10,7 @@
 # If you set these differently you can retrieve them via the "env" command.
 
 
-### MESS BEGIN ### - I really need to get this right as I had issues last time...
-
-# sudo -u postgres psql
-# sudo -u postgres createuser --interactive
-# despens
-# sudo -u postgres createdb Turtles
-# sudo adduser despens
-# despens
-
-# sudo nano /etc/postgresql/14/main/pg_hba.conf
-# local all all trust
-# sudo systemctl restart postgresql@14-main.service
-
-# nano ~/.pgpass
-# localhost:5432:Turtles:despens:despens
-# chmod 0600 ~/.pgpass
-# nano ~/.bashrc
-# export PGUSER='despens'
-
-# Reopen the terminal to activate new export line.
-
-### MESS END ###
+### Make sure you have completed the steps in 000a-setup before starting this script. ###
 # DELETE THE ABOVE LINE WHEN DONE AS IT HAS BEEN PUT INTO STEP 000a
 
 
