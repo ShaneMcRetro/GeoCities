@@ -100,17 +100,6 @@ exit
 # https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-pgadmin-on-ubuntu-22-04.html
 
 
-####    Alt user and db creation ?    ####
-# sudo -u postgres psql
-# sudo -u postgres createuser --interactive
-# despens
-# sudo -u postgres createdb turtles
-# sudo adduser despens
-# despens
-
-# IF THE ABOVE WORKED THE ABOVE IS JUNK
-
-
 ### To prevent many prompts, save the table, user and password to a file.
 nano ~/.pgpass
 localhost:5432:turtles:despens:despens
