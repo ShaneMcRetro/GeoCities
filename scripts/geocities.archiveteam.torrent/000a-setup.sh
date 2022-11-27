@@ -19,7 +19,7 @@ sudo apt install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-ti
 
 # Install other things that are needed, convmv (UTF-8), postgresql (database magic)
 
-sudo apt install build-essential p7zip-full convmv postgresql postgresql-contrib libpq-dev libglib2.0-bin findutils 
+sudo apt install build-essential p7zip-full convmv postgresql postgresql-contrib libpq-dev libglib2.0-bin findutils
 
 
 
@@ -44,8 +44,7 @@ export GEO_DB_DB='turtles'                                            # PostgreS
 export GEO_DB_USER='despens'                                          # PostgreSQL database user - Thanks Despens!
 export GEO_DB_PASSWD='despens'                                        # PostgreSQL database password - Thanks Despens!
 export PGUSER='despens'                                               # Can't get enough variables. Is this required? Probably not.
-
-PGPASSFILE='/home/ubuntu/.pgpass'                                     # Databases scare me
+export PGPASSFILE='/home/ubuntu/.pgpass'                              # Databases scare me
 
 # Some scripts will wipe temporary files after they are run. The only versions kept will be:
 # - the originals (as in how the data was distributed, located in $GEO_SOURCE/geocities.archiveteam.torrent,
@@ -65,31 +64,35 @@ mkdir -p /media/ubuntu/GC_2TB/work
 (ls /etc/postgresql/*/main/postgresql.conf)
 
 # Make database do database things
+# If using a version other than 14, adjust the version number to what the above commands outputted.
 # Reference: https://gist.github.com/AtulKsol/4470d377b448e56468baef85af7fd614
 
-sudo nano /etc/postgresql/[VERSION]/main/pg_hba.conf
-local all all trust
-sudo systemctl restart postgresql
-# OR
-# sudo systemctl restart postgresql@[VERSION]-main.service
+sudo nano /etc/postgresql/14/main/pg_hba.conf
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust
 
 # Add more things
-sudo nano /etc/postgresql/[VERSION]/main/postgresql.conf
-listen addresses = '*'
+sudo nano /etc/postgresql/14/main/postgresql.conf
+listen_addresses = '*'
+
+sudo systemctl restart postgresql
+
 
 
 ### Create despens role (user) in PostgreSQL
 sudo su - postgres                                                                    # Logs into postgres with the default admin account.
 psql                                                                                  # Opens psql.
 \du                                                                                   # Lists current users.
-CREATE ROLE despens WITH SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION;     # Creates despens "role" aka the PostgreSQL database user.
+CREATE ROLE despens WITH SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION BYPASSRLS;     # Creates despens "role" aka the PostgreSQL database user.
 \password despens                                                                     # Activates and changes the password from nothing.
 despens                                                                               # New password.
 despens                                                                               # Confirming password.
 \du                                                                                   # Lists current users - confirm despens exists.
 \q                                                                                    # Quit the database.
+exit
 
-### Create the turtles database
+### Create the turtles database # THIS DOES NOT WORK
 sudo -u despens createdb turtles
 
 # IF THE ABOVE WORKS THE FOLLOWING IS JUNK
