@@ -4,9 +4,9 @@
 # We are calling on the power of a database server for processing these.
 # Add the database login file to your home folder (see 000a).
 # If you set these differently you can retrieve them via the "env" command.
-
 # Directory names will be handled, since this will solve issues for most files contained inside of them.
 # To speed things up, create a list of all directory names and save it in a file.
+
 
 # Include conflicts by starting in root of $GEO_WORK directory.
 # Then again maybe this is a bad idea as they will be seen as doubles by the database?
@@ -24,8 +24,7 @@ find . -type d > $GEO_LOGS/dir-index.txt
 # No indexes or constraints are present in the table to enable a swift ingest.
 
 # Make sure your database server is prepared and that you have a 
-# .pgpass file in case your db server asks for passwords each 
-# time!
+# .pgpass file in case your db server asks for passwords each time!
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
