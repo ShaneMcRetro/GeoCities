@@ -44,8 +44,8 @@ while(<INPUT>) {
         my $winner = shift(@set);                                                   # the first directory name is the winner ...
 
         for my $loser (@set) {                                                        # every single loser should go there!
-            my $loser_path = $ENV{GEO_WORK} . '/geocities' . $loser;                  # Loser Path,
-            my $winner_path = $ENV{GEO_WORK} . '/geocities' . $winner;                # Winner Path!
+            my $loser_path = $ENV{GEO_WORK} . '' . $loser;                  # Loser Path,
+            my $winner_path = $ENV{GEO_WORK} . '' . $winner;                # Winner Path!
             my $merge_directories_path = $ENV{GEO_SCRIPTS} . '/merge_directories.pl'; # script path
 
             system(($merge_directories_path, $loser_path , $winner_path));           # MERGE!
