@@ -20,8 +20,7 @@ find . -type d > $GEO_LOGS/dir-index.txt
 # sys     4m7.619s
 
 
-# Create a database table to hold directory names
-# directory names converted to lower case.
+# Create a database table to hold directory names, directory names converted to lower case.
 # No indexes or constraints are present in the table to enable a swift ingest.
 
 # Make sure your database server is prepared and that you have a 
