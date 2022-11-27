@@ -57,7 +57,8 @@ psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/fi
 # user  0m0.265s
 # sys   0m0.388s
 
-# Feed the double dir list into the dir-compare script that will sort or dirnames and their contents.
+# Feed the double dir list into the dir-compare script that will sort dirnames and their contents.
+# FUTURE SHANE NOTE: Editing perl scripts may cause issues later.
 $GEO_SCRIPTS/remove-double-dirs.pl
 
 # real    1006m39.783s
