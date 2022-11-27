@@ -80,17 +80,22 @@ sudo systemctl restart postgresql
 
 
 
-### Create despens role (user) in PostgreSQL
-sudo su - postgres                                                                    # Logs into postgres with the default admin account.
-psql                                                                                  # Opens psql.
-\du                                                                                   # Lists current users.
+### Setup in PostgreSQL - Create despens role (user)
+sudo su - postgres                                                                              # Logs into postgres with the default admin account.
+psql                                                                                            # Opens psql.
+\du                                                                                             # Lists current users.
 CREATE ROLE despens WITH SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION BYPASSRLS;     # Creates despens "role" aka the PostgreSQL database user.
-\password despens                                                                     # Activates and changes the password from nothing.
-despens                                                                               # New password.
-despens                                                                               # Confirming password.
-\du                                                                                   # Lists current users - confirm despens exists.
-\q                                                                                    # Quit the database.
+\password despens                                                                               # Activates and changes the password from nothing.
+despens                                                                                         # New password.
+despens                                                                                         # Confirming password.
+\du                                                                                             # Lists current users - confirm despens exists.
+# Create database turtles and give despens full access
+CREATE DATABASE turtles;                                                                        # Create the database turtles.
+GRANT ALL PRIVILEGES ON DATABASE turtles TO despens;                                            # Allow despens access to turtles
+\l                                                                                             # Lists database
+\q                                                                                              # Quit postgresql.
 exit
+
 
 ### Create the turtles database # THIS DOES NOT WORK
 sudo -u despens createdb turtles
