@@ -8,16 +8,19 @@
 # To speed things up, create a list of all directory names and save it in a file.
 
 
+### UNSURE IF THIS WILL WORK ###
 # Include conflicts by starting in root of $GEO_WORK directory.
 # Then again maybe this is a bad idea as they will be seen as doubles by the database?
 # Or maybe they are safe if they are pathnames...
+### UNSURE IF THIS WILL WORK ### - if we get failures later, come back to this.
+# It's probably OK though.
 
 cd $GEO_WORK
 find . -type d > $GEO_LOGS/dir-index.txt
 
-# real    116m21.050s
-# user    0m32.966s
-# sys     4m7.619s
+# real    6m52.354s
+# user    0m35.492s
+# sys     1m56.881s
 
 
 # Create a database table to hold directory names, directory names converted to lower case.
@@ -28,11 +31,12 @@ find . -type d > $GEO_LOGS/dir-index.txt
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
-
-# Put all this stuff into the database
+# Put all this stuff into the database.
+# Lots of dots and stars.
 
 $GEO_SCRIPTS/ingest-doubles.pl dir-index.txt
 
+# Forgot to update the times on this one... whoops!
 # real    8m11.323s
 # user    4m28.981s
 # sys     0m28.762s
@@ -42,16 +46,16 @@ $GEO_SCRIPTS/ingest-doubles.pl dir-index.txt
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
 
-# real    3m22.510s
-# user    0m0.012s
-# sys     0m0.020s
+# real  2m18.694s
+# user  0m0.041s
+# sys   0m0.009s
 
 # Generate a sorted list of directories.
 psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-dir-sorted.txt
 
-# real    135m23.145s
-# user    0m0.324s
-# sys     0m0.288s
+# real  18m32.197s
+# user  0m0.265s
+# sys   0m0.388s
 
 # Feed the double dir list into the dir-compare script that
 # will sort or dirnames and their contents.
