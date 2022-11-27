@@ -2,17 +2,8 @@
 
 # Remove files that have been downloaded multiple thanks to case sensitivity issues.
 # We are calling on the power of a database server for processing these.
-
-# sudo apt update && sudo apt install postgresql postgresql-contrib
-# DELETE THE ABOVE LINE WHEN DONE AS IT HAS BEEN PUT INTO STEP 000a
-
-# Add the database login file to your home folder.
+# Add the database login file to your home folder (see 000a).
 # If you set these differently you can retrieve them via the "env" command.
-
-
-### Make sure you have completed the steps in 000a-setup before starting this script. ###
-# DELETE THE ABOVE LINE WHEN DONE AS IT HAS BEEN PUT INTO STEP 000a
-
 
 # Directory names will be handled, since this will solve issues for most files contained inside of them.
 # To speed things up, create a list of all directory names and save it in a file.
