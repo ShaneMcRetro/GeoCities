@@ -28,7 +28,7 @@ psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/du
 
 # real    45m40.148s
 # user    0m28.850s
-# sys 0m41.319s
+# sys     0m41.319s
 
 # For some real lowbrow multitasking, split the list file into
 # 128 parts to have 4 ingest scripts run at the same time. This helps
@@ -44,10 +44,7 @@ psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/du
 # dtach -n urlingest3 bash -c 'for i in {65..96}; do $GEO_SCRIPTS/GeoURLs.pl $i; done'
 # dtach -n urlingest4 bash -c 'for i in {97..128}; do $GEO_SCRIPTS/GeoURLs.pl $i; done'
 
-# On my system without RAID, I got roughly 1 million files
-# per hour using this approach.
-# If you do not like or need this, you can just run
-# $GEO_SCRIPTS/GeoURLs.pl and it will take in everything from one
-# file.
+# On my system without RAID, I got roughly 1 million files per hour using this approach.
+# If you do not like or need this, you can just run the below and it will take in everything from one file.
 
 $GEO_SCRIPTS/GeoURLs.pl
