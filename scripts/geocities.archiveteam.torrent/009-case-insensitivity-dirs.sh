@@ -58,20 +58,22 @@ psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/fi
 # sys   0m0.388s
 
 # Feed the double dir list into the dir-compare script that will sort dirnames and their contents.
-# FUTURE SHANE NOTE: Editing perl scripts may cause issues later.
+### FUTURE SHANE NOTE: Editing perl scripts may cause issues later.
 $GEO_SCRIPTS/remove-double-dirs.pl
 
 # real  1938m35.547s
 # user  1749m24.606s
 # sys   184m19.571s
 
-# I think I broke my Nautilus whie running the last script. 
+### I think I broke my Nautilus whie running the last script. 
 # This is nerve griding, get a RAID5 if you can!!!1
 
 # The lists are not needed any more, but I am collecting lists to see how mangled they are...
 # rm -v $GEO_LOGS/dir-index.txt
 # rm -v $GEO_LOGS/doubles-dir-sorted.txt
 
-# Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sdb        1.8T  806G  934G  47% /media/ubuntu/GC_2TB
 
+
+# The $GEO_WORK drive should report via df -H:
+# Filesystem  Size  Used  Avail  Use%  Mounted on
+# /dev/sdb    2.0T  866G  1.1T   47%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
