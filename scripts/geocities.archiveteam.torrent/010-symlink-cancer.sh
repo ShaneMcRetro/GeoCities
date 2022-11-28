@@ -8,7 +8,6 @@
 # To find them, the SQL query in $GEO_SCRIPTS/sql/do/find-doubles.sql was used.
 # This is based on the doubles-dir data generated in 009-case-insensitivity-dirs.sh
 
-# Do my cities have Titlecase or did I break it somehow?
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Temple/2506/pisces/beth/beth
 
@@ -113,7 +112,21 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/7931/midi
 # around as well! Found by using the 'tree -dfin' command and
 # watching the output rush by. :)
 
-rm -rv $GEO_WORK/geocities_conflicts_1/www.geocities.com/Hollywood/Academy/5235/index.html/www.geocities.com
+rm -rv $GEO_WORK/conflicts/main1/www.geocities.com/Hollywood/Academy/5235/index.html/www.geocities.com
 
-rm -rv $GEO_WORK/geocities_conflicts_1/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/Trivia.html
+rm -rv $GEO_WORK/geocities_conflicts_1/geocities/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/Trivia.html
+
+
+# Since I have no idea how to query SQL database... check via this.
+# cd $GEO_WORK
+# find . -type d > $GEO_LOGS/directory-structure.txt
+# Then look for any that are really long or repeating. Scrolling through should give a good idea of any missed.
+
+# Filesystem      Size  Used Avail Use% Mounted on
+# /dev/sdb        2.0T  839G 1.1T  45%  /media/ubuntu/GC_2TB
+
+
+# real  4m13.498s
+# user  0m25.061s
+# sys   1m56.021s
 
