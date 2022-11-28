@@ -8,6 +8,7 @@
 # To find them, the SQL query in $GEO_SCRIPTS/sql/do/find-doubles.sql was used.
 # This is based on the doubles-dir data generated in 009-case-insensitivity-dirs.sh
 
+# Do my cities have Titlecase or did I break it somehow?
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Temple/2506/pisces/beth/beth
 
