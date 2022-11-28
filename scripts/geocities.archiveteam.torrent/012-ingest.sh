@@ -30,6 +30,8 @@ psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/du
 # user    0m28.850s
 # sys     0m41.319s
 
+
+### THERE IS NO SPLIT.PL PRESENT ###
 # For some real lowbrow multitasking, split the list file into
 # 128 parts to have 4 ingest scripts run at the same time. This helps
 # because it seems like startup times of external applications that
