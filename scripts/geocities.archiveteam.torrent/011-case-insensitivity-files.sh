@@ -8,7 +8,9 @@
 # For the time it takes, the amount of results are quite meagre.
 # However, every file removed saves processing time for billions of occasions in the future.
 
-cd $GEO_WORK/geocities
+# I want all the files in GEO_WORK to be checked
+# cd $GEO_WORK/geocities
+cd $GEO_WORK
 find . -type f > $GEO_LOGS/file-index.txt
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
