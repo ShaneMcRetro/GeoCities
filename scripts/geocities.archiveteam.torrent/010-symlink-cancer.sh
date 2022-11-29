@@ -21,8 +21,6 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/SunsetStrip/Performance/3412/Bilder
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Hollywood/Club/3318/horses/gallery
 
-rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfcnorth/www.midsouth.net/spitfire/www.midsouth.net
-
 rm -rv $GEO_WORK/geocities/www.geocities.com/EnchantedForest/Dell/2237/dino/dino/dino
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Hills/1217/graphics/graphics/framed/framed
@@ -33,9 +31,25 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/4137/res9899/res9899/res9
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Vienna/Studio/5505/PolarBear/PolarBear/PolarBear_files/PolarBear_files
 
-rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfceast.html/dibears101.geo/dibears101.geo
+rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfceast.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfcnorth/
+rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfcnorth.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfcwest.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/dibears101.geo/golf/
+rm -rv $GEO_WORK/geocities/www.geocities.com/dibears101.geo/nfceast.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/dibears101.geo/nfcnorth/
+rm -rv $GEO_WORK/geocities/www.geocities.com/dibears101.geo/nfcnorth.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/dibears101.geo/nfcwest.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/dibears101.geo/tennis/
+
+rm -rf $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/Lab/1911/bh_blog.htm
+mv $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/Lab/1911/bh_blog.htm.1 $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/Lab/1911/bh_blog.htm
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/rosella.geo/graphics/graphics/framed/framed/framed
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Paris/Jardin/7503/itadakimasu/itadakimasu/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Bleachers/6545/OldPage/opinion/opinion/
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/WestHollywood/Chelsea/4524/juke/music.html/music.html
 
@@ -43,8 +57,14 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/dburton_1951/PolarBear/PolarBear/Po
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/kc2awa_grapee/Sayings.html/geobook.html/geobook.html
 
-rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfcnorth.html/www.midsouth.net/spitfire/www.midsouth.net
-rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Pressbox/9206/nfcnorth.html/www.midsouth.net/www.midsouth.net
+mv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Park/1219/index.html/sys/index.html $GEO_WORK/geocities/www.geocities.com/SiliconValley/Park/1219/index1.html
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Park/1219/index.html/
+mv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Park/1219/index1.html $GEO_WORK/geocities/www.geocities.com/SiliconValley/Park/1219/index.html
+
+rm -rf $GEO_WORK/work/geocities/www.geocities.com/Tokyo/Club/9256/advertising/
+rm -rf $GEO_WORK/work/geocities/www.geocities.com/Tokyo/Club/9256/travel/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/7848/Chapter/Ch2/Ch2/
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Pipeline/4966/islam/islam
 
@@ -73,13 +93,23 @@ for topdir in ${alldirs[@]}; do
 done
 
 
+mv $GEO_WORK/geocities/www.geocities.com/eternal_purpose/tonyzapnet.html/index.html $GEO_WORK/geocities/www.geocities.com/eternal_purpose/tonyzapnet1.html
+rm -rv $GEO_WORK/geocities/www.geocities.com/eternal_purpose/tonyzapnet.html/
+$GEO_WORK/geocities/www.geocities.com/eternal_purpose/tonyzapnet.html
+rm -rv $GEO_WORK/geocities/www.geocities.com/eternal_purpose/_market
+
 rm -rv $GEO_WORK/geocities/www.geocities.com/Hollywood/Hills/1350/dbs/dbs
 rm -rv $GEO_WORK/geocities/www.geocities.com/Hollywood/Hills/1350/dbs/emblems/dbs
 rm -rv $GEO_WORK/geocities/www.geocities.com/Hollywood/Hills/1350/dbs/emblems/emblems
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Keep/8907/Klingonregistry/Klingonregistry
 
-rm -rv $GEO_WORK/geocities/www.geocities.com/timessquare/galaxy/1821/index/www.geocities.com/www.geocities.com
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/1821/index/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Stargate/4991/doomtown/co_allies.htm/
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Stargate/4991/doomtown/co_events.htm/
+
+
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/SunsetStrip/Underground/5244/bands/bands
 
@@ -91,6 +121,32 @@ for topdir in ${alldirs[@]}; do
 done
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Teahouse/4122/geobook.html/snap.to/snap.to
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Pentagon/Bunker/3087/database/database/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Hollywood/Makeup/5254/index/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Hollywood/Club/3318/history/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Vienna/4761/dougie/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/HotSprings/Sauna/6585/links/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Acres/5127/Watkins/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Ridge/2859/renee/renee/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/baking/baking/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/balloon/balloon/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/banjo/banjo/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/gallery/gallery/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/harmonica/harmonica/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/juggling/juggling/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/profile/profile/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/roleplay/roleplay/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/talents/talents/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/videogame/videogame/
+rm -rv $GEO_WORK/geocities/www.geocities.com/TimesSquare/Galaxy/7805/yoyo/yoyo/
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Tokyo/Shrine/3376/Shampoo/Pictures/Pictures
 
@@ -105,6 +161,11 @@ for topdir in ${alldirs[@]}; do
     done
 done
 
+# We need to go deeper!
+rm -rv $GEO_WORK/geocities/www.geocities.com/canadian_sf/pages/authors/media
+rm -rv $GEO_WORK/geocities/www.geocities.com/canadian_sf/pages/authors/smith
+rm -rv $GEO_WORK/geocities/www.geocities.com/canadian_sf/pages/authors/szpindel
+
 # One of these directories that is actually a HTML file...
 rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/7931/midi
 
@@ -114,16 +175,91 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/7931/midi
 
 rm -rv $GEO_WORK/conflicts/main1/www.geocities.com/Hollywood/Academy/5235/index.html/www.geocities.com
 
-rm -rv $GEO_WORK/geocities_conflicts_1/geocities/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/Trivia.html
+rm -rv $GEO_WORK/geocities_conflicts_1/geocities/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/
+
+rm -rv $GEO_WORK/conflicts/main1/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/fzbwsundern/MH5_Data/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/SunsetStrip/Palladium/4733/BLOGMETALLICA.html/www.geocities.com/
+
+rm -rv $GEO_WORK/work/geocities/www.geocities.com/toytopguy/japan/
+rm -rv $GEO_WORK/geocities/www.geocities.com/toytopguy/triang/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Cottage/6131/friends/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Yosemite/7115/saidno.html/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/SunsetStrip/5847/audio/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Quadrant/7650/darkover/rpg/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Hollow/4621/rants/rants/
+
+# Fixing up broken things - this is how most can be fixed from a broken state... but it's a lot of work for very litte reward.
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/family.html/index.html $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/family1.html
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/kids.html/index.html $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/kids1.html
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/running.html/index.html $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/running1.html
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/family.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/kids.html/
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/running.html/
+
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/family1.html $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/family.html 
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/kids1.html $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/kids.html
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/running1.html $GEO_WORK/geocities/www.geocities.com/Heartland/Woods/6913/running.html
+
+mv $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index.html/index.html $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index11.html
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index.html
+mv $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index11.html $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index.html
+
+# I will not miss these. Spam and redirection junk.
+rm -rv $GEO_WORK/geocities/www.geocities.com/handy_universe/
+rm -rv $GEO_WORK/geocities/www.geocities.com/handy_stern/
+rm -rv $GEO_WORK/geocities/www.geocities.com/handy_jetzt/
+rm -rv $GEO_WORK/geocities/www.geocities.com/handy_rolle/
+rm -rv $GEO_WORK/geocities/www.geocities.com/finanzroom/
+rm -rv $GEO_WORK/geocities/www.geocities.com/finanzraum/
+rm -rv $GEO_WORK/geocities/www.geocities.com/finanzworlds/
+rm -rv $GEO_WORK/geocities/www.geocities.com/financen2000/
+rm -rv $GEO_WORK/geocities/www.geocities.com/freedownload24h/
+rm -rv $GEO_WORK/geocities/www.geocities.com/informationen06/
+rm -rv $GEO_WORK/geocities/www.geocities.com/jobboerse2007/
+rm -rv $GEO_WORK/geocities/www.geocities.com/jobstarten/
+rm -rv $GEO_WORK/geocities/www.geocities.com/jobtowner/
+rm -rv $GEO_WORK/geocities/www.geocities.com/modenschauen/
+rm -rv $GEO_WORK/geocities/www.geocities.com/modenschauen2007/
+rm -rv $GEO_WORK/geocities/www.geocities.com/simbiosen/
+rm -rv $GEO_WORK/geocities/www.geocities.com/simbiosen_b/
+rm -rv $GEO_WORK/geocities/www.geocities.com/simbiosen_c/
+rm -rv $GEO_WORK/geocities/www.geocities.com/sorgenfreiheit/
+rm -rv $GEO_WORK/geocities/www.geocities.com/speeddirect/
+rm -rv $GEO_WORK/geocities/www.geocities.com/weblinks101/
+rm -rv $GEO_WORK/geocities/www.geocities.com/kosdoi/
+rm -rv $GEO_WORK/geocities/www.geocities.com/jqovjs/
+rm -rv $GEO_WORK/geocities/www.geocities.com/qykmuy/
+rm -rv $GEO_WORK/geocities/www.geocities.com/qlqcba/
+rm -rv $GEO_WORK/geocities/www.geocities.com/uhkplf
+rm -rv $GEO_WORK/geocities/www.geocities.com/oxzjah/
+rm -rv $GEO_WORK/geocities/www.geocities.com/rjgagn
+rm -rv $GEO_WORK/geocities/www.geocities.com/ykdoyt/
+rm -rv $GEO_WORK/geocities/www.geocities.com/wkvrsu/
+rm -rf $GEO_WORK/geocities/www.geocities.com/aquadesignnyc/
 
 
-# Since I have no idea how to query SQL database... check via this.
+# Since I have no idea how to query the SQL database... check via:
+
 # cd $GEO_WORK
 # find . -type d > $GEO_LOGS/directory-structure.txt
-# Then look for any that are really long or repeating. Scrolling through should give a good idea of any missed.
+
+# Then look for any that are really long or repeating. Scrolling through should give a good idea of any missed directories.
+# Use BBEdit and grep - ^.{200}
+
+# Then look for folders that are larger than they should be maybe? > ~250k
+# find . -type d -size +250000c > $GEO_LOGS/directory-structure-bigfolders.txt
 
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sdb        2.0T  839G 1.1T  45%  /media/ubuntu/GC_2TB
+# /dev/sdb        2.0T  837G  1.1T  45% /media/ubuntu/GC_2TB
 
 
 # real  4m13.498s
