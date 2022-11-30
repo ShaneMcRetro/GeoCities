@@ -357,6 +357,173 @@ rm -rv $GEO_WORK/Latecomer
 #############################
 
 
+#############################
+# START           Chronomex #
+#############################
+
+cd $GEO_WORK/chronomex
+
+# Make conflict directories
+mkdir -p $GEO_WORK/conflicts/chronomex/www.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/br.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/es.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/in.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/mx.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/pic.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/us.geocities.com
+mkdir -p $GEO_WORK/conflicts/chronomex/us.share.geocities.com
+
+
+# Merge geocities.com into www.geocities.com and regionals into geocities MAIN. Only non-existing data will be copied.
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/www.geocities.com $GEO_WORK/geocities/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/br.geocities.com $GEO_WORK/geocities/br.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/es.geocities.com $GEO_WORK/geocities/es.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/in.geocities.com $GEO_WORK/geocities/in.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/mx.geocities.com $GEO_WORK/geocities/mx.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/pic.geocities.com $GEO_WORK/geocities/pic.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/us.geocities.com $GEO_WORK/geocities/us.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/us.share.geocities.com $GEO_WORK/geocities/us.share.geocities.com
+
+
+# Move the duplicate data (conflicting) to the conflicts folder
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/www.geocities.com $GEO_WORK/conflicts/chronomex/www.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/br.geocities.com $GEO_WORK/conflicts/chronomex/br.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/es.geocities.com $GEO_WORK/conflicts/chronomex/es.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/in.geocities.com $GEO_WORK/conflicts/chronomex/in.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/mx.geocities.com $GEO_WORK/conflicts/chronomex/mx.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/pic.geocities.com $GEO_WORK/conflicts/chronomex/pic.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/us.geocities.com $GEO_WORK/conflicts/chronomex/us.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/chronomex/us.share.geocities.com $GEO_WORK/conflicts/chronomex/us.share.geocities.com
+
+
+# Delete the source directory (Check it is empty first)
+rm -rv $GEO_WORK/chronomex
+
+
+#############################
+# END             Chronomex #
+#############################
+
+
+#############################
+# START    Percentage Signs #
+#############################
+
+cd $GEO_WORK
+
+# Make conflict directories
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/RainForest/Canopy/1455
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/RainForest/Canopy/4896
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/CapeCanaveral/8727
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/CapitolHill/Lobby/7305
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/TelevisionCity/5611
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Lake/7750
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Plains/4704
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Prairie/6154
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Prairie/9768
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Prairie/7463
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Flats/1738
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Estates/7923
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/7597
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/1954
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/7928
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/3786
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/1043
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Eureka/Park/4912
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/TheTropics/Island/2771
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/EnchantedForest/Cottage/6936
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Area51/Shadowlands/7987
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Area51/Chamber/6139
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/SouthBeach/Strand/5225
+mkdir -p $GEO_WORK/conflicts/Percentages/www.geocities.com/Yosemite/Falls/3369
+
+
+# Merge percentage-affected folders into their counterparts. Only non-existing data will be copied.
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/1455%0A $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/1455
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/4896%0A $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/4896
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/8727%0A $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/8727
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/CapitolHill/Lobby/7305%0A $GEO_WORK/geocities/www.geocities.com/CapitolHill/Lobby/7305
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/TelevisionCity/5611%0A $GEO_WORK/geocities/www.geocities.com/TelevisionCity/5611
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Lake/7750%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Lake/7750
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Plains/4704%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Plains/4704
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/6154%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/6154
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/9768%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/9768
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/7463%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/7463
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Flats/1738%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Flats/1738
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Estates/7923%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Estates/7923
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7597%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7597
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1954%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1954
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7928%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7928
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/3786%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/3786
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1043%0A $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1043
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Eureka/Park/4912%0A $GEO_WORK/geocities/www.geocities.com/Eureka/Park/4912
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/TheTropics/Island/2771%0A $GEO_WORK/geocities/www.geocities.com/TheTropics/Island/2771
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/EnchantedForest/Cottage/6936%0A $GEO_WORK/geocities/www.geocities.com/EnchantedForest/Cottage/6936
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Area51/Shadowlands/7987%0A $GEO_WORK/geocities/www.geocities.com/Area51/Shadowlands/7987
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Area51/Chamber/6139%0A $GEO_WORK/geocities/www.geocities.com/Area51/Chamber/6139
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/SouthBeach/Strand/5225%0A $GEO_WORK/geocities/www.geocities.com/SouthBeach/Strand/5225
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Yosemite%2FFalls%2F3369 $GEO_WORK/geocities/www.geocities.com/Yosemite/Falls/3369
+
+
+# Move the duplicate data (conflicting) to the conflicts folder
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/1455%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/RainForest/Canopy/1455
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/4896%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/RainForest/Canopy/4896
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/8727%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/CapeCanaveral/8727
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/CapitolHill/Lobby/7305%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/CapitolHill/Lobby/7305
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/TelevisionCity/5611%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/TelevisionCity/5611
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Lake/7750%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Lake/7750
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Plains/4704%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Plains/4704
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/6154%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Prairie/6154
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/9768%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Prairie/9768
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/7463%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Prairie/7463
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Flats/1738%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Flats/1738
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Estates/7923%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Estates/7923
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7597%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/7597
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1954%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/1954
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7928%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/7928
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/3786%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/3786
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1043%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Heartland/Meadows/1043
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Eureka/Park/4912%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Eureka/Park/4912
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/TheTropics/Island/2771%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/TheTropics/Island/2771
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/EnchantedForest/Cottage/6936%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/EnchantedForest/Cottage/6936
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Area51/Shadowlands/7987%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Area51/Shadowlands/7987
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Area51/Chamber/6139%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/Area51/Chamber/6139
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/SouthBeach/Strand/5225%0A $GEO_WORK/conflicts/Percentages/www.geocities.com/SouthBeach/Strand/5225
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/www.geocities.com/Yosemite%2FFalls%2F3369 $GEO_WORK/conflicts/Percentages/www.geocities.com/Yosemite/Falls/3369
+
+
+# Delete the source directories (Should be empty)
+rm -rv $GEO_WORK/geocities/www.geocities.com/%2E%2E
+rm -rv $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/1455%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/RainForest/Canopy/4896%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/CapeCanaveral/8727%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/CapitolHill/Lobby/7305%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/TelevisionCity/5611%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Lake/7750%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Plains/4704%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/6154%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/9768%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Prairie/7463%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Flats/1738%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Estates/7923%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7597%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1954%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/7928%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/3786%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Meadows/1043%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Eureka/Park/4912%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/TheTropics/Island/2771%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/EnchantedForest/Cottage/6936%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Shadowlands/7987%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Chamber/6139%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SouthBeach/Strand/5225%0A
+rm -rv $GEO_WORK/geocities/www.geocities.com/Yosemite%2FFalls%2F3369
+
+
+#############################
+# END      Percentage Signs #
+#############################
+
 ### DELETE EMPTY FOLDERS ###
 # Cleanup empty folders (conflicts mostly)
 
