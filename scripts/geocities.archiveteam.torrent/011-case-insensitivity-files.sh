@@ -23,26 +23,27 @@ psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
 $GEO_SCRIPTS/ingest-doubles.pl file-index.txt
 
-### TIMES GO HERE
-### TIMES GO HERE
-### TIMES GO HERE
+# real  78m53.038s
+# user  37m21.304s
+# sys   9m8.134s
 
 
 # Create indexes in the database to speed up sorting.
+# No stars and dots this time...
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
 
-### TIMES GO HERE
-### TIMES GO HERE
-### TIMES GO HERE
+# real  17m4.952s
+# user  0m0.040s
+# sys   0m0.012s
 
 
 # Generate a sorted list of files.
 psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-file-sorted.txt
 
-# real    261m8.978s
-# user    57m27.591s
-# sys     10m15.014s
+# real  19m7.149s
+# user  0m0.064s
+# sys   0m0.027s
 
 
 # Feed the double dir list into the dir-compare script that will sort or dirnames and their contents.
@@ -50,12 +51,17 @@ psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/fi
 
 $GEO_SCRIPTS/remove-double-files.pl
 
+# real  0m54.711s
+# user  0m26.305s
+# sys   0m13.096s
 
-# real    10m49.846s
-# user    0m23.697s
-# sys     0m13.885s
 
 
 # The lists are not needed any more, I'm keeping them for nostalgia!
 # rm $GEO_LOGS/file-index.txt
 # rm $GEO_LOGS/doubles-file-sorted.txt
+
+
+# The $GEO_WORK drive should report via df -H:
+# Filesystem  Size  Used  Avail  Use%  Mounted on
+# /dev/sdb    2.0T  866G  1.1T   47%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
