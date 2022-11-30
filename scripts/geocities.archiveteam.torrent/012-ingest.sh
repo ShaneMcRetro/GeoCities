@@ -1,23 +1,45 @@
 # Since mangling this collection on a file system basis is finished,
 # let's move it into the archive directory.
 
-mv -v $GEO_WORK/geocities $GEO_ARCHIVE/archiveteam.torrent
-mv -v $GEO_WORK/geocities_conflicts_1 $GEO_ARCHIVE/archiveteam.torrent_conflicts_1
-mv -v $GEO_WORK/geocities_conflicts_2 $GEO_ARCHIVE/archiveteam.torrent_conflicts_2
+# These probably need to be the base directories? What is considered base?
+# Perhaps items contained in $GEO_WORK/geocities are base - www.geocities.com
+mv -v $GEO_WORK/geocities $GEO_ARCHIVE/main
+mv -v $GEO_WORK/geocities_conflicts_1 $GEO_ARCHIVE/conflicts_1
+mv -v $GEO_WORK/geocities_conflicts_2 $GEO_ARCHIVE/conflicts_2
+mv -v $GEO_WORK/conflicts $GEO_ARCHIVE/conflicts_3
 
 # Next is database ingesting! Make sure the tables 'files', 'urls' and 'props'
 # are ready. See the 'sql' directory. If you can, disable constraints and
-# indexes while ingesting -- only if you know what this means! It can
-# dramatically speed up the process, but terribly destroy your database
+# indexes while ingesting -- only if you know what this means!
+# It can dramatically speed up the process, but terribly destroy your database
 # if something goes wrong.
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/files.sql
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/urls.sql
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/props.sql
 
-$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/archiveteam.torrent
-$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/archiveteam.torrent_conflicts_1
-$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/archiveteam.torrent_conflicts_2
+# These probably need to be the base directories? What is considered base?
+# Perhaps items contained in $GEO_WORK/geocities are base - www.geocities.com
+$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/main
+
+# TIME GOES HERE
+# TIME GOES HERE
+# TIME GOES HERE
+
+$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/conflicts_1
+# TIME GOES HERE
+# TIME GOES HERE
+# TIME GOES HERE
+
+$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/conflicts_2
+# TIME GOES HERE
+# TIME GOES HERE
+# TIME GOES HERE
+
+$GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/conflicts_3
+# TIME GOES HERE
+# TIME GOES HERE
+# TIME GOES HERE
 
 # real    1053m26.485s
 # user    214m3.311s
