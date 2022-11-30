@@ -262,6 +262,42 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/aquadesignnyc/
 # Found a lost archive? Need to decompress it and analyse.
 mv $GEO_WORK/geocities/www.geocities.com/diomedes.phear.cc $GEO_WORK/chronomex
 
+cd $GEO_WORK/chronomex/~chronomex/geocities
+tar -xvf chronomex.~2.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.1.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.2.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.3.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.5.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.6.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~a.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~b.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~c.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~d.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~e.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~f.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~g.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~h.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~i.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~j.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~k.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~l.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~m.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~n.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.nonwww.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~o.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~p.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~r.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~s.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~t.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~u.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~v.tar.gz -C $GEO_WORK/chronomex
+tar -xvf chronomex.~w.tar.gz -C $GEO_WORK/chronomex
+
+rm -rv $GEO_WORK/chronomex/~chronomex/
+
+# Chronomex now needs UTF, Question marks and all previous scripts ran before merging with MAIN
+cd $GEO_WORK/chronomex/
+
 
 ### More merging, better late than never?
 #############################
@@ -382,6 +418,12 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/Yosemite%2FFalls%2F3369
 #############################
 # END      Percentage Signs #
 #############################
+
+# Clean up any left over empty folders.
+cd $GEO_WORK
+find . -empty -type d -delete
+
+
 
 # Then look for folders that are larger than they should be maybe? > ~250k
 # find . -type d -size +250000c > $GEO_LOGS/directory-structure-bigfolders.txt
