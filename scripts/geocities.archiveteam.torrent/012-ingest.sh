@@ -22,35 +22,31 @@ psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/props.sql
 # Perhaps items contained in $GEO_WORK/geocities are base - www.geocities.com
 $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/main
 
-# TIME GOES HERE
-# TIME GOES HERE
-# TIME GOES HERE
+# real    1918m42.469s
+# user    261m58.098s
+# sys     71m10.146s
 
 $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/conflicts_1
-# TIME GOES HERE
-# TIME GOES HERE
-# TIME GOES HERE
+# real    0m9.397s
+# user    0m2.262s
+# sys     0m0.939s
 
 $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/conflicts_2
-# TIME GOES HERE
-# TIME GOES HERE
-# TIME GOES HERE
+# real    0m0.465s
+# user    0m0.294s
+# sys     0m0.045s
 
 $GEO_SCRIPTS/GeoIngest.pl $GEO_ARCHIVE/conflicts_3
-# TIME GOES HERE
-# TIME GOES HERE
-# TIME GOES HERE
-
-# real    1053m26.485s
-# user    214m3.311s
-# sys     48m5.140s
+# real    0m25.195s
+# user    0m5.908s
+# sys     0m2.083s
 
 
 psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/dump-files.sql -o $GEO_LOGS/db-files.txt
 
-# real    45m40.148s
-# user    0m28.850s
-# sys     0m41.319s
+# real    0m41.707s
+# user    0m14.119s
+# sys     0m8.876s
 
 
 ### THERE IS NO SPLIT.PL PRESENT ###
@@ -72,3 +68,7 @@ psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/du
 # If you do not like or need this, you can just run the below and it will take in everything from one file.
 
 $GEO_SCRIPTS/GeoURLs.pl
+
+# TIMES GO HERE
+# TIMES GO HERE
+# TIMES GO HERE
