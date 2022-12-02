@@ -110,13 +110,13 @@ while(<INPUT>) {
 
     push @urls, $record_url;
 
+    ### This has been depricated and may not work properly.
     # props (mime type)
     # This requires the "Gnome Virtual File System", gvfs.
     # This software guesses mime-types much better than the
     # classic "file", recognizing for example MS Office
     # documents, MIDI-files, etc ... PROTIP! This
     # thing is present on any Ubuntu Desktop install.
-
     my $gvfs_info = fexec('gvfs-info', '-a', 'standard::content-type', $ENV{GEO_ARCHIVE}.'/'.$row->{path});
 
     my ($mime_type) = $gvfs_info =~ m/standard::content-type: (\S+)/;
