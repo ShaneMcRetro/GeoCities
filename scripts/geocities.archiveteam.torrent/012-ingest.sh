@@ -67,6 +67,7 @@ psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/du
 # On my system without RAID, I got roughly 1 million files per hour using this approach.
 # If you do not like or need this, you can just run the below and it will take in everything from one file.
 
+cd $GEO_LOGS
 $GEO_SCRIPTS/GeoURLs.pl
 
 # TIMES GO HERE
