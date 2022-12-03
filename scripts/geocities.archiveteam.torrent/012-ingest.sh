@@ -67,9 +67,25 @@ psql -d $GEO_DB_DB --no-align --tuples-only -U despens -f $GEO_SCRIPTS/sql/do/du
 # On my system without RAID, I got roughly 1 million files per hour using this approach.
 # If you do not like or need this, you can just run the below and it will take in everything from one file.
 
-cd $GEO_LOGS
 $GEO_SCRIPTS/GeoURLs.pl
+
+### THE ABOVE SCRIPT DIED IN 22.04
+# Uncaught exception from user code:
+# 	no exec: No such file or directory at /home/ubuntu/Documents/GitHub/GeoCities/scripts/GeoURLs.pl line 233, <INPUT> line 63.
+# 	main::fexec("gvfs-info", "-a", "standard::content-type", "/media/ubuntu/GC_2TB/archive/main/pic.geocities.com/gbim/feat"...) called at /home/ubuntu/Documents/GitHub/GeoCities/scripts/GeoURLs.pl line 120
+#  main/pic.geocities.com/gbim/tommygun.gif
+# Can't exec "gvfs-info": No such file or directory at
+#	/home/ubuntu/Documents/GitHub/GeoCities/scripts/GeoURLs.pl line 233, <INPUT> line 64 (#2)
+#     (W exec) A system(), exec(), or piped open call could not execute the
+#     named program for the indicated reason.  Typical reasons include: the
+#     permissions were wrong on the file, the file wasn't found in
+#     $ENV{PATH}, the executable in question was compiled for another
+#     architecture, or the #! line in a script points to an interpreter that
+#     can't be run for similar reasons.  (Or maybe your system doesn't support
+#     #! at all.)
 
 # TIMES GO HERE
 # TIMES GO HERE
 # TIMES GO HERE
+
+# REVERTING BACK TO 12.04 to see if it works. gvfs-info is deprecated and replaced with gio info or something so maybe it broke that way or the way the database imports. I've reverted scripts where I tried to include files outside of the $GEO_WORK/geocities/ folder, even though the above uses $GEO_ARCHIVE as the root.

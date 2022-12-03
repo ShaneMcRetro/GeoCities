@@ -29,9 +29,8 @@ my $last_lowname;
 while(<INPUT>) {
     chomp;
 
-# I want all the files in GEO_WORK to be checked
-#   my $file_path = $ENV{'GEO_WORK'} .'/geocities'. decode_utf8($_);
-    my $file_path = $ENV{'GEO_WORK'} .''. decode_utf8($_);
+
+    my $file_path = $ENV{'GEO_WORK'} .'/geocities'. decode_utf8($_);
     
     my $current_lowname = lc( $file_path ); # lowercase the file name ... is it the same as the file before?
 

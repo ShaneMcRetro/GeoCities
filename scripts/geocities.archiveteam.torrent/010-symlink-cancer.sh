@@ -215,7 +215,7 @@ mv $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index.html/index.html
 rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index.html
 mv $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index11.html $GEO_WORK/geocities/www.geocities.com/Area51/Vault/1357/index.html
 
-# I will not miss these. Spam and redirection junk.
+# These will not be missed - Spam and redirection junk.
 rm -rv $GEO_WORK/geocities/www.geocities.com/handy_universe/
 rm -rv $GEO_WORK/geocities/www.geocities.com/handy_stern/
 rm -rv $GEO_WORK/geocities/www.geocities.com/handy_jetzt/
