@@ -26,7 +26,13 @@ find . -name \*.7z.001 | xargs -P8 -I filename 7z x -aou filename -o$GEO_WORK |&
 # Tidy up and remove some decrunched duplicates, where did they come from? 001, but their MD5s match so we will remove them.
 
 cd $GEO_WORK
-rm geocities.yahoo_1.com geocities.yahoo.co_1.jp ar.geocities.yahoo_1.com uk.geocities.yahoo_1.com us.geocities.yahoo_1.com visit.geocities.yahoo_1.com themis.geocities.yahoo_1.com
+rm -rv geocities.yahoo_1.com
+rm -rv geocities.yahoo.co_1.jp
+rm -rv ar.geocities.yahoo_1.com
+rm -rv uk.geocities.yahoo_1.com
+rm -rv us.geocities.yahoo_1.com
+rm -rv visit.geocities.yahoo_1.com
+rm -rv themis.geocities.yahoo_1.com
 
 # Check the $GEO_LOG/001-decrunch.log for any errors encountered (search keyword "error" or "fail", probably)
 
