@@ -8,18 +8,18 @@
 
 
 # We need to make sure all dependencies are installed upfront for Ubuntu 22.04.
-# Start by updating the system.
+# Start by updating the system. You can find the new sources in source.list in the root of this repository.
 
-sudo apt update && sudo apt dist-upgrade -y
+sudo apt-get update && sudo apt-get-get dist-upgrade -y
 
-# Install additional Perl Modules via apt; we do not use cpan here.
+# Install additional Perl Modules via apt-get; we do not use cpan here.
 # These are needed for DBI, Data::Dumper, IO::All, Try::Tiny, XML::TreePP, DBD::Pg, YAML qw(LoadFile)
 
-sudo apt install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-tiny-perl libxml-treepp-perl libdbd-pg-perl libconfig-yaml-perl libcapture-tiny-perl
+sudo apt-get install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-tiny-perl libxml-treepp-perl libdbd-pg-perl libconfig-yaml-perl libcapt-geture-tiny-perl
 
 # Install other things that are needed, convmv (UTF-8), postgresql (database magic)
 
-sudo apt install build-essential p7zip-full convmv postgresql postgresql-contrib libpq-dev libglib2.0-bin findutils
+sudo apt-get install build-essential p7zip-full convmv postgresql postgresql-contrib libpq-dev libglib2.0-bin findutils
 
 
 
@@ -64,19 +64,19 @@ mkdir -p /media/ubuntu/GC_2TB/work
 (ls /etc/postgresql/*/main/postgresql.conf)
 
 # Make database do database things
-# If using a version other than 14, adjust the version number to what the above commands outputted.
+# If using a version other than 9.1, adjust the version number to what the above commands outputted.
 # Reference: https://gist.github.com/AtulKsol/4470d377b448e56468baef85af7fd614
 
-sudo nano /etc/postgresql/14/main/pg_hba.conf
+sudo nano /etc/postgresql/9.1/main/pg_hba.conf
 
 # "local" is for Unix domain socket connections only
 local   all             all                                     trust
 
 # Add more things
-sudo nano /etc/postgresql/14/main/postgresql.conf
+sudo nano /etc/postgresql/9.1/main/postgresql.conf
 listen_addresses = '*'
 
-sudo systemctl restart postgresql
+sudo service postgresql restart
 
 
 
