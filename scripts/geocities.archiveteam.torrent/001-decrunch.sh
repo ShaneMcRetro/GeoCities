@@ -16,14 +16,14 @@ rm $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES%2Fmx.geocities.yahoo.com.7
 rm $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES%2Fghiageocities.com.7z.001_meta.txt
 rm $GEO_SOURCE/geocities.archiveteam.torrent/SUBSITES%2Fmx.geocities.yahoo.com.7z.001_meta.txt
 
-# Find all 7z archives and decrunch them.
+# Find all 7z archives and decrunch them to $GEO_WORK
 # The option -P8 means "run eight 7zip decrunchers at the same time".
 # Adjust the number to the number of cores (or threads) your processor has.
 # If a duplicate file is extracted the -aou flag appends _1 to the extracted file.
 
 find . -name \*.7z.001 | xargs -P8 -I filename 7z x -aou filename -o$GEO_WORK |& tee -a $GEO_LOGS/001-decrunch.log
 
-# Tidy up and remove some decrunched duplicates, where did they come from? 001, but their MD5s match so we will remove them.
+# Remove some decrunched duplicates. Their MD5s match so we will remove them.
 
 cd $GEO_WORK
 rm -rv geocities.yahoo_1.com
