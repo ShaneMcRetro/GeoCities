@@ -9,7 +9,7 @@
 # They will be untared and deleted after otherwise the 2TB drive ain't big enough.
 # JCN, Latecomer and Santiago are decompressed after this as they were only single archives.
 
-cd $GEO_SOURCE/geocities.archiveteam.torrent/
+cd $GEO_WORK
 
 ls -f -1 | tr '\n' '\0' | xargs -0 file -i | grep -i application/x-tar | sed 's/:.\+//' | tr '\n' '\0' | xargs -I filename -0 -n 1 bash -c 'tar xvf filename && rm -v filename'
 # list all    Separate    Run the "file"     "grep" finds all the files  Throwing away    Convert new-   Run bash to execute the untar operation             ^^^^^^^^^^^^^^^^^
