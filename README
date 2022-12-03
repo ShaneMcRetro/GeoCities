@@ -11,7 +11,7 @@ Demo Data: http://geocities.mcretro.net
 Rebuilding GeoCities in 2022 from Archive.org
 ---------------------------------------------------
 
-This project uses Ubuntu 22.04 LTS as a base.
+This project uses Ubuntu 12.04 LTS as a base.
 
 Time estimates are based on your hardware being:
 - Intel Xeon W3520 at 2.67 GHz (4 cores, 8 threads)
