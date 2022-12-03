@@ -12,6 +12,11 @@ Rebuilding GeoCities in 2022 from Archive.org
 ---------------------------------------------------
 
 This project uses Ubuntu 22.04 LTS as a base.
+NOTE: This was abandoned due to issues with:
+- 012-ingest.sh (step $GEO_SCRIPTS/GeoURLs.pl.
+- This blocked 013-indexes.sh.
+
+---------------------------------------------------
 
 Time estimates are based on your hardware being:
 - Intel Xeon W3520 at 2.67 GHz (4 cores, 8 threads)
