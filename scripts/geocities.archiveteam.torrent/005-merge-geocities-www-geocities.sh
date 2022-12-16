@@ -13,7 +13,8 @@ $GEO_SCRIPTS/merge_directories.pl geocities.com www.geocities.com
 # The contents of geocities.com that could not be merged are now considered conflicts.
 # We save this data for processing in the database later on.
 
-mkdir -p $GEO_WORK/conflicts/main1/www.geocities.com
+cd $GEO_WORK/geocities/
+mkdir -p $GEO_WORK/geocities_conflicts_1/www.geocities.com
 $GEO_SCRIPTS/merge_directories.pl geocities.com $GEO_WORK/geocities_conflicts_1/www.geocities.com
 
 
