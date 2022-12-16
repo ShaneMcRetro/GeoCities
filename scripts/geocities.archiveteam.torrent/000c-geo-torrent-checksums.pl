@@ -5,6 +5,7 @@ our $VERSION = 1.00;
 =pod
 
 
+Run these step by step.
 
 This script compares checksums of local files belonging to the ArchiveTeam's GeoCities Torrent with checksums published on archive.org.
 
@@ -107,7 +108,7 @@ If MD5 does not match 3198321f90792afeeda24174cd9a845b AND 5b6f33d81064ea671af41
 wget -cv https://archive.org/download/archiveteam-geocities-santiago/2012-06-geocities-catchup.zip
 wget -cv https://archive.org/download/archiveteam-geocities-santiago/archived_geocities_stuff_by_lord_nightmare.tar.gz
 
-Our data is intact, head on to the next script to begin the decrunch.
+Our data is intact, head on to the next script, 001, to begin the decrunch.
 
 
 =cut
