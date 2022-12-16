@@ -34,7 +34,7 @@ Read the script sources before running them, it might hint what packages you nee
 to install and contain instructions on their usage. I believe I've added them all to
 the 000a-setup.sh script.
 
-I'll be serving this with Apache so my goal was the raw files decently structured.
+I'll be serving this with Apache so my goal was to get the raw files decently structured.
 
 Thanks to Dragan Espenschied and others who have helped along the way!
 
