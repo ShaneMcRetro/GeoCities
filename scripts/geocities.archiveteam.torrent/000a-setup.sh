@@ -1,4 +1,4 @@
-# NOTE: Step through these one by one.
+# NOTE: Step through these one by one. Do not run as a script.
 
 
 # You need a decent amount of hard drive space to work with GeoCities.
@@ -7,15 +7,16 @@
 # - Use ext4 as the file systems. GeoCities was case-sensitive.
 
 
-# We need to make sure all dependencies are installed upfront for Ubuntu 22.04.
-# Start by updating the system. You can find the new sources in source.list in the root of this repository.
+# We need to make sure all dependencies are installed upfront for Ubuntu 12.04.
+# Start by updating the system.
+# You can find the updated sources for Ubuntu 12.04 in source.list in the root of this repository.
 
-sudo apt-get update && sudo apt-get-get dist-upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 
-# Install additional Perl Modules via apt-get; we do not use cpan here.
+# Install additional Perl Modules via apt; we do not use cpan here.
 # These are needed for DBI, Data::Dumper, IO::All, Try::Tiny, XML::TreePP, DBD::Pg, YAML qw(LoadFile)
 
-sudo apt-get install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-tiny-perl libxml-treepp-perl libdbd-pg-perl libconfig-yaml-perl libcapt-geture-tiny-perl
+sudo apt-get install libdbi-perl libdata-dumper-simple-perl libio-all-perl libtry-tiny-perl libxml-treepp-perl libdbd-pg-perl libconfig-yaml-perl libcapture-tiny-perl
 
 # Install other things that are needed, convmv (UTF-8), postgresql (database magic)
 
@@ -31,19 +32,18 @@ sudo nano ~/.bashrc
 # Username is assumed to be "ubuntu".
 # Paste block at the bottom of the .bashrc file.
 
-export GEO_SOURCE=/media/ubuntu/GC_1TB_SRC                            # Source distribution files; 1TB HDD
-export GEO_WORK=/media/ubuntu/GC_2TB/work                             # Work (tmp) folder; 2TB SSD
-export GEO_ARCHIVE=/media/ubuntu/GC_2TB/archive                       # Final data set (The Archives); 2TB SSD
+export GEO_SOURCE=/media/GC_1TB_SRC                            # Source distribution files; 1TB HDD
+export GEO_WORK=/media/GC_2TB/work                             # Work (tmp) folder; 2TB SSD
+export GEO_ARCHIVE=/media/GC_2TB/archive                       # Final data set (The Archives); 2TB SSD
 
-export GEO_LOGS=/media/ubuntu/GC_2TB/log                              # Log files/lists used by PostgreSQL
-export GEO_SCRIPTS=/home/ubuntu/Documents/GitHub/GeoCities/scripts    # Where the magic lives (Software)
-# export GEO_SCREENSHOTS=/media/ubuntu/GC_2TB/screenshots             # Screenshots (Unused)
+export GEO_LOGS=/media/GC_2TB/log                              # Log files/lists used by PostgreSQL
+export GEO_SCRIPTS=/home/ubuntu/GeoCities1204/scripts                 # Where the magic lives (Software)
 
 export GEO_DB_HOST='localhost'                                        # Database access
 export GEO_DB_DB='turtles'                                            # PostgreSQL database name
 export GEO_DB_USER='despens'                                          # PostgreSQL database user - Thanks Despens!
 export GEO_DB_PASSWD='despens'                                        # PostgreSQL database password - Thanks Despens!
-export PGUSER='despens'                                               # Can't get enough variables. Is this required? Probably not.
+export PGUSER='despens'                                               # Can't get enough variables. Is this required?
 export PGPASSFILE='/home/ubuntu/.pgpass'                              # Databases scare me
 
 # Some scripts will wipe temporary files after they are run. The only versions kept will be:
@@ -51,9 +51,10 @@ export PGPASSFILE='/home/ubuntu/.pgpass'                              # Database
 # - and the finished, workable archive files, located in $GEO_ARCHIVE
 
 # Make some folders
-mkdir -p /media/ubuntu/GC_2TB/archive
-mkdir -p /media/ubuntu/GC_2TB/log
-mkdir -p /media/ubuntu/GC_2TB/work
+
+mkdir -p /media/GC_2TB/archive
+mkdir -p /media/GC_2TB/log
+mkdir -p /media/GC_2TB/work
 
 
 
@@ -84,7 +85,7 @@ sudo service postgresql restart
 sudo su - postgres                                                                              # Logs into postgres with the default admin account.
 psql                                                                                            # Opens psql.
 \du                                                                                             # Lists current users.
-CREATE ROLE despens WITH SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION BYPASSRLS;     # Creates despens "role" aka the PostgreSQL database user.
+CREATE ROLE despens WITH SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION;               # Creates despens "role" aka the PostgreSQL database user.
 \password despens                                                                               # Activates and changes the password from nothing.
 despens                                                                                         # New password.
 despens                                                                                         # Confirming password.
@@ -96,6 +97,7 @@ GRANT ALL PRIVILEGES ON DATABASE turtles TO despens;                            
 \q                                                                                              # Quit postgresql.
 exit
 
+# pgAdmin 4 might require 18.04 or higher, use pgAdmin 3 if required.
 # You can install pgAdmin 4 to look around the database like stats:
 # https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-pgadmin-on-ubuntu-22-04.html
 
