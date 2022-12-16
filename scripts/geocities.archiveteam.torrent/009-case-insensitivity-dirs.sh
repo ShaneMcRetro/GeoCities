@@ -8,16 +8,354 @@
 # To speed things up, create a list of all directory names and save it in a file.
 
 
-### UNSURE IF THIS WILL WORK ###
-# Include conflicts by starting in root of $GEO_WORK directory.
-# Then again maybe this is a bad idea as they will be seen as doubles by the database?
-# Or maybe they are safe if they are pathnames...
-### UNSURE IF THIS WILL WORK ### - if we get failures later, come back to this.
-# It's probably OK though.
+### Percentage signs removal ###
+# These were missed by the question mark perl script (008) as they are %3F which is equal to ?.
 
-cd $GEO_WORK
+# find . -name '*index.html%3F*' > $GEO_LOGS/009-index-question-marks.txt
+# Remove the ones that are duplicates.
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/TurboPAS/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/Assembly/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/Amstrad_CPC/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/programs/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/01-October-2004/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/National_Park/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/01-Oct-2004/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/Specimen_Hill/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Bendigo/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/25-April-2005/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/25-April-2005/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/25-April-2005/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/25-April-2005/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/avoca/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/Pyrenees_Ranges/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/environment/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/Taradale/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/modella/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/images/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/cpm22_user/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/franzglaser/jrs/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ResearchTriangle/Lab/7907/downloads/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/babel/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/ikind_babel/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/images/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/images/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/images/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/images/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/images/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/images/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/research/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/swatson001/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/agihard/mohl/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/homeofoscarvermeulen/n8vem/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/intro/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/socketserver/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tinitermv2/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/relays/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/bootloader/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/mytini/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/tiniterm/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/webserver/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/p8255/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/microcontrollers/tini/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/sincos/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/crc16/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/lib/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/cg/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FN=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FS=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FN=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/emptysx/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FD=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FM=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FS=D
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FD=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/SiliconValley/Network/3656/c2c/index.html%3FM=A
+rm -rv $GEO_WORK/geocities/www.geocities.com/imran_akthar/files/index.html%*
+rm -rv $GEO_WORK/geocities/www.geocities.com/lynchaj/index.html%*
+
+# Find the remaining ones that might be forward slashes or other. Duplicated data.
+# find . -name '*%*' > $GEO_LOGS/009-percentages.txt
+
+rm -rv $GEO_WORK/geocities/geocities.yahoo.com/index.html?topic*
+rm -rv $GEO_WORK/geocities/geocities.yahoo.com/index.html?source=water%*
+rm -rv $GEO_WORK/geocities/geocities.yahoo.com/index.html?url*
+rm -rv $GEO_WORK/geocities/www.geocities.com/Colosseum/Arena/8157/geobook.html%*
+rm -rv $GEO_WORK/geocities/www.geocities.com/js_source/ygIELib9.js%*
+rm -rv $GEO_WORK/geocities/www.geocities.com/Athens/Stage/6170/Bolet%*
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Pines/8509/RobotDocs/index.html?*
+rm -rv $GEO_WORK/geocities/www.geocities.com/Paris/Chateau/3070/index.html?*
+
+
+
+# We only need the geocities folder as any conflict folders are duplicates.
+# This means the directory structure is more or less correct apart from case issues.
+# Well what do you know, that's what this script and some future ones set out to sort.
+
+cd $GEO_WORK/geocities
 find . -type d > $GEO_LOGS/dir-index.txt
 
+# Ubuntu 12.04
 # real    6m52.354s
 # user    0m35.492s
 # sys     1m56.881s
@@ -36,37 +374,38 @@ psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
 $GEO_SCRIPTS/ingest-doubles.pl dir-index.txt
 
-# Forgot to update the times on this one... whoops!
-# real    8m11.323s
-# user    4m28.981s
-# sys     0m28.762s
+# Ubuntu 12.04
+# real	6m33.004s
+# user	3m44.182s
+# sys	0m37.473s
+
 
 
 # Create indexes in the database to speed up sorting.
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
 
-# real  2m18.694s
+# Ubuntu 12.04
+# real  6m18.694s
 # user  0m0.041s
 # sys   0m0.009s
 
 # Generate a sorted list of directories.
 psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-dir-sorted.txt
 
-# real  18m32.197s
-# user  0m0.265s
-# sys   0m0.388s
+# Ubuntu 12.04
+# real	341m46.530s
+# user	0m0.653s
+# sys	0m0.628s
 
 # Feed the double dir list into the dir-compare script that will sort dirnames and their contents.
-### FUTURE SHANE NOTE: Editing perl scripts may cause issues later.
 $GEO_SCRIPTS/remove-double-dirs.pl
 
-# real  1938m35.547s
-# user  1749m24.606s
-# sys   184m19.571s
+# Ubuntu 12.04
+# real	1070m56.447s
+# user	744m39.551s
+# sys	330m5.314s
 
-### I think I broke my Nautilus whie running the last script. 
-# This is nerve griding, get a RAID5 if you can!!!1
 
 # The lists are not needed any more, but I am collecting lists to see how mangled they are...
 # rm -v $GEO_LOGS/dir-index.txt
