@@ -6,12 +6,10 @@
 # There are roughly 28,000,000 files.
 #
 # For the time it takes, the amount of results are quite meagre.
-# However, every file removed saves processing time for billions of occasions in the future.
-#
-# I want all the files in $GEO_WORK to be checked, not just the $GEO_WORK/geocities subfolder.
-# cd $GEO_WORK/geocities
+# However, every file removed saves processing time for triillions of occasions in the future.
 
-cd $GEO_WORK
+
+cd $GEO_WORK/geocities
 find . -type f > $GEO_LOGS/file-index.txt
 
 # Create a clean doubles database.
@@ -23,9 +21,11 @@ psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles.sql
 
 $GEO_SCRIPTS/ingest-doubles.pl file-index.txt
 
-# real  78m53.038s
-# user  37m21.304s
-# sys   9m8.134s
+# Ubuntu 12.04
+# real	87m27.841s
+# user	47m50.672s
+# sys	8m48.117s
+
 
 
 # Create indexes in the database to speed up sorting.
@@ -33,27 +33,30 @@ $GEO_SCRIPTS/ingest-doubles.pl file-index.txt
 
 psql -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/create/doubles-indexes.sql
 
-# real  17m4.952s
-# user  0m0.040s
-# sys   0m0.012s
+# Ubuntu 12.04
+# real	50m49.913s
+# user	0m0.040s
+# sys	0m0.019s
 
 
 # Generate a sorted list of files.
 psql --no-align --tuples-only -d $GEO_DB_DB -U despens -f $GEO_SCRIPTS/sql/do/find-doubles.sql -o $GEO_LOGS/doubles-file-sorted.txt
 
+# Ubuntu 12.04
 # real  19m7.149s
 # user  0m0.064s
 # sys   0m0.027s
 
 
 # Feed the double dir list into the dir-compare script that will sort or dirnames and their contents.
-### FUTURE SHANE NOTE: Editing perl scripts may cause issues later.
 
 $GEO_SCRIPTS/remove-double-files.pl
 
-# real  0m54.711s
-# user  0m26.305s
-# sys   0m13.096s
+# Ubuntu 12.04
+# real	1m9.388s
+# user	0m22.864s
+# sys	0m23.811s
+
 
 
 
@@ -64,4 +67,5 @@ $GEO_SCRIPTS/remove-double-files.pl
 
 # The $GEO_WORK drive should report via df -H:
 # Filesystem  Size  Used  Avail  Use%  Mounted on
-# /dev/sdb    2.0T  866G  1.1T   47%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+# /dev/sdb    2.0T  838G  1.1T   45%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+
