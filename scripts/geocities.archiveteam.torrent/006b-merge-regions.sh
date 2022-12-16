@@ -4,7 +4,6 @@
 # This will merge all the regions ar, au, br, etc., into the www.geocities.com directory.
 
 
-
 # Remove directories containing junk or bad data.
 
 rm -rv $GEO_WORK/geocities/ar.geocities.yahoo.com
@@ -61,32 +60,32 @@ rm -rv $GEO_WORK/geocities/yahoopagebuilderhelp.com
 
 # Make conflict directories.
 
-mkdir -p $GEO_WORK/conflicts/main3/ar.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/ar.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/asia.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/asia.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/au.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/au.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/br.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/br.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/ca.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/ca.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/cf.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/de.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/es.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/espanol.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/hk.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/hk.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/in.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/it.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/kr.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/mx.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/sg.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/uk.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/uk.share.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/us.geocities.com
-mkdir -p $GEO_WORK/conflicts/main3/us.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/ar.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/ar.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/asia.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/asia.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/au.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/au.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/br.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/br.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/ca.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/ca.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/cf.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/de.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/es.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/espanol.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/hk.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/hk.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/in.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/it.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/kr.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/mx.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/sg.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/uk.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/uk.share.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/us.geocities.com
+mkdir -p $GEO_WORK/geocities_conflicts_15/us.share.geocities.com
 
 
 
@@ -124,58 +123,63 @@ $GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GE
 
 # Move the duplicate data (conflicting) to the conflicts folder.
 
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.geocities.com $GEO_WORK/conflicts/main3/ar.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.share.geocities.com $GEO_WORK/conflicts/main3/ar.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/asia.geocities.com $GEO_WORK/conflicts/main3/asia.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/asia.share.geocities.com $GEO_WORK/conflicts/main3/asia.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/au.geocities.com $GEO_WORK/conflicts/main3/au.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/au.share.geocities.com $GEO_WORK/conflicts/main3/au.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/br.geocities.com $GEO_WORK/conflicts/main3/br.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/br.share.geocities.com $GEO_WORK/conflicts/main3/br.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ca.geocities.com $GEO_WORK/conflicts/main3/ca.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ca.share.geocities.com $GEO_WORK/conflicts/main3/ca.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/cf.geocities.com $GEO_WORK/conflicts/main3/cf.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/de.geocities.com $GEO_WORK/conflicts/main3/de.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/es.geocities.com $GEO_WORK/conflicts/main3/es.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/espanol.geocities.com $GEO_WORK/conflicts/main3/espanol.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/hk.geocities.com $GEO_WORK/conflicts/main3/hk.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/hk.share.geocities.com $GEO_WORK/conflicts/main3/hk.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/in.geocities.com $GEO_WORK/conflicts/main3/in.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/it.geocities.com $GEO_WORK/conflicts/main3/it.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/kr.geocities.com $GEO_WORK/conflicts/main3/kr.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/mx.geocities.com $GEO_WORK/conflicts/main3/mx.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/sg.geocities.com $GEO_WORK/conflicts/main3/sg.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/share.geocities.com $GEO_WORK/conflicts/main3/share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/uk.geocities.com $GEO_WORK/conflicts/main3/uk.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/uk.share.geocities.com $GEO_WORK/conflicts/main3/uk.share.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.geocities.com $GEO_WORK/conflicts/main3/us.geocities.com
-$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GEO_WORK/conflicts/main3/us.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.geocities.com $GEO_WORK/geocities_conflicts_15/ar.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ar.share.geocities.com $GEO_WORK/geocities_conflicts_15/ar.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/asia.geocities.com $GEO_WORK/geocities_conflicts_15/asia.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/asia.share.geocities.com $GEO_WORK/geocities_conflicts_15/asia.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/au.geocities.com $GEO_WORK/geocities_conflicts_15/au.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/au.share.geocities.com $GEO_WORK/geocities_conflicts_15/au.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/br.geocities.com $GEO_WORK/geocities_conflicts_15/br.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/br.share.geocities.com $GEO_WORK/geocities_conflicts_15/br.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ca.geocities.com $GEO_WORK/geocities_conflicts_15/ca.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/ca.share.geocities.com $GEO_WORK/geocities_conflicts_15/ca.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/cf.geocities.com $GEO_WORK/geocities_conflicts_15/cf.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/de.geocities.com $GEO_WORK/geocities_conflicts_15/de.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/es.geocities.com $GEO_WORK/geocities_conflicts_15/es.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/espanol.geocities.com $GEO_WORK/geocities_conflicts_15/espanol.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/hk.geocities.com $GEO_WORK/geocities_conflicts_15/hk.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/hk.share.geocities.com $GEO_WORK/geocities_conflicts_15/hk.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/in.geocities.com $GEO_WORK/geocities_conflicts_15/in.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/it.geocities.com $GEO_WORK/geocities_conflicts_15/it.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/kr.geocities.com $GEO_WORK/geocities_conflicts_15/kr.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/mx.geocities.com $GEO_WORK/geocities_conflicts_15/mx.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/sg.geocities.com $GEO_WORK/geocities_conflicts_15/sg.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/share.geocities.com $GEO_WORK/geocities_conflicts_15/share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/uk.geocities.com $GEO_WORK/geocities_conflicts_15/uk.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/uk.share.geocities.com $GEO_WORK/geocities_conflicts_15/uk.share.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.geocities.com $GEO_WORK/geocities_conflicts_15/us.geocities.com
+$GEO_SCRIPTS/merge_directories.pl $GEO_WORK/geocities/us.share.geocities.com $GEO_WORK/geocities_conflicts_15/us.share.geocities.com
 
 
 # These are not to be merged.
 # Check these contain useful data.
 # Keep or delete.
+#
 # $GEO_WORK/geocities/www.geocities.com      # MAIN www.geocities.com
 # $GEO_WORK/geocities/visit.geocities.com    # counter.gif - All zeroes
 # $GEO_WORK/geocities/geocities.yahoo.com    # Content Violation Reporting Form inside
-# $GEO_WORK/geocities/help.yahoo.com         # Misc
-# $GEO_WORK/geocities/info.yahoo.com         # Misc
+# $GEO_WORK/geocities/help.yahoo.com         # Misc.
+# $GEO_WORK/geocities/info.yahoo.com         # Misc.
 # $GEO_WORK/geocities/login.yahoo.com        # Login page
 # $GEO_WORK/geocities/pic.geocities.com      # Pictures and clipart
 # $GEO_WORK/geocities/us.geocities.yahoo.com # PageWizard? (Pagebuilder?)
 
 # Clean up any left over empty folders.
+echo Removing empty directories, nearly done.
 cd $GEO_WORK
 find . -empty -type d -delete
 
 
 # The $GEO_WORK drive should report via df -H:
 # Filesystem  Size  Used  Avail  Use%  Mounted on
-# /dev/sdb    2.0T  904G  965G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
+# /dev/sdb    2.0T  904G  966G   49%   /media/ubuntu/GC_2TB        # aka $GEO_WORK
 
+# Conflict folders 1-15 (a few numbers missing) should have:
+# 24,666 items, totalling 291.1 MB
 
-# real  68m55.548s
-# user  33m22.311s
-# sys   28m17.448s
+# Ubuntu 12.04
+# real   67m35.029s
+# user   10m36.313s
+# sys    55m37.222s
 
 
