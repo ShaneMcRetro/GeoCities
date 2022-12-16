@@ -190,6 +190,17 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Cottage/6131/friends/
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Yosemite/7115/saidno.html/
 
+rm -rv $GEO_WORK/geocities_conflicts_1/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/
+rm -rv $GEO_WORK/geocities_conflicts_2/www.geocities.com/Hollywood/Hills/7415/Trash/Trivia.html/
+rm -rv $GEO_WORK/geocities_conflicts_2/www.geocities.com/Hollywood/Academy/5235/index.html/
+rm -rv $GEO_WORK/www.geocities.com/Pipeline/Halfpipe/8882/lyrics/
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/Heartland/Park/9227/index.html/
+mv $GEO_WORK/geocities/www.geocities.com/Heartland/Park/9227/index.html.1 $GEO_WORK/geocities/www.geocities.com/Heartland/Park/9227/index.html
+
+rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/Gallery/9531/index.html/
+mv $GEO_WORK/geocities/www.geocities.com/SoHo/Gallery/9531/index.html.1 $GEO_WORK/geocities/www.geocities.com/SoHo/Gallery/9531/index.html
+
 rm -rv $GEO_WORK/geocities/www.geocities.com/SunsetStrip/5847/audio/
 
 rm -rv $GEO_WORK/geocities/www.geocities.com/Area51/Quadrant/7650/darkover/rpg/
@@ -249,12 +260,13 @@ rm -rv $GEO_WORK/geocities/www.geocities.com/ykdoyt/
 rm -rv $GEO_WORK/geocities/www.geocities.com/wkvrsu/
 rm -rv $GEO_WORK/geocities/www.geocities.com/vmmfgc/
 rm -rv $GEO_WORK/geocities/www.geocities.com/aquadesignnyc/
-
+rm -rv $GEO_WORK/geocities/www.geocities.com/flug_infos
+rm -rv $GEO_WORK/geocities/www.geocities.com/traumjob_jetzt/
 
 # Since I have no idea how to query the SQL database... check via:
 
 # cd $GEO_WORK
-# find . -type d > $GEO_LOGS/directory-structure.txt
+# find . -type d > $GEO_LOGS/010-directory-structure.txt
 
 # Then look for any that are really long or repeating. Scrolling through should give a good idea of any missed directories.
 # Use BBEdit and grep - ^.{200}
@@ -267,13 +279,18 @@ find . -empty -type d -delete
 
 
 # Then look for folders that are larger than they should be maybe? > ~250k
-# find . -type d -size +250000c > $GEO_LOGS/directory-structure-bigfolders.txt
+# find . -type d -size +250000c > $GEO_LOGS/010-directory-structure-bigfolders.txt
 
 # Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sdb        2.0T  839G  1.1T  45% /media/ubuntu/GC_2TB
+# /dev/sdb        2.0T  837G  1.1T  45% /media/ubuntu/GC_2TB
+
+# We have around ~948,000 folders at this point. Yikes!
+
+# Ubuntu 12.04
+# real	26m31.034s
+# user	1m28.305s
+# sys	5m11.370s
 
 
-# real  4m13.498s
-# user  0m25.061s
-# sys   1m56.021s
+
 
