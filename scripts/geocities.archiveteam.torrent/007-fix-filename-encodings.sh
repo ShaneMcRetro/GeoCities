@@ -15,6 +15,14 @@
 # As some character encoding issues are the result of using parametrized URLs with question marks, some of the fixes
 # here overlap with what the next script (008) is trying to achieve.
 
+# If you want to run the above, do it after running this script.
+
+# Ubuntu 12.04
+# real	156m34.865s
+# user	134m38.483s
+# sys	21m28.827s
+
+
 
 cd $GEO_WORK/geocities/www.geocities.com/SoHo/Museum/1134/ && convmv -f Windows-1251 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/zteffen/Clints_hjemmeside/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
@@ -229,3 +237,13 @@ cd $GEO_WORK/geocities/www.geocities.com/Eureka/Company/8808/ && convmv -f iso-8
 cd $GEO_WORK/geocities/www.geocities.com/MotorCity/Lane/8195/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/Paris/LeftBank/4494/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
 cd $GEO_WORK/geocities/www.geocities.com/TimesSquare/Corridor/1041/ && convmv -f iso-8859-1 -t utf8 -r --notest * ;
+
+# Filename over 255 characters and appears to be duplicated. Removed all ? and moved one to the html file.
+mv "$GEO_WORK/geocities/www.geocities.com/SoHo/Museum/1134/pict_e.html?EN?images%2F040501b.jpg?Our team?with rewards from Odessa (Ukraine) 2004" $GEO_WORK/geocities/www.geocities.com/SoHo/Museum/1134/pict_e.html
+rm -rv $GEO_WORK/geocities/www.geocities.com/SoHo/Museum/1134/pict_e.html?*
+
+# Ubuntu 12.04 - Just the converting.
+# real    0m15.609s
+# user    0m13.234s
+# sys     0m2.290s
+
