@@ -25,11 +25,10 @@ chdir("$ENV{GEO_WORK}/");
 find({wanted => \&normalize, no_chdir => 1}, '.');
 
 sub normalize {
-    # is it a file?
-    # I will not only process files named *.html or something, because
-    # there are some *.JPGs that are actually HTML!
-    # If the pattern searched for is not found and replaces, the file will
-    # stay unmodified anyway. This helps big time against the symlink cancer!
+    # Is it a file?
+    # We will process many file types as not only are *.html affected. There are some *.jpg files that are actually html.
+    # If the pattern searched for is not found, it will not be replaced, and the file remain unmodified.
+    # This helps big time against the symlink cancer!
     if(-f) {
         my $filename = $_;
         my $file = io($filename)->binary->all;  # load it
@@ -58,8 +57,8 @@ sub normalize {
     }
 }
 
-# real    439m0.772s
-# user    181m55.608s
-# sys     83m15.554s
 
-
+# Ubuntu 12.04
+# real    393m26.623s
+# user    189m17.489s
+# sys     64m57.897s
