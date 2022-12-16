@@ -12,24 +12,29 @@ Rebuilding GeoCities in 2022 from Archive.org
 ---------------------------------------------------
 
 This project uses Ubuntu 12.04 LTS as a base.
+Failed to use Ubuntu 22.04 as a core component, gvfs-info, has been deprecated.
+I am not sure how to resolve that, so we're using 12.04 again.
 
 Time estimates are based on your hardware being:
 - Intel Xeon W3520 at 2.67 GHz (4 cores, 8 threads)
 - 32 GB PC3-8500 (1066 MHz) DDR3 ECC SDRAM
-- 1TB HDD: Torrent source data
+- 2TB HDD: Torrent source data
 - 2TB SSD: Work (tmp) and final archive data
 
 We are merging several sources together:
-- The Archive Team Geocities Snapshot (May 2011)
-- Geocities: JCN Grab (geocities-jcn-pack) (Dec 2011)
-- Geocities: Latecomer (archiveteam-geocities-latecomer) (Mar 2012)
-- Geocities: The Santiago Grab (archiveteam-geocities-santiago) (Jun 2012)
+- The Archive Team GeoCities Snapshot (May 2011)
+- GeoCities: Chronomex (compressed inside the above under diomedes.phear.cc)
+- GeoCities: JCN Grab (geocities-jcn-pack) (Dec 2011)
+- GeoCities: Latecomer (archiveteam-geocities-latecomer) (Mar 2012)
+- GeoCities: The Santiago Grab (archiveteam-geocities-santiago) (Jun 2012)
 
 The full list can be found here: https://archive.org/details/archiveteam-geocities
 
 Read the script sources before running them, it might hint what packages you need 
 to install and contain instructions on their usage. I believe I've added them all to
 the 000a-setup.sh script.
+
+I'll be serving this with Apache so my goal was the raw files decently structured.
 
 Thanks to Dragan Espenschied and others who have helped along the way!
 
