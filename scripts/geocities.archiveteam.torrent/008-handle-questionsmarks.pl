@@ -3,7 +3,7 @@
 # Find all files containing a question mark and check if this version of the file is really needed.
 # Does the question mark version contain something different than the same file without a question mark.
 # Most of the URL parameters are targeted at Javascripts running in client-side and not server-side.
-# Most GeoCities users had no way of running server-side software apart from the GeoCities-provided cgi scripts. 
+# Most GeoCities users had no way of running server-side software apart from the GeoCities provided cgi scripts. 
 #
 # perl 008-handle-questionsmarks.pl
 #
@@ -130,9 +130,12 @@ sub fexec {
     return join('', @result);
 }
 
-# real	22m43.251s
-# user	6m1.048s
-# sys	10m14.149s
+
+# Ubuntu 12.04
+# real	11m29.760s
+# user	3m49.755s
+# sys	6m58.256s
 
 # Now that that is out of the way do a full backup.
 # sudo dd if=/dev/sdX of=/dev/sdX bs=4M status=progress
+
